@@ -1,0 +1,528 @@
+<!------ 
+
+tags page by taezs.tumblr.com, please do not remove credit.
+
+message me if you have any issues!
+
+------>
+
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+<!-- browser page title ---->
+<title>navigation</title>
+
+<style>
+
+
+/* CHANGE THE ACCENT COLOUR HERE */
+
+
+.tit h1:after{background:#ffe3e9;}
+#tags h2:after{background:#ffe3e9;}
+
+
+/* CHANGE THE ACCENT COLOUR HERE */
+
+
+
+#s-m-t-tooltip {
+    max-width:240px;
+    padding:5px;
+    margin-left:20px;
+    margin-right:15px;
+    margin-top:-8px;
+    border-radius:5px;
+    z-index:99999999990;
+    transition:.2s;
+    line-height:11px;
+    font-weight:100;
+    background:#f7f7f7;
+    border:1px solid #eee;
+    color:#000}
+    
+iframe {display:none !important;}
+
+ 
+body {
+    font-family: 'Open Sans', sans-serif; 
+    color:#333;
+    font-size: 10px;
+    background-color:#fafafa;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color: #aaa;
+    text-decoration: none;
+    font-style: italic;
+    letter-spacing:0.5px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+
+.cont{
+    position:absolute;
+    width:574px;
+    left:50%;
+    top:100px;
+    background:#fff;
+    padding:10px;
+    margin-left:-287px;
+    border:1px solid #eee;
+    border-radius:5px;
+    margin-bottom:90px;
+}
+
+.tit{
+    display:block;
+    text-align:left;
+    padding:10px;
+    padding-bottom:20px;
+    border-bottom:1px solid #eee;
+}
+
+.tit img{
+    border-radius:5px;
+    width:40px;
+    float:left;
+    margin-right:10px;
+    height:40px;
+}
+
+.tit h1{
+    font-size:10pt;
+    display:inline-block;
+    text-align:left;
+    font-style:italic;
+    font-weight:normal;
+}
+
+.tit h1:after{
+    content:"";
+    width:100%;
+    display:block;
+    margin-top:-7px;
+    height:7px;
+}
+
+.hlinks{
+    display:block;
+    width:200px;
+    float:right;
+    margin-top:10px;
+    text-align:right;
+}
+
+.hlinks a{
+    display:inline-block;
+    padding-top:4px;
+    padding-left:2px;
+    padding-right:5px;
+    padding-bottom:1px;
+    border-radius:5px;
+    width:15px;
+    height:15px;
+    border:1px solid #eee;
+    background:#fff;
+    margin-left:10px;
+}
+
+#tags{
+    display:inline-block;
+    width:720px;
+    margin-left:-5px;
+    margin-top:5px;
+}
+
+
+#tags h2{
+    font-size:8pt;
+    display:inline-block;
+    margin:0;
+    font-style:italic;
+    padding-bottom:10px;
+    text-align:center;
+    font-weight:normal;
+}
+
+#tags h2:after{
+    content:"";
+    width:100%;
+    display:block;
+    margin-top:-7px;
+    height:7px;
+}
+
+#tags a{
+    display:block;
+    margin:3px;
+    border-radius:2px;
+}
+
+#tags a:before{
+    content:"";
+    width:5px;
+    height:1px;
+    background:#aaa;
+    display:block;
+    float:left;
+    margin-left:-10px;
+    margin-top:6px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+#tags a:hover{
+    padding-left:10px;
+}
+
+#tags a:hover:before{
+    width:15px;
+    margin-left:-20px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.h{
+    display:block;
+    margin-top:20px;
+}
+
+#group{
+    width:106px;
+    padding:10px;
+    margin:10px;
+    float:left;
+}
+
+
+.note{
+    text-align:right;
+    color:#aaa;
+    font-style:italic;
+}
+
+
+
+.searchbar{
+    background:#fff;
+    width:100%;
+    height:30px;
+    margin-top:15px;
+    border-top:1px solid #eee;
+    padding-top:10px;
+    display:block;
+}
+.search{
+    height:26px;
+    width:400px;
+    float:left;
+    overflow:hidden;
+}
+ 
+.search input{
+    border:1px solid #fff;
+    background:#fff;
+    padding:2px;
+    padding-left:5px;
+    letter-spacing:0.5px;
+    color:black;
+    width:200px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 9px;
+    padding-top:5px;
+}
+
+.taezs{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:200px;
+    height:20px;
+}
+
+.taezs a{
+    display:inline-block;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:3px;
+    position:fixed;
+    right:20px;
+    padding:5px;
+    bottom:20px;
+}
+
+.taezs a:before{
+    content:"theme by taezs";
+    position:fixed;
+    right:70px;
+    opacity:0;
+    bottom:25px;
+    transition:.5s;
+}
+
+.taezs a:hover:before{
+    opacity:1;
+    right:50px;
+    transition:.5s;
+}
+
+</style></head>
+
+
+
+<body>
+
+
+
+
+<div class="cont">
+
+<!------   
+
+
+welcome to the fun stuff! 
+
+if you're not that familiar with html, please read the notes throughout to help you out.
+
+the default icon matches the accent color, but if you would like to change the icon you can do so by replacing the link in "img src" with a link of your own photo, OR you can replace the URL with "{PortraitURL-96}" and that will put in your own tumblr avatar. 
+
+
+--------->
+
+<div class="tit">
+    <a href="/" title="return to blog">
+        <img src="http://i.imgur.com/fQjDpwa.jpg">
+    </a>
+
+
+<!----- change the title of the page here ----->
+<h1>navigate this blog</h1>
+<!--------------------------------------------->
+
+
+<!--- honeybee icons by linearicons ------>
+<div class="hlinks"><a href="/dashboard" title="dashboard"><span class="lnr lnr-home"></span></a><a href="/archive" title="archive"><span class="lnr lnr-history"></span></a><a href="https://tumblr.com/follow/{Name}" title="follow"><span class="lnr lnr-plus-circle"></span></a></div></div>
+
+
+<!----- END HEADER ---->
+
+
+
+<!---- START TAGS.
+
+there are two layout options to use with this page theme.
+
+the first is to have sections with four blocks in each (https://creatre.tumblr.com/prev/t1a), and the second option is to just have it all in a masonry layout (https://creatre.tumblr.com/prev/t1b). 
+
+all you need to do to make a new section is copy and paste the piece of code between the brackets titled "SECTION DIVIDER", between the sections.
+
+if you wish for the second option, simply remove the divider and the script will work by itself. 
+
+----->
+
+
+<div id="tags">
+    
+    <div id="group">
+    <h2>category</h2>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>
+    
+    <div id="group">
+    <h2>category</h2>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>    
+        
+    <div id="group">
+    <h2>category</h2>    
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>
+    
+    <div id="group">
+    <h2>category</h2>    
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>
+    
+
+<!----- SECTION DIVIDER 
+copy and paste this if you need more than two sections. DELETE THIS IF YOU WANT OPTION B ----></div><div id="tags"><div style="width:570px; margin:5px; border-top:1px solid #eee;"></div>
+<!------ SECTION DIVIDER ---->
+    
+    <div id="group">
+    <h2>category</h2>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>
+    
+    <div id="group">
+    <h2>category</h2>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>    
+        
+    <div id="group">
+    <h2>category</h2>    
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>
+    
+    <div id="group">
+    <h2>category</h2>    
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+        <a href="/tagged/">tag name</a>
+    </div>
+    
+
+<!----- END TAGS LIST ----->
+    
+</div>
+
+
+<!------ delete this if you don't want a note ------------>
+<div class="note">
+    * here you can put a small note if you wish to.
+</div>
+<!------ delete this if you don't want a note ------------>
+
+
+<!----- delete this if you don't want a search box ------>
+<div class="searchbar"><div id="searchbx" class="unhidden"><div class="search"><form method="get" action="/search"><input type="text" placeholder="Type and press enter to search..." value="" name="q"></input></form></div></div></div>
+<!----- delete this if you don't want a search box ------>
+
+
+
+</div>
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="lnr lnr-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+<!------ S C R I P T S! ------>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/me5sfsd/12Qlmj66n/script.js"></script>
+
+<script type="text/javascript">
+$(window).load(function(){
+var $wall = $('#tags');
+$wall.imagesLoaded(function(){
+$wall.masonry({
+itemSelector: '#group',
+isAnimated : true
+});
+});
+$wall.infinitescroll({
+navSelector : "div#navigation",
+nextSelector : "div#navigation a#nextPage",
+itemSelector : '#group',
+loadingImg : "",
+loadingText : " ",
+donetext : " ",
+extraScrollPx : 0,
+bufferPx : 10000,
+debug : false,
+errorCallback: function() {
+$('#infscr-loading').animate({opacity: .8},2000).fadeOut('normal');
+}},
+function( newElements ) {
+var $newElems = $( newElements );
+$newElems.hide();
+$newElems.imagesLoaded(function(){
+$wall.masonry( 'appended', $newElems, {isAnimated: true, animationOptions: {duration: 250, easing: 'linear', queue: false}}, function(){$newElems.fadeIn('slow');} );
+});
+}); $('#tags').show(500);
+});
+</script>
+
+<script language="JavaScript">
+function function1(){
+window.scrollTo(0,5);
+}
+function function2(){
+window.scroll(0,2);
+}
+</script>
+
+<script type="text/javascript">
+ function unhide(searchbx) {
+ var item = document.getElementById(searchbx);
+ if (item) {
+ item.className=(item.className=='hidden')?'unhidden':'hidden';
+ }
+ }
+</script>
+ <script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script><script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:20,
+tip_fade_speed:300,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+</body>
+</html>
