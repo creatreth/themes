@@ -251,12 +251,15 @@ h1, h2, h3, h4 {
     margin:1.5em 0;
     font-size:1.5em;
     padding:0;
-    color:{color:title};
+    color:{color:text};
     font-weight:bold;
+    font-family:'Montserrat', sans-serif;
 }
  
-.posts h1:first-child, .posts h2:first-child, .posts h3:first-child, .posts h4:first-child {margin-top:0;}
- 
+.posts h1:first-child, .posts h2:first-child, .posts h3:first-child, .posts h4:first-child {
+    margin-top:0;
+}
+
 .comment ul {
   list-style: none;
   padding: 0;
@@ -1297,7 +1300,7 @@ a.notecount{
     margin-top:5px;
 }
 
-.pin{
+.pin, .posts h1{
     display:block;
     padding:10px;
     border-radius:3px;
@@ -1305,6 +1308,16 @@ a.notecount{
     margin-bottom:10px;
     color:{color:Text Over Accent};
     font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.posts h2, .posts h3, .posts h4{
+    border-bottom:3px solid {color:Accent};
+    padding-bottom:5px;
+    font-weight:400;
+}
+
+.posts h2{
+    font-weight:bold;
 }
 
 .pin span{
@@ -1315,7 +1328,10 @@ a.notecount{
     display:block;
 }
 
-
+.posttitle{
+    font-size:15px;
+    padding:10px 15px;
+}
 
 /* credit, please do not remove */
 .taezs{
@@ -1556,7 +1572,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 
 {block:Text}
-{block:Title}<div class="title">{title}</div>{/block:Title}
+{block:Title}<div class="pin posttitle">{title}</div>{/block:Title}
 {block:RebloggedFrom}
     {block:Reblogs}
         <li class="comment {block:Title}ted{/block:Title}">
