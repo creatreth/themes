@@ -1,0 +1,567 @@
+<!------ 
+
+character/network page by taezs.tumblr.com, please do not remove credit.
+
+message me if you have any issues!
+
+------>
+
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+
+<!-- browser page title ---->
+<title>Character List</title>
+
+<style>
+
+
+/* styling colour changes */
+
+
+body{color:#333;} /* body text color */
+a{color:#bbb;} /* link color */
+
+#sort a:hover {color:#000; border-color:#333;} /* filters */
+#sort li a.selected {color:#000; border-color:#333;} /* filters on hover */
+
+.one span{background-image: linear-gradient(to right, #fafafa, #fff);} 
+/* change the background of the descriptors here - if you don't want the gradient, just remove it all and say {background:#fafafa} (or the colour you want) */
+
+.one a:hover span:before{color:white} /*color of the icon when you hover over the character name (if you have included a link) */
+
+.one span.name{color:#000;background:#fafafa;} /*default colors for member name */
+
+a.character{color:black;}
+a.character:before{color:black;}
+a.character:hover:before{color:white;}
+
+#s-m-t-tooltip {
+    max-width:240px;
+    padding:3px 10px;
+    margin-left:20px;
+    margin-right:15px;
+    margin-top:-8px;
+    z-index:99999999990;
+    transition:.2s;
+    line-height:15px;
+    font-size:12px;
+    background:#f7f7f7;
+    color:#000}
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:999999999999;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    background-color:#fff;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    text-decoration: none;
+    letter-spacing:0.5px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+
+
+
+#topbar{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    background:#fafafa;
+    z-index:1;
+    padding-left:110px;
+}
+
+#topbar a{
+    display:inline-block;
+    text-transform:uppercase;
+    font-family:'Space Grotesk', sans-serif;
+    margin-right:30px;
+}
+
+#container{
+    position:absolute;
+    width:90%;
+    top:0px;
+    margin-bottom:100px;
+    left:100px;
+}
+
+.title{
+    font-family:'Space Grotesk', sans-serif;
+    margin-top:60px;
+    padding:10px;
+    height:95px;
+    padding-bottom:10px;
+    vertical-align:bottom;
+    position:relative;
+}
+
+.title h1{
+    font-size:20px; 
+    font-weight:200;
+    margin:0;
+    padding:10px 0;
+}
+
+.tlinks, .descr{
+    display:inline-block;
+    font-size:10px;
+    line-height:150%;
+    font-family: 'Lato', sans-serif;
+}
+
+.descr{
+    padding-bottom:10px;
+}
+
+
+ul.members{
+    list-style:none;
+    margin:0;
+    margin-top:240px;
+    left:80px;
+    width:90%;
+    margin-bottom:150px;
+    padding:0;
+}
+
+.one{
+    background:#fafafa;
+    display:inline-block;
+    font-weight:400;
+    margin:20px;
+    text-transform:uppercase;
+    width:270px;
+    text-align:left;
+    border-bottom:5px solid #fafafa;
+        -moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+.one img{
+    width:60px;
+    height:60px;
+    border-left:1px solid white;
+    border-bottom:1px solid white;
+    float:right;
+    object-fit: fill;
+}
+
+.one span{
+    display:block;
+    font-family:'Space Grotesk', sans-serif;
+    border-bottom:1px solid white;
+    padding:4px;
+}
+
+.one span.name{
+    font-size:13px;
+    padding:5px 10px;
+    display:block;
+    text-transform:none;
+}
+
+.c, .one .th{
+    font-size:9px;
+}
+
+.one .th:before{
+    display:block;
+    margin-top:2px;
+    margin-right:5px;
+    width:15px;
+    text-align:center;
+    float:left;
+    font-family:'honeybee';
+}
+
+.one span.desc{
+    padding:5px 10px;
+    text-transform:none;
+    overflow:scroll;
+    font-family: 'Lato', sans-serif;
+    background:#fafafa;
+    margin-top:1px;
+    line-height:150%;
+    overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+    height:11px;
+    width:11px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background:black;}
+
+::-webkit-scrollbar-track {background:#fafafa;}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {border:5px solid #fafafa;}
+
+
+#sort li, #sort ul{list-style:none;margin:0;padding:0;} 
+
+#sort li{display:inline-block;}
+
+#sort a{padding-bottom:1px; border-bottom:1px dotted transparent;}
+
+
+
+a.back{
+    display:block;
+    width:30px;
+    height:100%;
+    position:absolute;
+    margin-left:-45px;
+    background:#fafafa;
+    text-align:center;
+}
+
+a.back .th{
+    margin-top:19px;
+}
+
+a.back:hover{
+    background:#333;
+    color:white;
+}
+
+
+.header{
+    background:#fff;
+    text-transform:uppercase;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    padding:10px;
+    transition: all 0.4s ease;
+}
+
+.header a{
+    display:inline-block;
+    margin:0 5px;
+    transition: all 0.4s ease;
+}
+
+.content {
+  padding: 16px;
+  transition: all 0.4s ease;
+}
+
+.sticky {
+  position: fixed;
+  top:30px;
+  left:100px;
+  width: 100%;
+  z-index:10;
+      transition:.5s;
+      transition: all 0.4s ease;
+}
+
+#scrollup a{
+  position: fixed;
+  bottom: 30px; 
+  left: 40px; 
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #fafafa;
+  color: black; 
+  font-weight:lighter;
+  cursor: pointer; 
+  padding: 10px; 
+  font-size: 12px; 
+}
+
+#scrollup a:hover {
+  background-color: #555; 
+  color:white;
+}
+
+
+.one a:hover span{
+    background:#222;
+    color:white;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+
+.one a:hover span:before{
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a.character:before{
+    content:'\ebbe';
+    float:right;
+    margin:8px;
+    font-size:10px;
+    font-family:'honeybee';
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.one a span{transition:0.5s ease;}
+
+/* leave credit in tact please */
+.taezs{position:fixed;bottom:20px;right:20px;width:200px;height:20px;}
+.taezs a{display:inline-block;background:#eee;border:1px solid #eee;border-radius:3px;position:fixed;color:black;right:20px;padding:5px;bottom:20px;}
+.taezs a:hover{background:#000;color:white;}.taezs a:before{content:"theme by taezs";position:fixed;right:70px;opacity:0;bottom:25px;transition:.5s;}.taezs a:hover:before{opacity:1;right:50px;transition:.5s;color:black;}
+
+</style></head>
+
+
+
+<body>
+
+<div id="topbar"><a href="/">home</a><a href="/">contact</a><a href="/">theme</a></div>
+
+<div id="container">
+     
+<div class="title">
+<h1>character list</h1>
+<div class="descr" style="width:450px">
+<!--- change the width if you need here. I recommend keeping it max three lines so widen the box if necessary ---->
+    Here you can put a <b>description</b>.<br>
+    You don't have to make each character/member a different colour, and you also don't need a photo. for each character. if you do, <a href="https://imagecolorpicker.com/en/">imagecolorpicker</a> will be your friend.
+</div>
+</div>
+
+
+
+<div class="header" id="sort">
+<ul id="filters" class="option-set clearfix" data-option-key="filter">
+    filter by:
+    <li><a href="#filter" data-option-filter=".one" class="selected">all</a></li>
+    <li><a href="#filter" data-option-filter=".options">customization options</a></li>
+    <li><a href="#filter" data-option-filter=".female">female</a></li>
+    <li><a href="#filter" data-option-filter=".male">male</a></li>
+    <li><a href="#filter" data-option-filter=".good">good</a></li>
+    <li><a href="#filter" data-option-filter=".neutral">neutral</a></li>
+    <li><a href="#filter" data-option-filter=".evil">evil</a></li>
+    <li><a href="#filter" data-option-filter=".pc">pc</a></li>
+    <li><a href="#filter" data-option-filter=".npc">npc</a></li>
+    
+</ul>
+
+</div></div>
+
+<ul class="members">
+
+
+<!---- START CHARACTER LIST ----->
+
+
+
+<!-- add filters with spaces in between each. leave "one" there. 
+e.g. <li class="one admin filter1 filter2"> -->
+<li class="one FILTERS">
+
+<a href="BLOGURL" class="character"><!---remove this if you don't want a link-->
+
+<!-- to change the background colour of the character title, replace the background color here. If you just want them all to be the same, delete this: style="background:#c5cee0;" -->
+    <span class="name" style="background:#c5cee0;">
+        Character Name  
+    </span>
+    
+</a><!---remove this if you don't want a link-->
+
+<!-- put in your own img url here or delete it entirely-->
+<img src="http://i.imgur.com/C3Izm3d.png">
+
+<!-- 
+to change the icon that appears in each row, head to https://honeybee.suiomi.com/ and scroll to the bottom to find out the icon you want to replace it with. copy the text below it (e.g. acorn) and replace it AFTER th-. 
+e.g. <span class="th th-icon">
+-->
+<span class="th th-moon">name</span>
+<span class="th th-map-1-o">location</span>
+<span class="th th-constellation">star sign</span>
+        
+<span class="desc">
+    Description
+</span>
+    
+</li>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<!---- do not edit past here ----->    
+    
+</ul>    
+    
+    
+    
+</div>
+
+
+
+
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+<!------ S C R I P T S! ------>
+<script src="https://static.tumblr.com/w3dcevg/q2Tp3n8qs/b.js"></script>
+ <script src="http://static.tumblr.com/fuu6t9w/kh8ml0pl9/jquery-1.7.1.min.js"></script><script src="http://static.tumblr.com/fuu6t9w/eubml0pm0/jquery.isotope.min.js"></script>
+ <script src="https://static.tumblr.com/uopakca/GVcnvdwbq/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:90,
+tip_fade_speed:700,
+attribute:"title"
+});
+});
+})(jQuery);
+
+
+
+$(window).scroll(function() {
+if ($(this).scrollTop() >= 145){  
+    $('.header').addClass("sticky");
+  }
+  else{
+    $('.header').removeClass("sticky");
+  }
+});
+
+ $(function(){
+ 
+ var $container = $('.members');
+ 
+ $container.isotope({
+ itemSelector : '.one'
+ });
+ 
+ 
+ var $optionSets = $('#sort .option-set'),
+ $optionLinks = $optionSets.find('a');
+ 
+ $optionLinks.click(function(){
+ var $this = $(this);
+ // don't proceed if already selected
+ if ( $this.hasClass('selected') ) {
+ return false;
+ }
+ var $optionSet = $this.parents('.option-set');
+ $optionSet.find('.selected').removeClass('selected');
+ $this.addClass('selected');
+ 
+ // make option object dynamically, i.e. { filter: '.my-filter-class' }
+ var options = {},
+ key = $optionSet.attr('data-option-key'),
+ value = $this.attr('data-option-filter');
+ // parse 'false' as false boolean
+ value = value === 'false' ? false : value;
+ options[ key ] = value;
+ if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+ // changes in layout modes need extra logic
+ changeLayoutMode( $this, options )
+ } else {
+ // otherwise, apply new options
+ $container.isotope( options );
+ }
+ 
+ return false;
+ });
+ 
+ 
+ });
+
+ </script>
+ 
+ <script type="text/javascript">
+$(window).load(function(){
+var $wall = $('.members');
+$wall.imagesLoaded(function(){
+$wall.masonry({
+itemSelector: '.one',
+isAnimated : true
+});
+});
+$wall.infinitescroll({
+navSelector : "div#navigation",
+nextSelector : "div#navigation a#nextPage",
+itemSelector : '#group',
+loadingImg : "",
+loadingText : " ",
+donetext : " ",
+extraScrollPx : 0,
+bufferPx : 10000,
+debug : false,
+errorCallback: function() {
+$('#infscr-loading').animate({opacity: .8},2000).fadeOut('normal');
+}},
+function( newElements ) {
+var $newElems = $( newElements );
+$newElems.hide();
+$newElems.imagesLoaded(function(){
+$wall.masonry( 'appended', $newElems, {isAnimated: true, animationOptions: {duration: 250, easing: 'linear', queue: false}}, function(){$newElems.fadeIn('slow');} );
+});
+}); $('#tags').show(500);
+});
+</script>
+
+
+ <!-----end filter scripts------>
+
+</body>
+</html>
