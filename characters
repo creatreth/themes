@@ -361,7 +361,7 @@ a.character:before{
 
 <body>
 
-<div id="topbar"><a href="/">home</a><a href="/">contact</a><a href="/">theme</a></div>
+<div id="topbar"><a href="/">home</a><a href="/ask">contact</a><a href="https://taezs.tumblr.com">theme</a></div>
 
 <div id="container">
      
