@@ -1,0 +1,519 @@
+<!------ 
+
+tags page by @taezs, please do not remove credit.
+
+message me on creatre.tumblr.com/ask if you have any issues!
+
+------>
+
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+
+<!------ S C R I P T S! ------>
+<script src="https://static.tumblr.com/w3dcevg/q2Tp3n8qs/b.js"></script>
+ <script src="http://static.tumblr.com/fuu6t9w/kh8ml0pl9/jquery-1.7.1.min.js"></script>
+ <script src="https://static.tumblr.com/uopakca/GVcnvdwbq/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:90,
+tip_fade_speed:700,
+attribute:"title"
+});
+});
+})(jQuery);
+
+ </script>
+
+
+ <!-----end filter scripts------>
+
+<!-- browser page title ---->
+<title>Tags List</title>
+
+<style>
+
+
+#s-m-t-tooltip {
+    max-width:240px;
+    padding:3px 10px;
+    margin-left:20px;
+    margin-right:15px;
+    margin-top:-8px;
+    z-index:99999999990;
+    transition:.2s;
+    line-height:15px;
+    font-size:12px;
+    background:#f7f7f7;
+    color:#000}
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:999999999999;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+
+ 
+body {
+font-family: 'Lato', sans-serif;
+    color:#333;
+    font-size: 10px;
+    background-color:#fff;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color: #aaa;
+    text-decoration: none;
+    letter-spacing:0.5px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+.taezs{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:200px;
+    height:20px;
+}
+
+.taezs a{
+    display:inline-block;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:3px;
+    position:fixed;
+    right:20px;
+    padding:5px;
+    bottom:20px;
+}
+
+.taezs a:before{
+    content:"theme by taezs";
+    position:fixed;
+    right:70px;
+    opacity:0;
+    bottom:25px;
+    transition:.5s;
+}
+
+.taezs a:hover:before{
+    opacity:1;
+    right:50px;
+    transition:.5s;
+}
+
+#topbar{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    background:#fafafa;
+    z-index:1;
+    padding-left:110px;
+}
+
+#topbar a{
+    display:inline-block;
+    text-transform:uppercase;
+    font-family:'Space Grotesk', sans-serif;
+    margin-right:30px;
+}
+
+#container{
+    position:absolute;
+    width:80%;
+    top:0px;
+    margin-bottom:100px;
+    left:100px;
+}
+
+.title{
+    font-family:'Space Grotesk', sans-serif;
+    margin-top:60px;
+    padding:10px;
+    height:95px;
+    padding-bottom:10px;
+    vertical-align:bottom;
+    position:relative;
+}
+
+.title h1{
+    font-size:20px; 
+    font-weight:200;
+    margin:0;
+    padding:10px 0;
+}
+
+.tlinks, .descr{
+    display:inline-block;
+    font-size:10px;
+    line-height:150%;
+    font-family: 'Lato', sans-serif;
+}
+
+.descr{
+    padding-bottom:10px;
+    width:300px;
+}
+
+
+ul.members{
+    list-style:none;
+    margin:0;
+    margin-left:-10px;
+    margin-bottom:150px;
+    padding:0;
+}
+
+.one{
+    background:#fafafa;
+    display:inline-block;
+    font-weight:400;
+    margin:20px;
+    text-transform:uppercase;
+    width:270px;
+    text-align:left;
+    border-bottom:5px solid #fafafa;
+        -moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+.one img{
+    height:65px;
+    float:right;
+    margin-left:10px;
+}
+
+.one a, .one span{
+    display:block;
+    font-family:'Space Grotesk', sans-serif;
+    border-bottom:1px solid white;
+    padding:4px;
+}
+
+.one span.name{
+    font-size:13px;
+    padding:5px 10px;
+    display:block;
+    color:#000;
+    background:#fafafa;
+    text-transform:none;
+}
+
+.one a, .list span, .list2 span{
+    font-size:10px;
+    color:#333;
+    padding-left:5px;
+}
+
+.list span, .list2 span{
+    font-weight:500;
+}
+
+.one a:before, .list span:before, .list2 span:before{
+content:'\ebc6';
+display:block;
+margin-top:2px;
+margin-right:5px;
+width:15px;
+font-size:9px;
+text-align:center;
+float:left;
+font-family:'honeybee';
+}
+
+.one a:hover{
+    padding-left:10px;
+}
+
+span.starsign:before{
+    content:'\ebd4';
+}
+
+span.age:before{
+    content:'\ebee';
+}
+
+.one span.desc{
+    padding:10px;
+    padding-top:5px;
+    padding-bottom:0;
+    text-transform:none;
+    font-family: 'Lato', sans-serif;
+    background:#fafafa;
+    margin-top:1px;
+    line-height:150%;
+    overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+    height:11px;
+    width:11px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background:black;}
+
+::-webkit-scrollbar-track {background:#fafafa;}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {border:5px solid #fafafa;}
+
+
+#sort li, #sort ul{list-style:none;margin:0;padding:0;} 
+
+#sort li{
+    display:inline-block;
+}
+
+#sort a {color:#ccc; padding-bottom:1px; border-bottom:1px dotted transparent;}
+
+#sort a:hover {color:#000; border-color:#333;}
+
+#sort li a.selected {color:#000; border-color:#333;
+    
+}
+
+a.back{
+    display:block;
+    width:30px;
+    height:100%;
+    position:absolute;
+    margin-left:-45px;
+    background:#fafafa;
+    text-align:center;
+}
+
+a.back .th{
+    margin-top:19px;
+}
+
+a.back:hover{
+    background:#333;
+    color:white;
+}
+
+
+/* Style the header */
+.header{
+    background:#fff;
+    text-transform:uppercase;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    padding:10px;
+    transition: all 0.4s ease;
+}
+
+.header a{
+    display:inline-block;
+    margin:0 5px;
+    color:black;
+    transition: all 0.4s ease;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+  transition: all 0.4s ease;
+}
+
+.list span:before{
+    content:'\e941';
+}
+.in{
+    position:absolute;
+    left:250px;
+    width:200px;
+    margin-top:-23px;
+    z-index:100;
+    border:1px solid white;
+    background:#fafafa;
+    display:none;
+}
+
+.list:hover .in{
+    display:block;
+}
+
+.list:hover, .in .list:hover{
+    background:#eee;
+}
+.list2:hover .in2{
+    display:block;
+}
+
+.in2{
+    display:none;
+    display:block;
+    position:absolute;
+    left:180px;
+    width:200px;
+    margin-top:-23px;
+    z-index:100;
+    border:1px solid white;
+    background:#fafafa;
+    display:none;
+    
+}
+
+
+
+</style></head>
+
+
+
+<body>
+
+<div id="topbar"><a href="/">home</a><a href="/ask">contact</a><a href="https://taezs.tumblr.com">theme</a></div>
+
+<div id="container">
+     
+<div class="title">
+<h1>tags list</h1>
+<div class="descr">
+    Here you can put a <b>description</b>. <a href="https://leethompkins-icons.tumblr.com/">icons from @leethompkins</a>.<br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et <i>dolore</i> magna aliqua. 
+    
+</div></div>
+
+
+<ul class="members">
+
+
+
+
+<!---- start tag groups --->
+ <li class="one">
+ 
+<span class="name" style="background:#bb4ae6; color:white">
+    Tag Group Title
+</span>
+     
+<img src="https://i.imgur.com/6ySItMk.png">
+     
+        <a href="LINK">TAG URL</a>
+        <a href="LINK">TAG URL</a>
+        <a href="LINK">TAG URL</a>
+        <a href="LINK">TAG URL</a>
+        
+<!--- TO CREATE A SUBGROUP COPY THE BELOW: ---->        
+        
+    <div class="list"><span>SUBGROUP TITLE</span> <!-- title of subgroup --->
+        <div class="in">
+            <a href="LINK">TAG URL</a>
+            <a href="LINK">TAG URL</a>
+            <a href="LINK">TAG URL</a>
+            <a href="LINK">TAG URL</a>
+    </div></div>
+    
+    <div class="list"><span>SUBGROUP TITLE</span>
+        <div class="in">
+            <a href="LINK">TAG URL</a>
+            <a href="LINK">TAG URL</a>
+            
+<!--- TO CREATE A SUBGROUP WITH A SECOND SUBGROUP COPY THE BELOW: ---->               <div class="list2"><span>SUBGROUP 2</span>
+                <div class="in2">
+                    <a href="LINK">TAG URL</a>
+                    <a href="LINK">TAG URL</a>
+            </div></div>
+<!-- END SECOND SUBGROUP -->
+        
+        <a href="LINK">TAG URL</a>
+        <a href="LINK">TAG URL</a>
+    </div></div>
+<!--- END SUBGROUP --->
+
+        <a href="LINK">TAG URL</a>
+        <a href="LINK">TAG URL</a>
+    
+    </li>   
+<!--- END TAG GROUP --->
+    
+
+</ul>    
+    
+    
+    
+</div>
+
+
+
+
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+
+
+<script type="text/javascript" src="http://static.tumblr.com/me5sfsd/12Qlmj66n/script.js"></script>
+
+<script type="text/javascript">
+$(window).load(function(){
+var $wall = $('.members');
+$wall.imagesLoaded(function(){
+$wall.masonry({
+itemSelector: '.one',
+isAnimated : true
+});
+});
+$wall.infinitescroll({
+navSelector : "div#navigation",
+nextSelector : "div#navigation a#nextPage",
+itemSelector : '#group',
+loadingImg : "",
+loadingText : " ",
+donetext : " ",
+extraScrollPx : 0,
+bufferPx : 10000,
+debug : false,
+errorCallback: function() {
+$('#infscr-loading').animate({opacity: .8},2000).fadeOut('normal');
+}},
+function( newElements ) {
+var $newElems = $( newElements );
+$newElems.hide();
+$newElems.imagesLoaded(function(){
+$wall.masonry( 'appended', $newElems, {isAnimated: true, animationOptions: {duration: 250, easing: 'linear', queue: false}}, function(){$newElems.fadeIn('slow');} );
+});
+}); $('#tags').show(500);
+});
+
+
+
+</script>
+
+
+</body>
+</html>
