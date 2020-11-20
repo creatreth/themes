@@ -1,0 +1,417 @@
+<!------ 
+
+about page by taezs.tumblr.com, please do not remove credit.
+
+message me if you have any issues!
+
+------>
+
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+
+
+<!-- browser page title ---->
+<title>Bio</title>
+
+<style>
+
+.image{
+height:calc(25.8px*6); /*change the 6 to another number if you want a different number of descriptors */
+width:calc(25.8px*6); /* change this 6 to the same number if you want to keep a square image */
+}
+
+.one span, .one span.name{background:#eae5e0;color:black;}
+/*change the background color & text color of the descriptors. tip: if you want to match the color with the image, go to imagecolorpicker.com and upload the image link and it will suggest matching colours!*/
+
+.one span.desc{background:#fafafa; color:black;} 
+/*color and bg of the main body of text*/
+
+
+
+
+#s-m-t-tooltip {
+    max-width:240px;
+    padding:3px 10px;
+    margin-left:20px;
+    margin-right:15px;
+    margin-top:-8px;
+    z-index:99999999990;
+    transition:.2s;
+    line-height:15px;
+    font-size:12px;
+    background:#f7f7f7;
+    color:#000}
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:999999999999;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+
+ 
+body {
+font-family: 'Lato', sans-serif;
+    color:#333;
+    font-size: 10px;
+    background-color:#fff;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+    letter-spacing:0.5px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+.taezs{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:200px;
+    height:20px;
+}
+
+.taezs a{
+    display:inline-block;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:3px;
+    position:fixed;
+    right:20px;
+    padding:5px;
+    bottom:20px;
+}
+
+.taezs a:before{
+    content:"theme by taezs";
+    position:fixed;
+    right:70px;
+    opacity:0;
+    bottom:25px;
+    transition:.5s;
+}
+
+.taezs a:hover:before{
+    opacity:1;
+    right:50px;
+    transition:.5s;
+}
+
+#topbar{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    background:#fafafa;
+    z-index:1;
+    padding-left:20px;
+}
+
+#topbar a{
+    display:inline-block;
+    text-transform:uppercase;
+    font-family:'Space Grotesk', sans-serif;
+    margin-right:30px;
+}
+
+#container{
+    position:absolute;
+    width:500px;
+    margin:120px 0;
+    left:50%;
+    background:#fafafa;
+    margin-left:-250px;
+}
+
+
+ul.members{
+    list-style:none;
+    margin:0;padding:0;
+}
+
+.one{
+    display:inline-block;
+    font-weight:400;
+    text-transform:uppercase;
+    text-align:left;
+    border-bottom:5px solid #fafafa;
+        -moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+
+.image{
+    float:right;
+    margin-left:10px;
+    border-left:1px solid #fff;
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.one span{
+    display:block;
+    font-family:'Space Grotesk', sans-serif;
+    border-bottom:1px solid white;
+    padding:6px;
+    font-size:10px;
+}
+
+.one span:last-child{
+    border-bottom:none;
+}
+
+.one span.name{
+    font-size:20px;
+    padding:10px;
+    display:block;
+    color:#000;
+    text-transform:none;
+}
+
+.tit{
+    background:#fafafa;
+    text-align:left;
+    height:34px;
+    border-bottom:1px solid #fff;
+}
+
+.tit h1{
+    display:inline-block;
+    padding:0;
+    margin:0;
+    line-height:34px;
+    text-transform:uppercase;
+    padding-left:10px;
+    font-size:10px;
+    font-weight:600;    
+    font-family:'Space Grotesk', sans-serif;
+}
+
+.nav{
+    float:right;
+}
+
+.nav a{
+    padding:11px 12px;
+    display:inline-block;
+    width:10px;
+    margin:0;
+    margin-left:-2.5px;
+    color:black;
+    background:#fafafa;
+    border-left:1px solid #fff;
+    font-family:'Space Grotesk', sans-serif;
+}
+
+.nav a:hover{
+    background:white;
+    color:black;
+}
+
+
+.th{
+    font-size:9px;
+    font-weight:500;
+}
+
+.th:before{
+    display:block;
+    margin-top:2px;
+    margin-right:5px;
+    width:15px;
+    text-align:center;
+    float:left;
+    font-family:'honeybee';
+}
+
+.one span.desc{
+    padding:15px;
+    padding-bottom:5px;
+    padding-left:22px;
+    text-transform:none;
+    overflow:scroll;
+    font-family: 'Lato', sans-serif;
+    margin-top:1px;
+    font-size:11px;
+    line-height:200%;
+    text-indent:20px;
+    text-align:justify;
+    overflow-x:hidden;
+}
+
+.desc a{
+    text-decoration:underline;
+}
+
+::-webkit-scrollbar{
+    height:11px;
+    width:11px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background:black;}
+
+::-webkit-scrollbar-track {background:#fafafa;}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {border:5px solid #fafafa;}
+
+
+.end{
+    display:block;
+    padding:10px;
+    border-top:1px solid #fff;
+    text-align:center;
+}
+
+.end a{
+    color:#333;
+    font-weight:400;
+    text-transform:uppercase;
+    font-family:'Space Grotesk', sans-serif;
+    letter-spacing:1px;
+    display:inline-block;
+    padding:2px 10px;
+}
+
+.end a:hover{
+    color:#aaa;
+}
+
+</style></head>
+
+
+
+<body>
+
+<!--- top links, delete if you want ------>
+<div id="topbar">
+<a href="/">home</a>
+<a href="/ask">contact</a>
+<a href="https://taezs.tumblr.com">theme</a>
+</div>
+<!--- top links, delete if you want ------>
+
+
+
+
+
+<div id="container"><ul class="members">
+
+<!---- begin content --->
+
+<!--- header of content --->
+
+<div class="tit" style="background:#fafafa">
+<!--- change background here if you want--->
+
+<h1>biography</h1>
+
+<!--- links, delete if you want --->
+<span class="nav">
+        <a href="/" title="home"><span class="th th-home"></span></a>
+        <a href="/ask" title="contact"><span class="th th-envelope"></span></a>
+        <a href="https://taezs.tumblr.com" title="theme by taezs"><span class="th th-paperclip"></span></a>
+</span>
+ <!--- links, delete if you want --->       
+        
+</div>
+    
+    
+    
+    
+<li class="one">
+    
+<!---- begin ----->
+    
+<span class="name">Keyleth of Zephrah</span>
+<!-- change your name here --->        
+
+<div class="image" style="background-image:url('https://i.pinimg.com/originals/40/98/75/409875c897aa503133e79ec58b716254.jpg');"></div>
+<!--- delete the entire image if you want. change the image by putting the image url over the placeholder here. Will automatically crop it into a square.---->
+
+
+<!-- begin descriptors. if you want to change the icons, head to https://honeybee.suiomi.com/, and scroll to the bottom that has the list of the icons. follow the instructions there to change them -->
+<span class="th th-moon"><b>aliases:</b> 
+Kiki, Minxie, Majesty or Highness</span>
+<span class="th th-magic-wand"><b>class:</b> 
+Druid (Circle of the Moon)</span>
+<span class="th th-stars"><b>title:</b> 
+Voice of the Tempest</span>
+<span class="th th-flash"><b>race:</b> 
+Half-elf</span>
+<span class="th th-map-1"><b>location:</b> 
+zephrah, exandria</span>
+<span class="th th-constellation"><b>star sign:</b> 
+virgo</span>
+
+<!--- begin description. If you prefer that the about page does not go down further, simply add style="height:300px" (or however tall you want it) after "desc", and it will add a scrollbar. --->
+            
+        <span class="desc">
+        
+        
+A first impression of <a href="/" title="this is a link">Keyleth</a> would leave you with little information on the half-elven druid. You might even think that her social awkwardness, due to her sheltered upbringing, is... kind of sweet. Of course, it would be unwise to underestimate her based on first impressions. Under that unintimidating petite frame is a vicious beast waiting to be unleashed, whose natural powers have made even the fiercest of champions pee their pants.<b> Literally</b>.
+<p>
+Born to the air tribe of the Ashari people, Keyleth was raised with a deep love of nature and the elemental magics. It is her people's inherent duty to protect the delicate areas in Tal'Dorei, where the four elemental planes begin to bleed with this realm. Since she was a little girl, she had quite a knack for air manipulation and beast shaping abilities; well, if you consider kittens and flying squirrels to be little beasts, which I do. <em>Anyways</em>, it wasn't long before the headmaster of the tribe, her father, Korrin, realized her true prodigious abilities and she was inveterated to succeed him as the next headmaster.
+
+
+        </span>
+            
+
+</li>
+<!--- end about --->
+
+<!--- final links - delete if you want --->
+        
+<div class="end">
+<a href="/">instagram</a> / <a href="/">facebook</a> / <a href="/">sideblog</a>
+</div>
+
+
+
+
+
+
+<!----- END ---->
+</ul>   
+</div>
+
+
+
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+
+</body>
+</html>
