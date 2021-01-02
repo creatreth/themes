@@ -1,0 +1,1189 @@
+<!------ 
+ 
+frequently asked questions page by taezs.tumblr.com, please do not remove credit.
+ 
+message me on creatre if you have any issues!
+ 
+------>
+ 
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+<title>{Name}: FAQ & Ask</title>
+
+
+<!---- icons by suiomi & linearicons ---->
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;600&family=Montserrat:wght@200;400;600&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+<!--CSS customization here. -->
+
+<style type="text/css">
+
+/*
+
+In order to match the fansite main page, go to the source code (right click or CTRL+U on chrome) and copy the section of colour variables so you can see what each accent colour corresponds to.
+
+Paste it in here (where it's grey, after this bit) and use find and replace to replace each color. I recommend doing the colours first (where you can just find & replace all) and then black and white last (especially if you're going from this light version to a dark version, updating preview in between each change to make sure you're not mixing them up.
+
+// default variables:
+
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Posts" content="#f8f8f8"/>
+<meta name="color:Text" content="#000000"/>
+<meta name="color:Link" content="#494949"/>
+<meta name="color:Link Hover" content="#c3a690"/>
+<meta name="color:Top Text" content="#000000"/>
+<meta name="color:Top Bar" content="#f3e3d1"/>
+<meta name="color:Header Title"content="#ffffff"/>
+<meta name="color:Header Links"content="#ffffff"/>
+<meta name="color:Header Background" content="#f3e3d1"/>
+<meta name="color:Header Overlay" content="#ffffff"/>
+<meta name="color:Secondary Text" content="#898786"/>
+<meta name="color:Borders" content="#bba898"/>
+<meta name="color:Accent" content="#e7dbce"/>
+<meta name="color:Accent 2" content="#eeeeee"/>
+<meta name="color:Sidebar Titles" content="#000000"/>
+<meta name="color:Text Over Accent" content="#000000"/>
+
+
+// insert your default variables here:
+
+
+
+*/
+
+/* 
+
+header styling 
+
+tip: go to the source code of your main fansite and copy this whole thing below to transfer across all of your styling for the header including the overlay. this page will not have subtitles on the header, and I also recommend a shorter header - change the height to 200px or 100px - whatever you want. If you don't want a header, change the height to 0px. 
+
+*/
+
+header{
+    position:relative;
+    top:100px;
+    height:200px;
+    /* change the height here. if you don't want a header, change this to 0px */
+    width:1100px;
+    left:50%;
+    margin-left:-550px;
+    background:rgba(104,104,104, 30%);
+    border-radius:3px;
+    overflow:hidden;
+    text-align:center;
+    color:#ffffff;
+}
+
+header:before{
+    content:'';
+    width:100%;
+    height:100%;
+    left:0;
+    background:#d9a921;
+    background-color:#d9a921;
+/* change your background image for your header here if you want a different one to the index page */
+    background-image:url('https://kpopping.com/uploads/documents/18/4/optimize_-_2020-05-26T143631287.jpeg'); 
+/* --- */    
+    background-repeat:no-repeat; 
+    background-position:0 -100px ;
+    background-size:cover;
+    z-index:-100;
+    position:absolute;
+}
+
+
+/* controls & body */
+
+#s-m-t-tooltip {
+    max-width:300px;
+    margin:10px 10px;  
+    z-index:99999;
+    color:#000000;
+    background:#e7dbce;
+    padding:4px 7px;
+    line-height:1.2;
+    font-family: 'Montserrat', sans-serif;
+    border-radius:3px;
+}
+
+ 
+.iframe-controls--desktop {
+   position:fixed;
+   top:0px;
+   right:0px;
+   z-index:999999999999;
+   filter:invert(100%);
+   -webkit-filter:invert(100%);  
+   -webkit-transform:scale(0.6,0.6);
+   -webkit-transform-origin: 100% 0%;
+   -ms-transform-origin:100% 0%;
+   -ms-transform:scale(0.6,0.6);
+   transform:scale(0.6,0.6);
+   transform-origin:100% 0%;
+}
+
+body {
+    background:#ffffff;
+    line-height:200%;
+    margin:0;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    color:#000000;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 0.65em;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color:#494949;
+    text-decoration:none;
+    transition:all .3s linear;    
+    -webkit-transition:all .3s linear;
+    -o-transition:all .3s linear;
+    -moz-transition:all .3s linear;      
+}
+ 
+a, a img {cursor:pointer;}
+ 
+a:hover {
+    color:#c3a690;
+    text-decoration:none;
+    transition:all .3s linear;    
+    -webkit-transition:all .3s linear;
+    -o-transition:all .3s linear;
+    -moz-transition:all .3s linear;  
+}
+ 
+img {
+    opacity:1;
+    border:0;
+    text-decoration:none;
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+ 
+blockquote {
+    padding:.25em 0 .25em 15px;
+    margin:.5em 1em;
+    border-left:3px solid #EBEBF6;
+}
+ 
+pre {
+    padding:0;
+    margin:0;
+    line-height:inherit!important;
+    background:transparent;
+    font-family:inherit!Important;
+    font-size:inherit!important;
+    white-space:pre-wrap;
+    white-space:-moz-pre-wrap;
+    white-space:-pre-wrap;
+    white-space:-o-pre-wrap;
+    word-wrap:break-word;
+}
+ 
+p {margin:1em 0;}
+ 
+p:first-of-type {margin-top:0;}
+ 
+p:last-of-type {margin-bottom:0;}
+ 
+b, strong, b a, strong a {
+    font-weight:bold!important;
+    color:#000000;
+}
+
+small, big, sub, pre {
+    font-size:1em!important;
+    line-height:1.4em!important;
+    vertical-align:baseline!important;
+}
+ 
+h1, h2, h3, h4 {
+    margin:1.5em 0;
+    font-size:1.5em;
+    padding:0;
+    color:#000000;
+    font-weight:bold;
+}
+ 
+hr {
+    border:none;
+    box-shadow:0;
+    margin:2em auto;
+    width:75px;
+    border-top:1px solid #EBEBF6;
+}
+
+::-webkit-scrollbar{height:6px;width:6px;background:inherit;}
+::-webkit-scrollbar-thumb {background:#e7dbce;}
+::-webkit-scrollbar-track {background:#ffffff;}
+.mp_admins .desc::-webkit-scrollbar-track {background:#f8f8f8;}
+.mp_admins .desc::-webkit-scrollbar-thumb{background:#e7dbce;}
+.mp_admins .desc::-webkit-scrollbar{height:4px;width:4px;background:inherit;}
+
+::selection {background:#333; color:#ffffff;}
+
+/* credit, please do not remove */
+
+.taezs, #button{
+    position:fixed;
+    bottom:38px;
+    z-index:300;
+    width:200px;
+    height:20px;
+    transition:0.3s ease-in-out;
+}
+
+.taezs a, #button{
+    display:inline-block;
+    background:#e7dbce;
+    border-radius:3px;
+    color:#000000;
+    position:fixed;
+    right:30px;
+    text-align:center;
+    width:20px;
+    padding:5px;
+    font-size:10px;
+    transition:0.3s ease-in-out;
+}
+ 
+.taezs a:before, #button:before{
+    content:"theme by taezs";
+    position:fixed;
+    right:80px;
+    opacity:0;
+    margin-top:-5px;
+    font-size:0.9em;
+    width:80px;
+    line-height:20px;
+    padding:5px 10px;
+    font-family:'montserrat alternates', sans-serif;
+    font-weight:bold;
+    text-align:center;
+    background:#e7dbce;
+    border-radius:3px;
+    color:#000000;
+    transition:0.3s ease-in-out;
+}
+
+.taezs a:hover, a#button:hover{
+    background:#f8f8f8;
+    color:#000000;
+    transition:0.3s ease-in-out;
+}
+
+.taezs a:hover:before, #button:hover::before{
+    opacity:1;
+    right:70px;
+    transition:0.3s ease-in-out;
+}
+
+#button {
+    transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+    opacity: 0;
+    bottom:65px;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button::after {
+  content: "\e873";
+  font-family: 'linearicons-free';
+  font-weight: normal;
+  font-style: normal;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+
+#button:before {
+  content:'scroll to top';
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/*header*/
+
+#topbar{
+    position:fixed;
+    top:30px;
+    height:40px;
+    line-height:40px;
+    background:#ffffff;
+    left:50%;
+    margin-left:-550px;
+    border-bottom:1px solid #e7dbce;
+    z-index:10;
+    width:1100px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#tit{
+    display:inline-block;
+    width:40%;
+    margin:0;
+    float:left;
+    font-weight:600;
+    color:#000000;
+    font-size:15px;
+    height:40px;
+    font-weight:600;
+    line-height:40px;
+    line-height:40px;
+}
+
+#top{
+   display:inline-block;
+    height:40px;
+    text-transform:lowercase;
+    line-height:40px;
+    text-align:right;
+    font-weight:600;
+    color:#000000;
+    width:60%;
+}
+
+#top a{
+    display:inline-block;
+    padding:0 20px;
+    position:relative;
+    font-size:11px;
+    color:#000000;
+}
+
+#top a:after{
+    content:'';
+    height:5px;
+    width:5px;
+    margin-left:20px;
+    top:50%;
+    margin-top:-2.5px;
+    border-radius:50%;
+    background:#e7dbce;
+    position:absolute;
+}
+
+#top a:last-child{
+    padding-right:0;
+}
+
+#top a:last-child:after{
+    display:none;
+}
+
+
+#top a:hover{
+    color:#e7dbce;
+    border-color:#e7dbce;
+}
+
+#top span{
+    font-size:10px;
+    padding-right:4px;
+    margin-top:-3px;
+    display:none;
+}
+
+#top:before{
+    position:fixed;
+    width:100%;
+    left:0px;top:0px;
+    height:30px;
+    background:#f3e3d1;
+    content:'';
+    font-family: 'Montserrat', sans-serif;
+    font-weight:200;
+}
+
+.sub{
+    font-size:35px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight:600;
+    margin: 0;
+    width:100%;
+    color:#ffffff;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+/* sidebar */
+
+#right{
+    position:absolute;
+    width:245px;
+    left:50%;
+    margin-top:25px;
+    margin-left:-570px;
+    padding:0 20px;
+    padding-bottom:100px;
+    border-radius:3px;
+    transition:0.5s;
+}
+
+#right{
+    margin-left:285px;
+    
+}
+
+.inform .counter span{
+    padding:0;
+    display:inline-block;
+}
+
+.inform a, .desc a, .comment a{
+    display:inline-block;
+    line-height:140%;
+    border-bottom:1px dotted #494949;
+}
+
+.inform a:hover, .desc a:hover, .comment a:hover{
+    border-color:#c3a690;
+}
+
+.head{
+    margin:0px;
+    padding:0px;
+    font-size:15px;
+    position:relative;
+    margin-bottom:10px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    padding-bottom:10px;
+    border-bottom:1px solid #bba898;
+    font-weight:400;
+    line-height:100%;
+    font-size:11px;
+    color:#000000;
+}
+
+.head:after{
+    position:absolute;
+    right:0;
+    content:'\e814';
+    color:#000000;
+    font-family:'linearicons-free';
+    font-style:normal;
+}
+
+.ad:after{content:'\e82a';}
+.sch:after{content:'\e836';}
+.so:after{content:'\e83d';}
+.pr:after{content:'\e859';}
+.ql:after{content:'\e871';}
+.ab:after{content:'\e843';}
+.af:after{content:'\e82b';}
+.se:after{content:'\e86f';}
+
+#left ul, #right ul{
+    list-style-type:none; 
+    padding:0px;
+    margin:0px;
+    margin-top:-10px;
+}
+
+#left ul, #left li, #right li, #right ul{
+    display:block;
+    background:#ffffff;
+    padding:0;
+    margin:5px 0;
+}
+
+#left li, #right li{
+    margin-bottom:35px;
+    background:#ffffff;
+    border-radius:3px;
+    
+    background:#f8f8f8;
+    padding:20px;
+    
+}
+
+#left li.sbpic, #right li.sbpic{
+    padding:0px;
+}
+
+.admins a{
+    display:block;
+    height:34px;
+    overflow:hidden;
+    margin-bottom:5px;
+}
+
+.admins img{
+    height:32px;
+    float:left;
+    position:relative;
+    width:32px;
+    margin-right:10px;
+    overflow:hidden;
+    border-radius:3px;
+    object-fit:cover;
+    object-position:top;
+}
+
+.admins h3:after{
+    width:32px;
+    left:40px;
+    content:'';
+    position:absolute;
+    height:32px;
+    border-radius:3px;
+    transition:0.5s;
+    background:#000000;
+    opacity:0;
+    
+}
+
+.admins a:hover h3:after{
+    opacity:0.5;
+    transition:0.5s;
+}
+
+.admins h3{
+    margin:0;
+    padding:0;
+    line-height:32px;
+    font-size:0.95em;
+    transition:0.5s;
+}
+
+.admins a:hover h3{
+    color:#c3a690;}
+
+
+
+.admins i{
+    font-style:normal;
+    font-size:0.9em;
+}
+
+.socials a{
+    display:block;
+    padding:5px 0;
+    border:none;
+}
+
+.socials span.th{
+    display:inline-block;
+    text-align:center;
+    border-radius:3px;
+    padding:5px 10px;
+    margin-right:10px;
+    background:#e7dbce;
+    color:#000000;
+    transition:0.5s;
+}
+
+.socials a:hover span.th{
+    background:#000000;
+    color:#e7dbce;
+    transition:0.5s;
+}
+
+
+.inform b{font-family: 'Montserrat Alternates', sans-serif;}
+
+.inform span{
+    display:block;
+    padding:4px;
+    padding-left:0;
+    border-bottom:1px solid #eeeeee;
+}
+
+.inform .counter span{
+    display:inline-block;
+}
+.inform.ab b{
+    display:inline-block;
+    padding:3px 5px;
+    background:#fafafa;
+}
+
+.inform span:last-child{
+    border:none;
+}
+
+
+
+.sbpic img{
+    width:100%;
+    border-radius:3px;
+}
+
+.qlinks{
+    margin-bottom:-10px;
+}
+
+.qlinks a{
+    display:block;
+    padding:6px;
+    font-size:11px;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom:1px solid #eeeeee;
+    padding-left:0;
+    color:;
+}
+
+.qlinks a:last-child{
+    border:none;
+}
+
+.qlinks a:after{
+    position:absolute;
+    display:inline-block;
+    content:'\e876';
+    font-family:'linearicons-free';
+    line-height:200%;
+    margin-top:3px;
+    font-size:8px;
+    padding-left:20px;
+    font-style:normal;  
+    transition:.5s;
+}
+
+.qlinks a:hover:after{
+    padding-left:30px;
+    color:;
+    opacity:1;
+}
+
+.searchb input {
+    background-color:#e7dbce; 
+    font-size: 1em; 
+    border: 0px; 
+    border-radius:3px;
+    line-height:200%;
+    width:calc(100% - 16px);
+    margin-top: 0px; 
+    color: #000000;  
+    letter-spacing:0.5px;
+    font-family:'montserrat', sans-serif;
+    padding: 4px 8px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000000;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000000;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #000000;
+}
+
+.aff{
+    text-align:center;
+}
+
+.aff_img img{
+    object-fit:cover;
+    object-position:top;
+    height:52px;
+    margin-bottom:-15px;
+    width:52px;
+    border-radius:3px;
+    display:inline-block;
+}
+
+.aff_img{
+    position:relative;
+    background:none;
+}
+
+.aff td.aff_img:hover, .aff td.aff_img{
+    background:#f8f8f8;
+}
+
+.sch_item{
+    display:block;
+    margin-bottom:8px;
+    height:40px;
+    line-height:1;
+}
+
+.sch_thing{
+    display:inline-block;
+    font-size:10px;
+    text-transform:uppercase;
+    float:left;
+    margin-right:10px;
+    height:40px;
+    border-radius:3px;
+    background:#e7dbce;
+    color:#000000;
+    padding:10px;
+    width:40px;
+}
+
+.sch_thing b{
+    display:block;
+    font-size:16px;
+    color:#000000;
+    letter-spacing:1px;
+}
+
+.sch_event{
+    display:block;
+    padding:10px;
+    padding-left:20px;
+}
+
+table{
+    width:100%;
+}
+
+tr{
+    border-bottom:6px solid #ffffff;
+    
+    border-color:#f8f8f8;
+    
+}
+
+td{
+    padding:3px;
+    line-height:150%;
+}
+
+td:first-child, .aff td, .project td{
+    background:#e7dbce;
+    width:40px;
+    line-height:200%;
+    padding:10px 3px;
+    margin-left:-10px;
+    color:#000000;
+    border-radius:5px;
+    border:2px solid #ffffff;
+    
+    border-color:#f8f8f8;
+    
+    text-align:center;
+}
+
+td:first-child a, .aff td a, .project td a{
+    color:#000000;
+}
+
+.sched td:nth-of-type(2){
+    padding-left:10px;
+}
+
+.aff td.aff_img{
+    padding:0;
+    height:40px;
+    overflow:hidden;
+}
+
+.aff td, .project td{
+    font-weight:600;
+    text-transform:uppercase;
+    transition:0.5s;
+}
+
+#left li.projects, #right li.projects{
+    padding-bottom:1px;
+}
+.project table{
+    width:calc(100% + 10px);
+    margin-left:-5px;
+    margin-top:5px;
+    margin-bottom:20px;
+}
+
+.project td{
+    padding:5px 3px;
+    font-size:0.8em;
+}
+
+.aff td:hover, .project td:hover{
+    background:#000000;
+    color:#e7dbce;
+    transition:0.5s;
+}
+
+.aff td:hover a, .project td:hover a{
+   color:#e7dbce; 
+}
+
+.aff .lnr{
+    font-size:120%;
+    display:inline-block;
+    transform:translateY(1px);
+}
+
+td:first-child b{
+    display:block;
+    color:#000000;
+    font-size:15px;
+    margin-bottom:-5px;
+    font-weight:lighter;
+}
+
+
+.project span{
+    display:block;
+    margin:5px 0;
+    text-align:center;
+    font-weight:600;
+    padding:3px 5px;
+    border-radius:3px;
+    background:#e7dbce;
+    color:#000000;
+}
+
+.project span a{
+    border:none;
+    display:inline;
+}
+
+.project span.type{
+    background:#eeeeee;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:0.8em;
+}
+
+.project img{
+    height:150px;
+    width:100%;
+    object-fit:cover;
+    margin-bottom:7px;
+    border-radius:3px;
+}
+
+
+/* container */
+
+section {
+    width:820px;
+    overflow:hidden;
+    left:50%;
+    margin-left:-550px;
+    position:relative;
+    margin-top:100px;
+    margin-bottom:200px;
+}
+
+.posts {
+    width:780px;
+    background:#f8f8f8;
+    overflow:hidden;
+    margin-top:30px;
+    border-radius:3px;
+    margin-bottom:0px;
+    padding:20px;
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    width:1100px;
+    left:50%;
+    margin-left:-550px;
+    z-index:100;
+    line-height:200%;
+    background:#ffffff;
+    border-top:1px solid #e7dbce;
+    color:#000000;
+    font-family: 'Montserrat', sans-serif;
+    text-align:center;
+}
+
+footer span{
+    display:inline-block;
+    padding:10px;
+    position:relative;
+    font-size:11px;
+    color:#000000;
+}
+
+
+footer span:after{
+    content:'';
+    height:5px;
+    width:5px;
+    margin-left:10px;
+    top:50%;
+    margin-top:-2.5px;
+    border-radius:50%;
+    background:#e7dbce;
+    position:absolute;
+}
+
+footer span:last-child{
+    padding-right:0;
+}
+
+footer span:last-child:after{
+    display:none;
+}
+
+
+/* faq page */
+
+h2{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:10px;
+    padding-top:30px;
+    font-weight:400;
+    border-bottom:1px solid #e7dbce;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#myInput {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:600;
+  padding:10px;
+  border:none;
+  border-radius:3px;
+  margin-bottom: 20px;
+  text-align:center;
+}
+
+.faq {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.faq li{
+    border-bottom:1px solid #c3a690;
+    margin-bottom:30px;
+}
+
+.active, .question:hover {
+  color:black;
+}
+
+.question {
+    display:block;
+    color:black;
+    margin-bottom:15px;
+    width: 100%;
+    padding-bottom:0px;
+    text-align: left;
+    border: none;
+    font-weight:400;
+    color:black;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size:1.6em;
+}
+
+
+.answer {
+    padding-bottom:40px;
+    font-size:1.1em;
+}
+
+.answer_uo{
+    font-family: 'Montserrat', sans-serif;
+    font-size:1.5em;
+    font-weight:600;
+    padding-bottom:0px;
+    border-bottom:none;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!------ begin footer --------->
+
+<footer>
+<span>{Name}</span>
+<span>{CopyrightYears}</span>
+<span>Powered by Tumblr.</span>
+</footer>
+<!------ end footer --------->
+
+<!------ 
+
+begin top links 
+
+change the links here. 
+
+tip: if you go to the fansite and view page source (CTRL+U on chrome and CTRL+F for "topbar"), you can copy this whole thing across instead of typing all of the links out.
+
+--------->
+<div id="topbar">
+    <div id="tit">fansitepreview</div>
+    <div id="top">
+        <a href="/">Index</a>
+        <a href="/faq">Contact</a>
+        <a href="/nav">Navigation</a>
+        <a href="/members">members</a>
+        <a href="/about">about</a>
+        <a href="/archive">Archive</a>
+        <a href="https://taezs.tumblr.com">Theme</a>
+</div></div>
+<!------ end top links --------->
+
+
+<!------ 
+
+begin header
+
+tip: if you do not want a header, remove it here, but also change the margin below from 125px to 25px.
+
+--------->
+
+<header>
+    <div class="sub">frequently asked questions</div>
+</header>
+
+<!------ end header  --------->
+
+
+<!------ 
+
+
+begin sidebar
+
+tip: copy across any sidebar boxes you would like from your main site and they will work here too. 
+
+just make sure you leave <ul> and </ul> in tact.
+
+
+--------->
+
+<div id="right" style="margin-top:125px">
+    <ul>
+    
+
+<!------ begin sidebar boxes --------->
+
+    <li>
+        <div class="qlinks">
+            <h1 class="head ql">Quick Links</h1>
+            <a href="/URL">URL</a>
+
+        </div>
+    </li>
+        
+
+<!------ end sidebar boxes --------->
+        
+
+    </ul>    
+</div>
+
+
+<!------ end sidebar --------->
+
+
+
+<!------ begin content --------->
+
+<section id="entries">
+
+
+<!------ begin FAQ --------->
+
+<article class="posts">
+<ul class="faq">
+
+<!------ begin question --------->
+<li>
+    <div class="question">
+    Question?
+    </div>
+    <div class="answer">
+Answer.
+    </div>
+</li>
+<!------ end question --------->
+
+<div class="question">
+Have a question not listed above? Ask away:
+</div>
+
+<!-- ask box. Remove if you don't want it. If it's not working for some reason, try change {name} to the url of your blog. -->
+
+<iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/{Name}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe>
+
+<!-- end ask box -->
+
+</ul>
+
+
+</article>
+
+
+
+
+
+
+
+
+    
+
+</section>
+<!------ LEAVE CREDIT IN TACT ------------>
+<a id="button"></a>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="lnr lnr-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+
+
+<!---- scripts ---->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script><script src="https://static.tumblr.com/uopakca/GVcnvdwbq/jquery.style-my-tooltips.js"></script>
+ <script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:700,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+<script>
+var btn = $('#button');
+$(window).scroll(function() {
+if ($(window).scrollTop() > 300) {
+btn.addClass('show');
+} else {
+btn.removeClass('show');
+}
+});
+btn.on('click', function(e) {
+e.preventDefault();
+$('html, body').animate({scrollTop:0}, '300');
+});
+</script>
+</body></html>
