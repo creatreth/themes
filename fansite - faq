@@ -1039,13 +1039,12 @@ tip: if you go to the fansite and view page source (CTRL+U on chrome and CTRL+F 
 
 --------->
 <div id="topbar">
-    <div id="tit">fansitepreview</div>
+    <div id="tit">{Name}</div>
     <div id="top">
         <a href="/">Index</a>
         <a href="/faq">Contact</a>
         <a href="/nav">Navigation</a>
         <a href="/members">members</a>
-        <a href="/about">about</a>
         <a href="/archive">Archive</a>
         <a href="https://taezs.tumblr.com">Theme</a>
 </div></div>
