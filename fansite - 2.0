@@ -82,6 +82,7 @@ enjoy! let me know if you need any help with anything :-)
 <meta name="if:Show Tags" content="1"/>
 <meta name="if:Hide Header On Permalink" content="0"/>
 <meta name="if:One Sidebar" content="0"/>
+<meta name="if:Left Sidebar" content="0"/>
 
 
 <!---- fonts & scripts ---->
@@ -311,7 +312,6 @@ hr {
     width:245px;
     left:50%;
     margin-top:-5px;
-    background:{color:background};
     margin-left:-570px;
     padding:0 20px;
     padding-bottom:100px;
@@ -324,6 +324,9 @@ hr {
     {block:ifOneSidebar}
     width:320px;
     margin-left:130px;
+    {block:ifLeftSidebar}
+    margin-left:-490px;
+    {/block:ifLeftSidebar}
     {/block:ifOneSidebar}
 }
 
@@ -1037,6 +1040,9 @@ section{
     margin-bottom:30px;
     {block:ifOneSidebar}
     margin-left:-220px;
+    {block:ifLeftSidebar}
+    margin-left:140px;
+    {/block:ifLeftSidebar}
     width:540px;
     {/block:ifOneSidebar}
     {block:PermalinkPage}margin-bottom:0px;{/block:PermalinkPage}
