@@ -1,0 +1,153 @@
+<!------ 
+
+page base code by taezs
+
+
+------>
+
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;600&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,500&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+
+
+<!-- browser page title ---->
+<title>Bio</title>
+
+<style>
+
+#s-m-t-tooltip {
+    max-width:240px;
+    padding:3px 10px;
+    margin-left:20px;
+    margin-right:15px;
+    margin-top:-8px;
+    z-index:99999999990;
+    transition:.2s;
+    line-height:15px;
+    font-size:12px;
+    background:#f7f7f7;
+    color:#000}
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:999999999999;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+body {
+    font-family: 'Open Sans', sans-serif;
+    color:#333;
+    font-size: 10px;
+    background-color:#fff;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+    letter-spacing:0.5px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+
+.taezs{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:200px;
+    height:20px;
+}
+
+.taezs a{
+    display:inline-block;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:3px;
+    position:fixed;
+    right:20px;
+    padding:5px;
+    bottom:20px;
+}
+
+.taezs a:before{
+    content:"theme by taezs";
+    position:fixed;
+    right:70px;
+    opacity:0;
+    bottom:25px;
+    transition:.5s;
+}
+
+.taezs a:hover:before{
+    opacity:1;
+    right:60px;
+    transition:.5s;
+}
+
+::-webkit-scrollbar{
+    height:11px;
+    width:11px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background:black;}
+
+::-webkit-scrollbar-track {background:#fafafa;}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {border:5px solid #fafafa;}
+
+
+
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<!-- body. do what you want what you really really want -->
+
+
+
+
+
+
+
+
+
+
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+
+</body>
+</html>
