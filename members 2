@@ -1,0 +1,673 @@
+<!------ 
+
+page base code by taezs
+
+
+------>
+
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+
+
+<!-- browser page title ---->
+<title>Character List</title>
+
+<style>
+
+#s-m-t-tooltip {
+    max-width:240px;
+    padding:3px 10px;
+    margin-left:20px;
+    margin-right:15px;
+    margin-top:-8px;
+    z-index:99999999990;
+    transition:.2s;
+    line-height:15px;
+    font-size:12px;
+    background:#f7f7f7;
+    color:#000}
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:100;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+#tumblr_controls,
+.tmblr-iframe {
+   position:fixed!important;
+   top:28px!important;
+   right:10px!important;
+   max-width:calc(100%-788px);
+   opacity:0!important;
+   -webkit-filter:invert(100%);
+   -webkit-backface-visibility:hidden;
+   padding:10px 100px 10px 100px;
+   -webkit-transition:opacity .3s ease-out;
+   transition:opacity .3s ease-out;
+}
+#tumblr_controls:hover, .tmblr-iframe:hover {
+   opacity:.9!important;
+}
+
+.control{
+    position:fixed;
+    top:35px;
+    right:30px;
+    width:30px;
+    height:15px;
+    z-index:100;
+    color:black;
+    font-size:12px;
+    padding:8px 0;
+}
+ 
+body {
+    font-family: 'Karla', sans-serif;
+    color:#333;
+    font-size: 10px;
+    line-height:150%;
+    left:0;
+    top:0;
+    margin:0;
+    width:100%;
+    height:100%;
+    background-color:#ffffff;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color:#777;
+    cursor:pointer;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+
+
+.taezs{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:200px;
+    height:20px;
+}
+
+.taezs a{
+    display:inline-block;
+    background:#fff;
+    border-radius:3px;
+    position:fixed;
+    right:20px;
+    padding:10px;
+    bottom:20px;
+}
+
+.taezs a:before{
+    content:"page by taezs";
+    position:fixed;
+    right:80px;
+    opacity:0;
+    bottom:30px;
+    transition:.5s;
+}
+
+.taezs a:hover:before{
+    opacity:1;
+    right:60px;
+    transition:.5s;
+}
+
+::-webkit-scrollbar{height:5px;width:5px;background:inherit;}
+::-webkit-scrollbar-thumb {background:#ddd;border:2px solid #fff;}
+::-webkit-scrollbar-track {background:inherit;}
+ ::selection{background:#333;color:#fff;}
+
+/* page! */
+
+#con{
+    width:calc(100% - 430px);
+    top:100px;
+    position:absolute;
+    left:350px;
+    padding-bottom:100px;
+}
+
+nav{
+    position:fixed;
+    left:0px;
+    top:0px;
+    padding:30px 70px 30px 200px;
+    width:100%;
+    z-index:2;
+    background:white;
+    border-bottom:1px solid #eee;
+}
+
+nav a{
+    display:inline-block;
+    width:10px;
+    position:relative;
+    background:#fff;
+    border-radius:3px;
+    padding:10px;
+    margin:5px;
+    transition:0s;
+    height:10px;
+}
+
+nav a:hover span{
+    opacity:1;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+nav a:hover{
+    color:#000;
+}
+
+nav a span, .nv{
+    position:fixed;
+    opacity:0;
+    left:-70px;
+    padding:3px 10px;
+    padding-left:150px;
+    color:black;
+    border-radius:5px;
+    margin-top:-4px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+nav a span{
+    background:white;
+    width:100px;
+}
+
+.nv{
+    opacity:1;
+    top:45px;
+}
+
+.side{
+    width:300px;
+    left:0px;
+    border-right:1px solid #eee;
+    padding-left:50px;
+    position:fixed;
+    z-index:1;
+    height:100%;
+}
+
+.desc{
+    margin:120px auto 0 auto;
+    position:relative;
+    padding:30px;
+}
+
+
+.desc h2{
+    margin-top:10px;
+    line-height:150%;
+    font-weight:400;
+}
+
+.desc img{
+    width:40px;
+    height:40px;
+    position:fixed;
+    left:20px;
+    margin-top:10px;
+    border-radius:50%;
+}
+
+.d{
+    display:block;
+    margin:15px 0;
+}
+
+
+#sort:before, .key:before, .longdesc:before{
+    content:'';
+    width:60px;
+    height:1px;
+    background:#eee;
+    margin-top:-25px;
+    position:absolute;
+}
+
+#sort{
+    margin-top:50px;
+}
+
+#sort li, #sort ul{list-style:none;margin:0;padding:0;} 
+
+#sort li{
+    display:block; 
+    margin:5px 0;
+}
+
+#sort a {
+    color:#aaa; 
+    border:none;
+    padding-bottom:1px;
+    padding-right:10px;
+}
+
+#sort a:after{
+    display:none;
+}
+
+#sort a:before{
+    content:'\eb68';
+    font-size:0.7em;
+    margin-right:5px;
+    font-family:'honeybee';
+}
+
+#sort a:hover {
+    color:#000; 
+}
+
+#sort li a.selected {
+    color:#000;
+}
+
+#sort li a.selected:before{
+    content:'\eb67';
+}
+
+#sort h3, .key h3{
+    font-weight:500;
+    font-style:italic;
+}
+
+
+
+/* characters */
+
+.characters, .charac{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    -webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+	-ms-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+
+.charac{
+    width:300px;
+    float:left;
+    height:176px;
+    border:20px solid #fff;
+    outline:1px solid #eee;
+    margin:-0.5px;
+    outline-offset:-1px;
+    position:relative;
+    overflow:hidden;
+}
+
+.ch_img img{
+    height:calc(100% - 20px);
+    width:90px;
+    border:10px solid #fff;
+    background-size:cover;
+    background-position:center;
+    z-index:100;
+    top:0;
+    left:0;
+    position:fixed;
+    transition:0.5s;
+    object-fit:cover;
+    object-position:center;
+}
+
+#sort li a.fav:before{color:#d97380;content:'\ea55';}
+#sort li a.fav.selected:before{content:'\ea54';}
+
+.charac a, .desc a{
+    color:#999;
+}
+
+.charac a:hover, .desc a:hover{
+    color:black;
+}
+
+.charac h2{
+    font-weight:400;
+    margin:10px 5px 0px 5px;
+    padding:5px 10px;
+}
+
+.charac h2 a{
+    color:#333;
+    border:none;
+}
+
+.charac h2 a:hover{
+    color:#aaa;
+}
+
+.ch_desc{
+    position:absolute;
+    right:4px;
+    top:0;
+    width:195px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height:180px;
+}
+
+.noimg .ch_desc{
+    width:100%;
+}
+
+.charac .th, .key .th{
+    padding:3px 15px;
+    display:block;
+    line-height:15px;
+    margin-left:20px;
+}
+
+.charac .th:before, .key .th:before{
+    position:absolute;
+    margin-top:2px;
+    left:16px;
+}
+
+.charac.fav:before{
+    content:'\ea55';
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:1;
+    color:#d97380;
+    font-family:'honeybee';
+    font-size:12px;
+    background:white;
+    padding:13px 0 8px 0;
+}
+
+.longdesc{
+    padding:5px 15px;
+    margin-top:20px;
+}
+
+
+.longdesc:before{
+    margin-top:-14px;
+}
+
+.key .th{
+    margin-left:20px;
+    padding:0;
+    line-height:20px;
+}
+
+.key .th:before{
+    left:30px;
+    margin-top:5px;
+}
+
+.key{
+    margin-top:50px;
+}
+
+hr{
+    border:none;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<nav>
+
+<!-- links - if you want to add more, go for it. change the icon the same way as the others - head to honeybee.suiomi.com and replace 'th-link' with the name of the icon: 'th-icon name' -->
+
+<span class="nv">explore</span>
+
+    <a href="/" class="th th-home-o"><span>home</span></a>
+    <a href="/ask" class="th th-paper-plane-o"><span>ask</span></a>
+    <a href="/archive" class="th th-box-o"><span>archive</span></a> 
+    
+    <!-- extra link example -->
+    <a href="linkurl" class="th th-link"><span>name of link</span></a>
+    
+    <!-- credit, please do not remove -->
+<a href="https://taezs.tumblr.com" class="th th-paperclip"><span>code by @taezs</span></a>
+</nav>
+
+<div class="side">
+    <div class="desc">
+
+<!-- title of page. remove the subheading if you want -->
+    <h2><i>{Name}'s</i><br>original characters</h2>
+        
+        
+        
+<!-- key (optional)
+
+add or remove icons here as you need. if you want to change the icon, go to honeybee.suiomi.com, find the icon you want, and put the name of the icon after th- so it says <span class="th th-icon-name">. do the same in each book/fic.
+
+-->
+
+<div class="key">
+<h3>key:</h3>
+<span class="th th-earth-o">universe</span>
+<span class="th th-location-1-o">location</span>
+<span class="th th-heart-1-o">current love interest</span>
+<span class="th th-broken-heart-o">past love interest</span>
+<span class="th th-hourglass-o">occupation</span>
+<span class="th th-constellation-o">star sign</span>
+</div>
+
+
+<!-- filters (optional)
+
+if you have a lot of filters, a scrollbar will appear.
+
+do not remove the first filter, but add or remove as many of the ones below as you want. a filter or "tag" works like so:
+
+<li><a href="#filter" data-option-filter=".tag">tag name</a></li>
+
+ONLY change .tag and >tag name<. i recommend keeping the tags short but something you'll remember. see some examples below:
+
+<li><a href="#filter" data-option-filter=".female">female</a></li>
+<li><a href="#filter" data-option-filter=".leo">star sign:leo</a></li>
+<li><a href="#filter" data-option-filter=".narnia">universe: narnia</a></li>
+
+if you want something to be classed by two things (e.g. favourite females), you'll put together the tags .fav and .female like so:
+
+<li><a href="#filter" data-option-filter=".fav.female">favourite females</a></li>
+
+if you want to make sections of tags/filters, pop a <hr> in between each.
+
+-->
+        
+<div id="sort">
+<ul id="filters" class="option-set clearfix" data-option-key="filter">
+
+    <h3>filter by:</h3>
+<li><a href="#filter" data-option-filter=".charac" class="selected">all</a></li>
+<li><a href="#filter" data-option-filter=".fav" class="fav">favourites</a></li>
+<hr>
+<li><a href="#filter" data-option-filter=".female">female</a></li>
+<li><a href="#filter" data-option-filter=".male">male</a></li> 
+</ul>
+    </div>
+        
+</div>
+    
+
+    
+</div>    
+
+
+
+<ul id="con" class="characters">
+
+<!-- 
+
+a note on tagging/filtering.
+
+<li class="charac...."> is where you put the tags. LEAVE 'charac' there. don't touch it. 
+
+remove 'put your tags here' from the line and add whatever ones you want, making sure they match with what you put above. e.g.:
+
+<li class="charac female leo narnia"> 
+is a female character who is a leo and set in the 'narnia' universe.
+
+<li class="charac male fav virgo"> 
+is a favourite male character who is a virgo. 
+
+it doesn't matter what order you put things in. if you want it to come up with the little red heart and be included in favourites, make sure you put 'fav' in there somewhere. 
+
+-->
+
+
+
+
+<!-- start character -->
+<li class="charac male put your tags here fav">
+
+<div class="ch_img">
+    <!-- character image -->
+    <img src="http://i.imgur.com/3hoCWtR.png">
+</div>
+
+<div class="ch_desc">
+    
+<!-- character name -->
+<h2><a href="link - optional">John Doe</a></h2>
+    
+
+<!-- copy these from your key -->
+<span class="th th-earth-o">universe</span>
+<span class="th th-location-1-o">location</span>
+<span class="th th-heart-1-o">current love interest</span>
+<span class="th th-broken-heart-o">past love interest</span>
+<span class="th th-hourglass-o">occupation</span>
+<span class="th th-constellation-o">star sign</span>
+
+<!-- desc -->
+<div class="longdesc">long description here (optional)</div>
+
+</div>
+
+</li>
+<!-- end character -->
+
+
+
+
+
+<!---- do not edit past here ----->    
+ 
+</ul>   
+
+
+
+
+
+
+
+
+
+<div class="control"><span class="th th-settings-o"></span></div>
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+
+</body>
+
+
+<!------ S C R I P T S! ------>
+ <script src="https://static.tumblr.com/fuu6t9w/kh8ml0pl9/jquery-1.7.1.min.js"></script><script src="https://static.tumblr.com/fuu6t9w/eubml0pm0/jquery.isotope.min.js"></script>
+ <script src="https://static.tumblr.com/uopakca/GVcnvdwbq/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:90,
+tip_fade_speed:700,
+attribute:"title"
+});
+});
+})(jQuery);
+
+ $(function(){
+ 
+ var $container = $('.characters');
+ 
+ $container.isotope({
+ itemSelector : '.charac'
+ });
+ 
+ 
+ var $optionSets = $('#sort .option-set'),
+ $optionLinks = $optionSets.find('a');
+ 
+ $optionLinks.click(function(){
+ var $this = $(this);
+ if ( $this.hasClass('selected') ) {
+ return false;
+ }
+ var $optionSet = $this.parents('.option-set');
+ $optionSet.find('.selected').removeClass('selected');
+ $this.addClass('selected');
+  var options = {},
+ key = $optionSet.attr('data-option-key'),
+ value = $this.attr('data-option-filter');
+ value = value === 'false' ? false : value;
+ options[ key ] = value;
+ if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+ changeLayoutMode( $this, options )
+ } else {
+ $container.isotope( options );
+ }
+ 
+ return false;
+ });
+ 
+ 
+ });
+
+ </script>
+</html>
