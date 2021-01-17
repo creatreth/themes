@@ -34,6 +34,21 @@ please don't remove credit.
     font-size:12px;
     background:#f7f7f7;
     color:#000}
+    
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:100;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
 
 #tumblr_controls,
 .tmblr-iframe {
@@ -74,7 +89,6 @@ body {
     margin:0;
     width:100%;
     height:100%;
-    
     background-color:#ffffff;
     letter-spacing:0.5px;
     -moz-osx-font-smoothing:grayscale;
