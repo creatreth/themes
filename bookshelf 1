@@ -35,19 +35,33 @@ please don't remove credit.
     background:#f7f7f7;
     color:#000}
 
-.iframe-controls--desktop {
+#tumblr_controls,
+.tmblr-iframe {
+   position:fixed!important;
+   top:28px!important;
+   right:10px!important;
+   max-width:calc(100%-788px);
+   opacity:0!important;
+   -webkit-filter:invert(100%);
+   -webkit-backface-visibility:hidden;
+   padding:10px 100px 10px 100px;
+   -webkit-transition:opacity .3s ease-out;
+   transition:opacity .3s ease-out;
+}
+#tumblr_controls:hover, .tmblr-iframe:hover {
+   opacity:.9!important;
+}
+
+.control{
     position:fixed;
-    top:0px;
-    right:0px;
-    filter:invert(100%);
-    -webkit-filter:invert(100%); 
+    top:35px;
+    right:30px;
+    width:30px;
+    height:15px;
     z-index:100;
-    -webkit-transform:scale(0.6,0.6);
-    -webkit-transform-origin: 100% 0%;
-    -ms-transform-origin:100% 0%;
-    -ms-transform:scale(0.6,0.6);
-    transform:scale(0.6,0.6);
-    transform-origin:100% 0%;
+    color:black;
+    font-size:12px;
+    padding:8px 0;
 }
  
 body {
@@ -657,7 +671,7 @@ fic description goes here.
 
 
 
-
+<div class="control"><span class="th th-settings-o"></span></div>
 
 <!------ LEAVE CREDIT IN TACT ------------>
 <div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
