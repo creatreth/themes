@@ -22,6 +22,21 @@ please don't remove credit.
 
 <style>
 
+/* 
+
+HOW TO CHANGE THE COLOURS. 
+
+If you don't like the dark green/light green combo, here's what to do:
+
+press ctrl + f TWICE so that the "find and replace" box comes up. 
+
+dark green is #0B5E55
+light green is #ADD1C7
+
+use find and replace to search for the colour (e.g. #ADD1C7 and replace ALL with the colour you want instead e.g. #facade). i recommend a dark colour for the sidebar and a light colour for the top bar.
+
+*/
+
 #s-m-t-tooltip {
     max-width:240px;
     padding:3px 10px;
@@ -34,7 +49,7 @@ please don't remove credit.
     font-size:12px;
     background:#f7f7f7;
     color:#000}
-    
+
 .iframe-controls--desktop {
     position:fixed;
     top:0px;
@@ -48,6 +63,39 @@ please don't remove credit.
     -ms-transform:scale(0.6,0.6);
     transform:scale(0.6,0.6);
     transform-origin:100% 0%;
+}
+ 
+body{
+    font-family: 'Karla', sans-serif;
+    color:#333;
+    font-size: 11px;
+    line-height:150%;
+    left:0;
+    top:0;
+    margin:0;
+    width:100%;
+    height:100%;
+    background-color:#fafafa;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color:#aaa;
+    cursor:pointer;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
 }
 
 #tumblr_controls,
@@ -78,40 +126,6 @@ please don't remove credit.
     font-size:12px;
     padding:8px 0;
 }
- 
-body {
-    font-family: 'Karla', sans-serif;
-    color:#333;
-    font-size: 10px;
-    line-height:150%;
-    left:0;
-    top:0;
-    margin:0;
-    width:100%;
-    height:100%;
-    background-color:#ffffff;
-    letter-spacing:0.5px;
-    -moz-osx-font-smoothing:grayscale;
-    -webkit-font-smoothing:antialiased;
-    font-smoothing:antialiased;
-}
-
-a {
-    color:#777;
-    cursor:pointer;
-    text-decoration: none;
-    -webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-
-a:hover {
-    color: #222; 
-    transition: 0.3s ease-in-out;
-}
-
 
 .taezs{
     position:fixed;
@@ -123,11 +137,12 @@ a:hover {
 
 .taezs a{
     display:inline-block;
-    background:#fff;
+    background:#ADD1C7;
     border-radius:3px;
     position:fixed;
+    color:black;
     right:20px;
-    padding:10px;
+    padding:8px 10px;
     bottom:20px;
 }
 
@@ -136,24 +151,31 @@ a:hover {
     position:fixed;
     right:80px;
     opacity:0;
-    bottom:30px;
+    bottom:23px;
+    background:white;
+    padding:5px 10px;
     transition:.5s;
+    border-radius:3px;
+}
+
+.taezs a:hover{
+    background:white;
 }
 
 .taezs a:hover:before{
     opacity:1;
-    right:60px;
+    right:65px;
     transition:.5s;
 }
 
-::-webkit-scrollbar{height:5px;width:5px;background:inherit;}
-::-webkit-scrollbar-thumb {background:#ddd;border:2px solid #fff;}
+::-webkit-scrollbar{height:5px;width:1px;background:inherit;}
+::-webkit-scrollbar-thumb {background:#ADD1C7;}
 ::-webkit-scrollbar-track {background:inherit;}
- ::selection{background:#333;color:#fff;}
+ ::selection{background:#ADD1C7;color:#fff;}
 
 /* page! */
 
-#con{
+.container{
     width:calc(100% - 430px);
     top:100px;
     position:absolute;
@@ -168,18 +190,17 @@ nav{
     padding:30px 70px 30px 200px;
     width:100%;
     z-index:2;
-    background:white;
-    border-bottom:1px solid #eee;
+    background:#ADD1C7;
 }
 
 nav a{
     display:inline-block;
     width:10px;
+    color:black;
     position:relative;
-    background:#fff;
     border-radius:3px;
-    padding:10px;
-    margin:5px;
+    padding:10px 15px;
+    margin:5px -0.5px;
     transition:0s;
     height:10px;
 }
@@ -194,15 +215,16 @@ nav a:hover span{
 }
 
 nav a:hover{
-    color:#000;
+    color:#fff;
 }
 
 nav a span, .nv{
     position:fixed;
     opacity:0;
-    left:-70px;
+    left:45px;
+    font-size:12px;
     padding:3px 10px;
-    padding-left:150px;
+    padding-left:0px;
     color:black;
     border-radius:5px;
     margin-top:-4px;
@@ -214,7 +236,8 @@ nav a span, .nv{
 }
 
 nav a span{
-    background:white;
+    color:white;
+    background:#ADD1C7;
     width:100px;
 }
 
@@ -224,21 +247,30 @@ nav a span{
 }
 
 .side{
-    width:300px;
+    width:350px;
     left:0px;
-    top:100px;
-    border-right:1px solid #eee;
-    padding-left:50px;
+    top:90px;
     position:fixed;
-    overflow:scroll;
+    overflow-y:scroll;
     z-index:1;
-    height:calc(100% - 100px);
+    padding-bottom:20px;
+    background:#0B5E55;
+    color:white;
+    height:calc(100% - 90px);
+}
+
+.side a{
+    color:#eee;
 }
 
 .desc{
-    margin:30px auto 0 auto;
     position:relative;
-    padding:30px;
+    padding:40px;
+    padding-bottom:0px;
+}
+
+.desc a{
+    color:#ADD1C7;
 }
 
 .dots{
@@ -253,7 +285,7 @@ nav a span{
     display:inline-block;
     width:4px;
     height:4px;
-    background:blue;
+    background:#ADD1C7;
     margin-right:10px;
     border-radius:50%;
 }
@@ -279,17 +311,31 @@ nav a span{
 }
 
 
-#sort:before, .key:before, .longdesc:before{
+.longdesc:before{
     content:'';
     width:60px;
     height:1px;
-    background:#eee;
+    background:#ADD1C7;
     margin-top:-25px;
     position:absolute;
 }
 
 #sort{
-    margin-top:50px;
+}
+
+.key .th{
+    display:block;
+    padding:5px 0;
+}
+
+.key .th:before{
+    margin-right:10px;
+    transform:translateY(1px);
+    display:inline-block;
+}
+
+.key{
+    padding-bottom:20px;
 }
 
 #sort li, #sort ul{list-style:none;margin:0;padding:0;} 
@@ -300,7 +346,7 @@ nav a span{
 }
 
 #sort a {
-    color:#aaa; 
+    color:#fff; 
     border:none;
     padding-bottom:1px;
     padding-right:10px;
@@ -318,27 +364,26 @@ nav a span{
 }
 
 #sort a:hover {
-    color:#000; 
+    color:#ADD1C7; 
 }
 
 #sort li a.selected {
-    color:#000;
+    color:#ADD1C7;
 }
 
 #sort li a.selected:before{
     content:'\eb67';
+    color:#ADD1C7;
 }
 
-#sort h3, .key h3{
-    font-weight:500;
-    font-style:italic;
+hr{
+    border:none;
+    padding-top:10px;
 }
 
+/* stories */
 
-
-/* characters */
-
-.characters, .charac{
+.container, .story{
     list-style-type:none;
     margin:0;
     padding:0;
@@ -349,93 +394,48 @@ nav a span{
 	transition: all 0.6s ease-in-out;
 }
 
-.charac{
+.story{
     width:300px;
     float:left;
     height:177px;
-    border:20px solid #fff;
-    outline:1px solid #eee;
-    margin:-0.5px;
-    outline-offset:-1px;
+    border:20px solid white;
+    margin:0px 1px 1px 0px;
     position:relative;
+    background:white;
+    color:black;
     overflow:hidden;
 }
 
-.ch_img{
-    content:'';
-    height:calc(100% - 20px);
-    width:90px;
-    border:10px solid #fff;
-    background-color: #ffd5cd;
-    
-    
-    /*
-    
-    ffd5cd - f7c8ce - efbbcf - d9b4d3 - c3aed6
-screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, and luminosity
-    */
-    
-    background-blend-mode:overlay;
-    background-size:cover;
-    background-position:center;
-    z-index:100;
-    top:0;
-    left:0;
-    position:fixed;
-    transition:0.5s;
-}
+.dots li:nth-of-type(2){opacity:0.8;}
+.dots li:nth-of-type(3){opacity:0.6;}
+.dots li:nth-of-type(4){opacity:0.4;}
+.dots li:nth-of-type(5){opacity:0.2;}
 
-.v0 .ch_img{background-color:#ffd5cd;}
-.v1 .ch_img{background-color:#f7c8ce;}
-.v2 .ch_img{background-color:#efbbcf;}
-.v3 .ch_img{background-color:#d9b4d3;}
-.v4 .ch_img{background-color:#c3aed6;}
-
-#sort li a.v0:before{color:#ffd5cd;}
-#sort li a.v1:before{color:#f7c8ce;}
-#sort li a.v2:before{color:#efbbcf;}
-#sort li a.v3:before{color:#d9b4d3;}
-#sort li a.v4:before{color:#c3aed6;}
-
-.dots li:nth-of-type(2){background-color:#f7c8ce;}
-.dots li:nth-of-type(3){background-color:#efbbcf;}
-.dots li:nth-of-type(4){background-color:#d9b4d3;}
-.dots li:nth-of-type(5){background-color:#c3aed6;}
-
-.dots li{
-    display:inline-block;
-    width:4px;
-    height:4px;
-    background:#ffd5cd;
-    margin-right:10px;
-    border-radius:50%;
-}
-
-.charac:hover .ch_img{
+.story:hover .ch_img{
     background-color:transparent;
     transition:0.5s;
 }
 
-.charac a, .desc a{
-    color:#999;
+.story a{
+    color:#333;
 }
 
-.charac a:hover, .desc a:hover{
+.story a:hover, .desc a:hover{
     color:black;
 }
 
-.charac h2{
+.story h2{
     font-weight:400;
-    margin:10px 5px 0px 5px;
+    margin:5px 5px 0px 5px;
     padding:5px 10px;
 }
 
-.charac h2 a{
+.story h2 a{
     color:#333;
     border:none;
 }
 
-.charac h2 a:hover{
+.story h2 a:hover{
     color:#aaa;
 }
 
@@ -445,21 +445,21 @@ screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-ligh
     top:0;
     width:195px;
     overflow-y:scroll;
-    height:180px;
+    height:170px;
 }
 
 .fic .ch_desc, .book .ch_desc{
     width:100%;
 }
 
-.charac .th, .key .th{
+.story .th{
     padding:3px 15px;
     display:block;
     line-height:15px;
     margin-left:20px;
 }
 
-.charac .th:before, .key .th:before{
+.story .th:before{
     position:absolute;
     margin-top:2px;
     left:16px;
@@ -475,102 +475,167 @@ screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-ligh
     margin-top:-14px;
 }
 
-.key .th{
-    margin-left:20px;
-    padding:0;
-    line-height:20px;
-}
-
-.key .th:before{
-    left:30px;
-    margin-top:5px;
-}
-
-.key{
-    margin-top:50px;
-}
-
-.charac .link{
+.story .link{
     display:none;
 }
-.charac h2 b{
+.story h2 b{
     display:none;
 }
 
-.charac h2{line-height:150%;margin-top:0;}
-.charac{height:250px;}
-.ch_desc{height:250px;right:4px;}
-.charac.fav:before{
+.story h2{line-height:150%;margin-top:-6px;}
+.story{height:250px;}
+.ch_desc{height:245px;right:10px;}
+.story.fav:before{
     content:'\ea55';
     position:absolute;
     top:0px;
-    right:0px;
+    right:4px;
     z-index:1;
-    color:red;
+    color:#ADD1C7;
     font-family:'honeybee';
     font-size:12px;
-    background:white;
-    padding:8px 0;
+    background:#fff;
+    padding:2px 0 8px 0;
+    transition: 0.4s;
 }
 
-#sort li a.fav:before{color:red;content:'\ea55';}
-#sort li a.fav.selected:before{content:'\ea54';}
-
-hr{
-    border:none;
+.story.fav:hover:before{
+    color:#A55157;
+    transition: 0.4s;
+    content:'\ea54';
 }
 
 
+#sort li a.fav:before{color:#fff;content:'\ea55';}
+#sort li a.fav.selected:before{content:'\ea54';color:#A55157;}
+
+.accordion {
+  cursor: pointer;
+  padding: 18px 40px;
+  width: 100%;
+  background:#0B5E55;
+  color:white;
+  font-family:'karla', sans-serif;
+  font-size:12px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.accordion .th{
+    margin-right:10px;
+    transform:translateY(2px);
+}
+
+.active, .accordion:hover {
+  color:#ADD1C7;
+}
+
+.panel {
+  padding: 0 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\ebd8';
+  font-family:'honeybee';
+  font-size: 8px;
+  color: #fff;
+  float: right;
+  transform:translateY(2px);
+  margin-left: 5px;
+  transition: 0.2s ease-out;
+}
+
+.accordion:hover:after{
+    color:#ADD1C7;
+    transition: 0.2s ease-out;
+}
+
+.active:after {
+  content: '\ec1e';
+  font-family:'honeybee';
+  color:#ADD1C7;
+}
 
 </style>
+
+
 </head>
 <body>
+<div class="control"><span class="th th-settings-o"></span></div>
 
 
 <nav>
-
-<!-- links - if you want to add more, go for it. change the icon the same way as the others - head to honeybee.suiomi.com and replace 'th-link' with the name of the icon: 'th-icon name' -->
-
 <span class="nv">explore</span>
-
     <a href="/" class="th th-home-o"><span>home</span></a>
     <a href="/ask" class="th th-paper-plane-o"><span>ask</span></a>
-    <a href="/archive" class="th th-box-o"><span>archive</span></a> 
-    
-    <!-- extra link example -->
-    <a href="linkurl" class="th th-link"><span>name of link</span></a>
-    
-    <!-- credit, please do not remove -->
-<a href="https://taezs.tumblr.com" class="th th-paperclip"><span>code by @taezs</span></a>
+    <a href="/archive" class="th th-box-o"><span>archive</span></a>
+    <a href="https://taezs.tumblr.com" class="th th-paperclip"><span>page by @taezs</span></a>
 </nav>
 
 <div class="side">
+
+<!-- begin description -->
+
     <div class="desc">
-        <h2>bookshelf</h2>
-    <p>
-        description.
+        <h2>
+        <!-- page title - remove what you want but leave <h2></h2> there.  -->
+            <em>{Name}'s</em>
+                <br>
+            bookshelf
+        </h2>
         
+        <!-- dots. remove if you don't want -->
+        <ul class="dots"><li><li><li><li></ul>
+        
+    <p>
+description 
+    </p>
+
+    </div>
+
+<!-- end description -->
+
+<!-- begin key -->
+
+<button class="accordion">
+    <span class="th th-key-o"></span>key</button>
+<div class="panel"><div class="key">
+
 <!-- key (optional)
 
 add or remove icons here as you need. if you want to change the icon, go to honeybee.suiomi.com, find the icon you want, and put the name of the icon after th- so it says <span class="th th-icon-name">. do the same in each book/fic.
 
 -->
 
-<div class="key">
-    <h3>key:</h3>
-    <span class="th th-pencil-o">author</span>
-    <span class="th th-star-o">star rating</span>
-    <span class="th th-flag-1-o">book/fic length</span>
-    <span class="th th-heart-1-o">pairing</span>
-    <span class="th th-bookmark-1-o">fic tags</span>
-    <span class="th th-chat-bubble-o">reader commentary</span>
-</div>
+<span class="th th-pencil-o">author</span>
+<span class="th th-heart-1-o">pairing</span>
+<span class="th th-bookmark-1-o">tags</span>
+<span class="th th-star-o">star rating</span>
+<span class="th th-flag-1-o">length</span>
+<span class="th th-chat-bubble-o">reader commentary</span>
 
 
+</div></div>
 
-<!-- filters (optional)
+<!-- end key -->
 
-if you have a lot of filters, a scrollbar will appear.
+
+<!-- start filters -->
+
+<button class="accordion">
+    <span class="th th-bookmark-1-o"></span>filters
+</button>
+
+<div class="panel"><div id="sort"><ul id="filters" class="option-set clearfix" data-option-key="filter">
+
+<!-- start filters!
+
+if you have a lot of filters, a scrollbar will appear for the sidebar.
 
 do not remove the first filter, but add or remove as many of the ones below as you want. a filter or "tag" works like so:
 
@@ -586,54 +651,56 @@ if you want something to be classed by two things (e.g. favourite books), you'll
 
 <li><a href="#filter" data-option-filter=".fav.book">favourite books</a></li>
 
+if you want it to have a little heart in the list of filters, add 'class="fav"', like so:
+
+<li><a href="#filter" data-option-filter=".fav.book" class="fav">fav books</a></li>
+
 if you want to make sections of tags/filters, pop a <hr> in between each.
 
 -->
 
-<div id="sort">
-<ul id="filters" class="option-set clearfix" data-option-key="filter">
-
-<h3>filter by:</h3>
-
-<!-- start filters -->
-<li><a href="#filter" data-option-filter=".charac" class="selected">all</a></li>
+<li><a href="#filter" data-option-filter=".story" class="selected">all</a></li>
 <li><a href="#filter" data-option-filter=".fav" class="fav">favourites</a></li>
 <hr>
 <li><a href="#filter" data-option-filter=".book">book</a></li>
 <li><a href="#filter" data-option-filter=".fic">fic/e-text</a></li>
-<hr>
+
+</ul></div></div>
 
 <!-- end filters -->
-</ul></div>
-<!-- end filter section -->
-
-</div>
-</div>    
 
 
-<ul id="con" class="characters">
+<div style="padding-bottom:50px"></div></div>  
+
+<!-- end sidebar -->
+
+
+
+<!-- begin container -->
+
+<ul id="con" class="container">
 
 <!-- 
 
 a note on tagging/filtering.
 
-<li class="charac...."> is where you put the tags. LEAVE 'charac' there. don't touch it. 
+<li class="story...."> is where you put the tags. LEAVE 'charac' there. don't touch it. 
 
 remove 'put your tags here' from the line and add whatever ones you want, making sure they match with what you put above. e.g.:
 
-<li class="charac fic magic-au e2l 10"> 
+<li class="story fic magic-au e2l 10"> 
 is a magical au fic with enemies to lovers and 10k words long. 
 
-<li class="charac fav book e2l"> 
+<li class="story fav book e2l"> 
 is a favourite book with enemies to lovers. 
 
-it doesn't matter what order you put things in. if you want it to come up with the little red heart and be included in favourites, make sure you put 'fav' in there somewhere. 
+it doesn't matter what order you put things in. if you want it to come up with the little heart and be included in favourites, make sure you put 'fav' in there somewhere. 
 
 -->
 
 
 <!-- START BOOK. remove this if you only want to have fics.-->
-<li class="charac book fav put your tags here"><div class="ch_desc">
+<li class="story book fav put your tags here"><div class="ch_desc">
 
 <h2><a href="link to goodreads here">name of book</a></h2>
 
@@ -653,7 +720,7 @@ book description goes here
 <!-- END BOOK -->
 
 <!-- START FIC. remove this if you only want to have books. -->
-<li class="charac fic put your tags here"><div class="ch_desc">
+<li class="story fic put your tags here"><div class="ch_desc">
     
 <h2><a href="link to fic here">name of fic</a></h2>
 
@@ -666,23 +733,17 @@ book description goes here
 
 <!-- blurb -->
 <div class="longdesc">
-fic description goes here.
+fic description goes here
 </div>
     
 </div></li>
 <!-- END FIC -->
 
 
+
 <!---- do not edit past here ----->    
  
 </ul>   
-
-
-
-
-
-
-
 
 
 <div class="control"><span class="th th-settings-o"></span></div>
@@ -710,12 +771,29 @@ attribute:"title"
 });
 })(jQuery);
 
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+
  $(function(){
  
- var $container = $('.characters');
+ var $container = $('.container');
  
  $container.isotope({
- itemSelector : '.charac'
+ itemSelector : '.story'
  });
  
  
