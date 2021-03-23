@@ -1,0 +1,804 @@
+<!------ 
+
+books code by taezs
+
+day/night by egg design
+media queries from the seyche base code
+table filter by webdevtrick
+saturn icons and honeybee icons by suiomi
+
+changing the colours may be hard sorry :(( 
+
+------>
+
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{Favicon}">
+<link href="https://fonts.googleapis.com/css2?family=Bellota:wght@300;400&family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,400;1,600&family=Spirax&display=swap" rel="stylesheet">
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+<link href="//solrainha.github.io/saturnicons/saturnicons.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<!-- browser page title ---->
+<title>bookshelf</title>
+
+<style>
+
+#s-m-t-tooltip {
+    max-width:240px;
+    padding:3px 10px;
+    margin-left:20px;
+    margin-right:15px;
+    margin-top:-8px;
+    z-index:99999999990;
+    transition:.2s;
+    line-height:15px;
+    font-size:12pt;
+    background:#f7f7f7;
+    color:#000}
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:999999999999;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+body {
+    font-family: 'karla', sans-serif;
+    color:#333;
+    font-size: 10pt;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    left:0;
+    background:#E8F1F2;
+    top:0;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    transition:0.6s;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+    letter-spacing:0.5px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+
+.taezs{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:200px;
+    height:20px;
+}
+
+.taezs a{
+    display:inline-block;
+    border-radius:3px;
+    font-weight:600;
+    font-size:18px;
+    position:fixed;
+    right:20px;
+    bottom:20px;
+}
+
+.taezs a:before{
+    content:"theme by taezs";
+    position:fixed;
+    right:70px;
+    opacity:0;
+    bottom:22px;
+    font-size:12px;
+    background:blue;
+    transition:.5s;
+    padding:5px 10px;
+    border-radius:8px;
+}
+
+.taezs a:hover:before{
+    opacity:1;
+    right:50px;
+    transition:.5s;
+}
+
+::-webkit-scrollbar{
+    height:5px;
+    width:5px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background:black;}
+
+::-webkit-scrollbar-track {background:white;}
+
+header{
+    width:calc(90% - 40px);
+    max-width:800px;
+    text-align:center;
+    border-radius:8px;
+    padding-top:40px;
+    margin:auto;
+    border:1px solid #7A9E7E;
+    background:#a1b5a3;
+    margin-top:140px;
+    margin-bottom:80px;
+}
+
+.title{
+    font-size:30px;
+    font-weight:400;
+    font-family:'Bellota', sans-serif;
+}
+
+.desc{
+    padding:10px;
+    margin:auto;
+    line-height:150%;
+    max-width:600px;
+}
+
+.desc a{
+  display:inline-block;
+  line-height:100%;
+  border-bottom:1px dashed red;
+}
+
+.title.sf:before{
+    position:absolute;
+    left:50%;
+    width:50px;
+    margin-top:-80px;
+    padding:10px;
+    line-height:50px;
+    border-radius:50%;
+    background:#eee;
+    margin-left:-35px;
+}
+
+.sbar{
+    text-align:left;
+    padding-bottom:30px;
+    margin:auto;
+    background:#eee;
+    border-radius:8px;
+    padding:10px;
+    padding-bottom:9px;
+}
+
+td a{
+    display:block;
+    background:#31493C;
+    color:white;
+    padding:5px 10px;
+    position:relative;
+    box-shadow:2px 2px #7A9E7E;
+    border-radius:8px;
+    transition:0.6s;
+}
+
+td a:hover{
+    color:white;
+    background:black;
+}
+
+.sbar:before{
+    content:"\e20d";
+    background:#eee;
+    border-radius:50%;
+    padding:10px;
+    font-size:14px;
+    margin-left:10px;
+    margin-right:10px;
+    font-family:'saturnicons';
+}
+
+th:hover{
+    color:#aaa;
+}
+
+
+input {
+    font-family:'Karla', sans-serif;
+    color:black;
+    border:none;
+    font-size:18px;
+    font-weight:400;
+    text-transform:lowercase;
+    outline:none;
+    background:none;
+    width:calc(100% - 70px);
+    border-bottom:1px solid transparent;
+    height: 40px;
+}
+
+input:focus {
+  outline: none;
+    color:black;
+  border-bottom:1px solid #eee;
+}
+
+.sortable-table{
+    position:relative;
+    text-align:left;
+    border-collapse: collapse;
+    border:none;
+    margin-bottom:100px;
+    margin:auto;
+}
+
+th, td, tr{
+    border-collapse: collapse;
+    border:none;
+}
+
+.con{
+    width:calc(90% - 40px);
+    max-width:1000px;
+    position:relative;
+    text-align:left;
+    background:#d6edd5;
+    padding:40px;
+    padding-bottom:20px;
+    margin:auto;
+    border:1px solid #aaa;
+    margin-bottom:100px;
+    border-radius:8px;
+}
+
+th{
+    cursor:pointer;
+      text-decoration-line: underline;
+  text-decoration-style: wavy;
+  color:black;
+  text-decoration-color: #ccc;
+}
+
+th:hover{
+    text-decoration-color:black;
+}
+
+td, th{ 
+    padding:10px;
+    vertical-align: top;
+} 
+
+td{
+}
+
+td.sm{
+    padding:5px 20px 5px 45px;
+    margin:0;
+    vertical-align:middle;
+    position:relative;
+}
+
+.sm:before{
+    width:12px;
+    content:'\e12a';
+    font-family:'saturnicons';
+    text-align:center;
+    font-size:12px;
+    line-height:12px;
+    border-radius:8px;
+    padding:8px 9px;
+    height:12px;
+    position:absolute;
+    left:10px;
+    margin-top:-14px;
+    top:50%;
+}
+.sortable-table thead th.sm{
+    padding-left:35px;
+}
+
+th.sm:before{
+    width:12px;
+    content:'\e12a';
+    font-family:'saturnicons';
+    text-align:center;
+    padding:0;
+    font-weight:200;
+    margin-top:-6px;
+    background:none;
+    margin-left:4px;
+}
+
+.sm-user:before, th.sm-user:before{content:'\e275';}
+.sm-book:before, th.sm-book:before{content:'\e18f';}
+.sm-tags:before, th.sm-tags:before{content:'\e24b';}
+
+.sortable-table thead th{cursor:pointer;
+    position:relative;
+    padding-left:10px;
+    padding:5px 10px;
+} 
+.sortable-table thead th:after{
+    line-height:20px;
+    font-size:10px;
+    font-family:'honeybee';
+    
+}
+
+.sortable-table thead th[data-sort-direction="0"]:after{content:''}.sortable-table thead th[data-sort-direction="1"]:after{content:"\ec1e";
+    padding-left:10px;
+    padding-right:5px;display:inline-block;}
+.sortable-table thead th[data-sort-direction="-1"]:after{content:"\ebd8";display:inline-block;
+    padding-left:10px;
+    padding-right:5px;}
+
+.sortable-table thead th, .sortable-table thead th:hover{
+     transition:0.2s;
+}
+td:first-child{
+    display:block;
+    font-size:18px;
+    vertical-align:middle;
+    text-align:left;
+}
+
+td:first-child a:before{
+    content:'\ebbe';
+    font-size:12px;
+    line-height:20px;
+    font-family:honeybee;
+    float:right;
+}
+
+td.descr{
+    display:block;
+    background:#f2f2f2;
+    margin:10px;
+    margin-top:3px;
+    box-shadow:2px 2px #e3e4e9;
+    line-height:150%;
+    border-radius:8px;
+    text-align:left;
+}
+
+h1{
+    text-align:left;
+    font-weight:400;
+    margin:0;
+    padding:10px 0;
+    font-size:18pt;
+    border-bottom:1px solid #eee;
+}
+
+.top{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:30px;
+    z-index:10;
+}
+
+.top a{
+    width:40px;
+    display:inline-block;
+    height:40px;
+    margin-top:15px;
+    line-height:40px;
+    color:black;
+    background:#EEE5E5;
+    margin-left:30px;
+    margin-right:-20px;
+    font-size:14px;
+    cursor:pointer;
+    text-align:Center;
+    border-radius:50%;
+}
+
+.bigtext span{
+    font-weight:600;
+}
+
+.top a span.th {
+cursor:pointer;
+display:inline-block;
+position:relative;
+}
+
+.top a span.th:before{
+    display:inline-block;
+    left:-6px;
+    top:-11px;
+    position:absolute;
+}
+
+.top a{
+    position:relative;
+}
+
+span.bub{
+    position:absolute;
+    top:40px;
+    left:20px;
+    z-index:20;
+}
+
+span.bub{
+    display:inline-block;
+    background:#49889e;
+    color:white;
+    padding:6px 12px;
+    line-height:100%;
+    box-shadow:2px 2px #e3e4e9;
+    border-radius:8px;
+    transition:0.6s;
+    opacity:0;
+}
+
+.top a:hover span.bub{
+    opacity:1;
+    top:30px;
+    transition:0.6s;
+}
+
+th{
+    display:inline-block;
+    background:#fff;
+    margin-left:10px;
+    border-radius:8px;
+    text-decoration:none;
+    box-shadow:2px 2px #e3e4e9;
+}
+
+body.night th{
+    background:black;
+    color:white;
+}
+
+tr.header{
+    padding-bottom:0;
+    margin-bottom:0;
+    margin-top:-10px;
+    box-shadow:none;
+    padding-left:75px;
+    bordeR:none;
+    background:none;
+}
+
+tr.header:before{
+    content:'sort by:';
+    font-weight:600;
+    background:#f7e7e6;
+    padding:7.5px 10px;
+    box-shadow:2px 2px #e3e4e9;
+    border-radius:8px;
+    position:absolute;
+    left:0;
+}
+
+tr{
+    margin:20px 0;
+    display:inline-block;
+    padding:10px;
+    background:white;
+    display:block;
+    box-shadow:2px 2px #e3e4e9;
+    border:1px solid #eee;
+    border-radius:8px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    background:#5487b3;
+    color:white;
+    margin-bottom:10px;
+    border-radius:8px;
+    border:none;
+}
+
+.svgs{
+    position:fixed;
+    z-index:-10;
+    bottom:-5px;
+    border:none;
+    left:0;
+    width:100%;
+}
+
+.svg2{
+    z-index:-20;
+}
+
+.svg3{
+    z-index:-10;
+}
+
+
+/* day time! */
+
+body{background:#fff;color:#1a1a1c;}
+
+.con, header, .sbar{
+    border-color:#e3e4e9; 
+    background:rgba(227, 228, 233, 0.5);
+}
+
+.title.sf:before, td a, tr.header:before, .sbar:before, .buttons div, .top a, .sortable-table thead th:hover, .sortable-table thead th[data-sort-direction="1"], .sortable-table thead th[data-sort-direction="-1"], .taezs a:before, span.bub{
+    background:#c3083f;
+    color:#fff;
+    box-shadow:2px 2px #aaa;
+}
+td a:hover{background:#6f2232;}
+.desc a{color:black;border-color:black;}
+.desc a:hover{color:#c3083f;border-color:#c3083f;}
+.top{background:#6f2232;}
+.svgs svg{fill:#6f2232;}
+.svg2 svg{fill:#1a1a1c;}
+.svg3 svg{fill:#c3083f;}
+.taezs a, .taezs a:hover{color:white;}
+::selection, span.bub{background:#222629; color:white;}
+.top a:hover{background:#474a4f;}
+input{border-bottom:1px solid #e3e4e9;}
+input:focus {color:#363c4a; border-bottom:1px solid #aaa;}
+
+
+/* night time! */
+
+body.night {background:#1a1a1c;color:white!important;transition:.6s;}
+body.night .iframe-controls--desktop {filter:invert(0%);-webkit-filter:invert(0%);}
+
+body.night .con, body.night header, body.night .sbar{
+    border-color:#222; 
+    background:rgba(2,2,2, 0.5);}
+    
+body.night tr{
+    background:#222;
+    border-color:#444;
+    box-shadow:2px 2px #666;}
+
+body.night tr.header{box-shadow:none;background:none;}
+body.night .descr{background:#444;}
+body.night input{border-bottom:1px solid #444;}
+body.night input:focus {color:#fff; border-bottom:1px solid #950741;}
+body.night .desc a{color:white;border-color:white;}
+body.night .desc a:hover{color:#c3083f;border-color:#c3083f;}
+body.night .svg2 svg{fill:#4e4e50;}
+body.night th{background:#222;color:white;}
+
+
+
+
+/* media queries */
+
+@media only screen and (max-width: 1100px) {
+    .con, header, .bottom {width:calc(90% - 40px);}
+
+    td:first-child{border:none;}
+    
+    th{
+        width:auto;
+        padding-left:40px;
+        display:inline-block;
+        padding:5px 30px 5px 50px;
+        width:auto;
+        margin-bottom:10px;
+        text-decoration:none;
+    }
+    
+    body.night th{
+        background:black;
+        color:white;
+    }
+    .tabtitle{
+        display:block;
+        padding:10px;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 720px) {
+    main, section {width: 80vw;}
+    td a{
+        font-size:18px;
+    }
+    header{
+        margin-top:200px;
+    }
+    .con{
+        padding:20px;
+        padding-bottom:10px;
+    }
+        
+    td{
+        display:block;
+    }
+    
+    
+    .top{
+        height:100px;
+    }
+    
+    .top a{
+        top:60px;
+    }
+
+    td:first-child a:before{
+    font-size:10px;
+    line-height:25px;
+}
+} 
+
+
+</style>
+</head>
+<body>
+
+<div class="top">
+    <a href="/"><span class="th th-home"></span><span class="bub">home</span></a>
+    <a href="/"><span class="th th-paper-plane"></span><span class="bub">contact</span></a>
+    <a href="/"><span class="th th-list"></span><span class="bub">site map</span></a>
+    <a href="/"><span class="th th-download"></span><span class="bub">download code</span></a>
+  <a class="daynight"><span class="th th-moon"></span><span class="bub">toggle dark mode</span></a>
+</div>
+
+<div class="svgs">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,64L40,74.7C80,85,160,107,240,122.7C320,139,400,149,480,176C560,203,640,245,720,256C800,267,880,245,960,202.7C1040,160,1120,96,1200,74.7C1280,53,1360,75,1400,85.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+</div>
+
+<div class="svgs svg3">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,128L20,149.3C40,171,80,213,120,234.7C160,256,200,256,240,240C280,224,320,192,360,197.3C400,203,440,245,480,272C520,299,560,309,600,309.3C640,309,680,299,720,277.3C760,256,800,224,840,192C880,160,920,128,960,117.3C1000,107,1040,117,1080,128C1120,139,1160,149,1200,154.7C1240,160,1280,160,1320,144C1360,128,1400,96,1420,80L1440,64L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z"></path></svg>
+</div>
+
+<div class="svgs svg2">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,256L30,256C60,256,120,256,180,240C240,224,300,192,360,149.3C420,107,480,53,540,69.3C600,85,660,171,720,213.3C780,256,840,256,900,240C960,224,1020,192,1080,192C1140,192,1200,224,1260,240C1320,256,1380,256,1410,256L1440,256L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+</div>
+
+<header>
+<div class="title sf sf-book">my bookshelf</div>
+
+<div class="desc"> click buttons below to sort works alphabetically or numerically. use the searchbar to search for anything e.g. author name, ship, or tag, like "vampires", etc. <p>
+    be sure to check out how this looks on mobile, as the whole point is that it's super responsive across devices, perfect for reading! and there's dark mode! woo!
+    <p>
+    <a href="/prev/fics-p">pink preview</a> / <a href="/">pink download</a> // <a href="/prev/fics-g">green preview</a> / <a href="/">green download</a>.<br>
+    Instructions in code on how to remove dark mode or make dark mode the default. 
+</div>
+<div class="sbar">
+ <input type="search" class="light-table-filter" data-table="table-info" placeholder="Filter/Search">
+ </div>
+</header>
+
+
+<div class="con">
+
+
+<table class="sortable-table table-info table">
+  <thead>
+    <tr class="header">
+      <th>title</th>
+      <th>description</th>
+      <th class="sm">pairing</th>
+      <th class="sm sm-book numeric-sort">words</th>
+      <th class="sm sm-user">author</th>
+      <th class="sm sm-tags">tags</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+<tr>
+<td><a href="/s">1914 translation by H. Rackham</a>
+<td class="descr">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+<td class="sm">jack & jill</td>
+<td class="sm sm-book">15,000
+<td class="sm sm-user">giuseppe
+<td class="sm sm-tags">vampires, enemies to lovers
+</tr>
+
+<tr>
+<td><a href="/s">The standard Lorem Ipsum passage</a>
+<td class="descr">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+<td class="sm">adam & eve</td>
+<td class="sm sm-book">10,000
+<td class="sm sm-user">franklin
+<td class="sm sm-tags">soul bond, enemies to lovers, werewolves
+</tr>
+
+<tr>
+<td><a href="/s">Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</a>
+<td class="descr">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+<td class="sm">adam & steve</td>
+<td class="sm sm-book">100,000
+<td class="sm sm-user">rutherford
+<td class="sm sm-tags">fluff, angst, slow burn
+</tr>
+
+
+  </tbody>
+</table>
+
+
+</div>
+
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+<script src="https://static.tumblr.com/ssqfxic/Souqpksng/sortable-tables.js"></script>
+<script>
+/* Code By Webdevtrick ( https://webdevtrick.com ) */
+(function(document) {
+    'use strict';
+ 
+    var TableFilter = (function(Arr) {
+ 
+        var _input;
+ 
+        function _onInputEvent(e) {
+        _input = e.target;
+        var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+        Arr.forEach.call(tables, function(table) {
+        Arr.forEach.call(table.tBodies, function(tbody) {
+        Arr.forEach.call(tbody.rows, _filter);
+        });
+        });
+        }
+ 
+        function _filter(row) {
+        var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+        row.style.display = text.indexOf(val) === -1 ? 'none' : 'block';
+        }
+ 
+        return {
+        init: function() {
+        var inputs = document.getElementsByClassName('light-table-filter');
+        Arr.forEach.call(inputs, function(input) {
+        input.oninput = _onInputEvent;
+        });
+        }
+        };
+    })(Array.prototype);
+ 
+    document.addEventListener('readystatechange', function() {
+        if (document.readyState === 'complete') {
+        TableFilter.init();
+        }
+    });
+ 
+})(document);
+ 
+</script>
+<script>
+    $(document).ready(function(){
+      $('.daynight').click(function(){
+         $('body').toggleClass('night');
+         $('.daynight span.th').toggleClass('th-sun');
+      });
+   });
+</script>
+
+</body>
+</html>
