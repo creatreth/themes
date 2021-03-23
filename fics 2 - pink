@@ -1,13 +1,13 @@
 <!------ 
 
-books code by taezs
+fics page by taezs
 
 day/night by egg design
 media queries from the seyche base code
-table filter by webdevtrick
+table filter & search by webdevtrick
 saturn icons and honeybee icons by suiomi
 
-changing the colours may be hard sorry :(( 
+pink version
 
 ------>
 
@@ -22,9 +22,11 @@ changing the colours may be hard sorry :((
 
 
 <!-- browser page title ---->
-<title>bookshelf</title>
+<title>Bookshelf</title>
 
 <style>
+
+/* don't change colours here, do it all at the end, just before @media */
 
 #s-m-t-tooltip {
     max-width:240px;
@@ -63,7 +65,6 @@ body {
     margin:0;
     padding:0;
     left:0;
-    background:#E8F1F2;
     top:0;
     letter-spacing:0.5px;
     -moz-osx-font-smoothing:grayscale;
@@ -532,6 +533,7 @@ h1{
     z-index:-10;
 }
 
+/* change colours here if you dare!!!! it's pretty simple, just choose 2-3 colours and change them (you can use find + replace) to swap exact colours??*/
 
 /* day time! */
 
@@ -587,66 +589,23 @@ body.night th{background:#222;color:white;}
 
 
 
-/* media queries */
+/* media queries - so that it works on mobile */
 
 @media only screen and (max-width: 1100px) {
-    .con, header, .bottom {width:calc(90% - 40px);}
-
-    td:first-child{border:none;}
-    
-    th{
-        width:auto;
-        padding-left:40px;
-        display:inline-block;
-        padding:5px 30px 5px 50px;
-        width:auto;
-        margin-bottom:10px;
-        text-decoration:none;
-    }
-    
-    body.night th{
-        background:black;
-        color:white;
-    }
-    .tabtitle{
-        display:block;
-        padding:10px;
-    }
-    
-
+.con, header, .bottom {width:calc(90% - 40px);}
+td:first-child{border:none;}
+th{width:auto;padding-left:40px;display:inline-block;padding:5px 30px 5px 50px;width:auto;margin-bottom:10px;text-decoration:none;}
+body.night th{background:black;color:white;}
+.tabtitle{display:block;padding:10px;}
 }
-
 
 @media only screen and (max-width: 720px) {
-    main, section {width: 80vw;}
-    td a{
-        font-size:18px;
-    }
-    header{
-        margin-top:200px;
-    }
-    .con{
-        padding:20px;
-        padding-bottom:10px;
-    }
-        
-    td{
-        display:block;
-    }
-    
-    
-    .top{
-        height:100px;
-    }
-    
-    .top a{
-        top:60px;
-    }
-
-    td:first-child a:before{
-    font-size:10px;
-    line-height:25px;
-}
+main, section {width: 80vw;}td a{font-size:18px;}header{margin-top:200px;}
+.con{padding:20px;padding-bottom:10px;}
+td{display:block;}
+.top{height:100px;}
+.top a{top:60px;}
+td:first-child a:before{font-size:10px;line-height:25px;}
 } 
 
 
@@ -654,14 +613,144 @@ body.night th{background:#222;color:white;}
 </head>
 <body>
 
+<!-- if you don't want there to be a dark and light mode, just a dark mode, delete <body> and replace it with <body class="night"> 
+make sure that you also remove the switch just below ---->
+
 <div class="top">
+<!-- header links. add more if you like, and change the icons to any on https://honeybee.suiomi.com/ by following the instructions there. -->
+
     <a href="/"><span class="th th-home"></span><span class="bub">home</span></a>
-    <a href="/"><span class="th th-paper-plane"></span><span class="bub">contact</span></a>
-    <a href="/"><span class="th th-list"></span><span class="bub">site map</span></a>
-    <a href="/"><span class="th th-download"></span><span class="bub">download code</span></a>
-  <a class="daynight"><span class="th th-moon"></span><span class="bub">toggle dark mode</span></a>
+    <a href="/ask"><span class="th th-paper-plane"></span><span class="bub">contact</span></a>
+    <a href="/"><span class="th th-box-2"></span><span class="bub">archive</span></a>
+    
+<!--- delete this switch if you don't want the dark mode option -->
+<a class="daynight"><span class="th th-moon"></span><span class="bub">toggle dark mode</span></a>
+<!------------------------------------------------------------>
+  
 </div>
 
+
+
+
+<!-- header -->
+<header>
+<div class="title sf sf-book">my bookshelf</div><!-- your title -->
+
+<div class="desc"> 
+
+description goes here
+
+</div>
+
+
+<!-- search bar. delete if you don't want it -->
+<div class="sbar">
+<input type="search" class="light-table-filter" data-table="table-info" placeholder="Filter/Search">
+</div>
+<!-- search bar. delete if you don't want it -->
+</header>
+
+
+
+<!---->
+<div class="con">
+
+<!-- 
+
+okay! fic time!
+
+please read!!!!! it might get confusing!!!!
+
+this is technically a table. if you're confused, what you can do when setting it up is create a new page and just copy all of the below (from <table class= to </table>) in and update preview. it's actually a simple table when you remove all of the styling. You'll see that each "th" lines up as the column header for all the "td"'s below it. For this reason, it is CRUCIAL that you keep everything in the same order as it is in the header, or the sorting will not work.
+
+if you're having issues, again, try just put the table into a basic page and check if you can see what isn't lining up properly.
+
+-->
+
+
+<!--- sorting descriptors ---->
+
+<table class="sortable-table table-info table">
+  <thead>
+    <tr class="header">
+    
+    <!-- update/remove descriptors here. DO NOT ADJUST THE ORDER OF THEM -->
+    
+      <th>title</th>
+      <th>description</th>
+      <th class="sm">pairing</th>
+      
+      <th class="sm sm-book numeric-sort">words</th>
+<!-- it is important to have "numeric-sort" here or this will not sort the numbers properly, it'll do it alphabetically instead -->
+      
+      <th class="sm sm-user">author</th>
+      <th class="sm sm-tags">tags</th>
+      
+      <!-- end descriptors -->
+    </tr>
+  </thead>
+  <!---->
+  
+  
+  <!---->
+  <tbody>
+   
+   <!-- start book -->
+<tr>
+<td><a href="link">fic name</a><!--- fic name -->
+<td class="descr">
+
+fic description goes here
+
+</td>
+<td class="sm">jily</td><!--- ship -->
+<td class="sm sm-book">6,000</td><!-- word count. you can make it "6k" or "6,000" or "6000", just keep it consistent -->
+<td class="sm sm-user">giuseppe</td><!-- author -->
+<td class="sm sm-tags">vampires, enemies to lovers</td><!-- tags -->
+</tr>
+   <!-- end book -->
+   
+   <!-- start book -->
+<tr>
+<td><a href="link">fic name</a><!--- fic name -->
+<td class="descr">
+
+fic description goes here
+
+</td>
+<td class="sm">jily</td><!--- ship -->
+<td class="sm sm-book">8,000</td><!-- word count. you can make it "6k" or "6,000" or "6000", just keep it consistent -->
+<td class="sm sm-user">giuseppe</td><!-- author -->
+<td class="sm sm-tags">favourite, friends to lovers</td><!-- tags -->
+</tr>
+   <!-- end book -->
+   
+   <!-- start book -->
+<tr>
+<td><a href="link">fic name</a><!--- fic name -->
+<td class="descr">
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</td>
+<td class="sm">jily</td><!--- ship -->
+<td class="sm sm-book">200,000</td><!-- word count. you can make it "6k" or "6,000" or "6000", just keep it consistent -->
+<td class="sm sm-user">angela</td><!-- author -->
+<td class="sm sm-tags">vampires</td><!-- tags -->
+</tr>
+   <!-- end book -->
+
+
+
+<!-- end fics -->
+  </tbody>
+</table>
+
+
+</div>
+
+
+<!--- svgs. delete if you don't want them -->
 <div class="svgs">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,64L40,74.7C80,85,160,107,240,122.7C320,139,400,149,480,176C560,203,640,245,720,256C800,267,880,245,960,202.7C1040,160,1120,96,1200,74.7C1280,53,1360,75,1400,85.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 </div>
@@ -674,74 +763,7 @@ body.night th{background:#222;color:white;}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,256L30,256C60,256,120,256,180,240C240,224,300,192,360,149.3C420,107,480,53,540,69.3C600,85,660,171,720,213.3C780,256,840,256,900,240C960,224,1020,192,1080,192C1140,192,1200,224,1260,240C1320,256,1380,256,1410,256L1440,256L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
 </div>
 
-<header>
-<div class="title sf sf-book">my bookshelf</div>
-
-<div class="desc"> click buttons below to sort works alphabetically or numerically. use the searchbar to search for anything e.g. author name, ship, or tag, like "vampires", etc. <p>
-    be sure to check out how this looks on mobile, as the whole point is that it's super responsive across devices, perfect for reading! and there's dark mode! woo!
-    <p>
-    <a href="/prev/fics-p">pink preview</a> / <a href="/">pink download</a> // <a href="/prev/fics-g">green preview</a> / <a href="/">green download</a>.<br>
-    Instructions in code on how to remove dark mode or make dark mode the default. 
-</div>
-<div class="sbar">
- <input type="search" class="light-table-filter" data-table="table-info" placeholder="Filter/Search">
- </div>
-</header>
-
-
-<div class="con">
-
-
-<table class="sortable-table table-info table">
-  <thead>
-    <tr class="header">
-      <th>title</th>
-      <th>description</th>
-      <th class="sm">pairing</th>
-      <th class="sm sm-book numeric-sort">words</th>
-      <th class="sm sm-user">author</th>
-      <th class="sm sm-tags">tags</th>
-    </tr>
-  </thead>
-  <tbody>
-   
-<tr>
-<td><a href="/s">1914 translation by H. Rackham</a>
-<td class="descr">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-<td class="sm">jack & jill</td>
-<td class="sm sm-book">15,000
-<td class="sm sm-user">giuseppe
-<td class="sm sm-tags">vampires, enemies to lovers
-</tr>
-
-<tr>
-<td><a href="/s">The standard Lorem Ipsum passage</a>
-<td class="descr">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-<td class="sm">adam & eve</td>
-<td class="sm sm-book">10,000
-<td class="sm sm-user">franklin
-<td class="sm sm-tags">soul bond, enemies to lovers, werewolves
-</tr>
-
-<tr>
-<td><a href="/s">Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</a>
-<td class="descr">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-<td class="sm">adam & steve</td>
-<td class="sm sm-book">100,000
-<td class="sm sm-user">rutherford
-<td class="sm sm-tags">fluff, angst, slow burn
-</tr>
-
-
-  </tbody>
-</table>
-
-
-</div>
-
+<!--- svgs end. delete if you don't want them -->
 
 <!------ LEAVE CREDIT IN TACT ------------>
 <div class="taezs"><a href="https://taezs.tumblr.com"><span class="th th-paperclip"></span></a></div>
