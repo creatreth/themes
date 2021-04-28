@@ -102,6 +102,17 @@ body {
     
 }
 
+::-webkit-
+bar {
+  width: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+  background-color:{color:accent 2};
+}
+
+::-moz-selection { color: {color:text over accent}; background:{color:accent};}
+::selection { color: {color:text over accent}; background:{color:accent};}
+
 .iframe-controls--desktop {
     position:fixed;
     top:0px;
