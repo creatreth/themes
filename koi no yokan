@@ -1282,6 +1282,20 @@ ul.uperminfo, .uperminfo li{
     
 }
 
+
+.taezs{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    font-size:15px;
+}
+
+.taezs .tooltip::after{
+    left:auto;
+    font-size:12px;
+    right:10px;
+}
+
 {CustomCSS}
 
 </style>
@@ -1290,6 +1304,7 @@ ul.uperminfo, .uperminfo li{
 <!----- HTML ----->
 
 <body>
+<div class="taezs"><div id="anim"><span class="tooltip" data-tooltip="theme by taezs"><a href="https://taezs.tumblr.com"><i class="icon icon-anchor"></i></a></span></div></div>
 
 <main class="content">
 
