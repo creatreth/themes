@@ -12,6 +12,7 @@
 <!---
 
     koi no yokan theme by taezs
+    pls consider buying me a ko-fi if you use this theme :-) ko-fi.com/taezs
     
     creds
 
@@ -22,6 +23,7 @@
     note count shortener by shythemes
     shaky tooltips by sashatran on codepen
     typing dots animation by gaenglish on codepen
+    
     
 --->
 
@@ -1248,7 +1250,7 @@ body.move .extrainfo{
     margin:0;
 }
 
-body.move #sidebar img{
+body.move .s_img{
     border-radius:15px;
 }
 
@@ -1282,7 +1284,6 @@ ul.uperminfo, .uperminfo li{
     
 }
 
-
 .taezs{
     position:fixed;
     bottom:30px;
@@ -1296,6 +1297,18 @@ ul.uperminfo, .uperminfo li{
     right:10px;
 }
 
+#s-m-t-tooltip {
+    max-width:300px;
+    margin:10px 10px;  
+    z-index:99999;
+    color:{color:text over accent};
+    background:{color:accent};
+    padding:5px 8px;
+    line-height:1.2;
+    border-radius:15px;
+}
+
+
 {CustomCSS}
 
 </style>
@@ -1304,6 +1317,7 @@ ul.uperminfo, .uperminfo li{
 <!----- HTML ----->
 
 <body>
+
 <div class="taezs"><div id="anim"><span class="tooltip" data-tooltip="theme by taezs"><a href="https://taezs.tumblr.com"><i class="icon icon-anchor"></i></a></span></div></div>
 
 <main class="content">
@@ -1317,7 +1331,7 @@ ul.uperminfo, .uperminfo li{
 <div id="top">
 <a href="/">
     <img class="sicon" src="{PortraitURL-64}">
-    <h1 class="stitle">{title}</h1>
+    <h1 class="stitle" title="title">{title}</h1>
     <h1 class="sname">@{name}</h1></a>
 </div>
 <span id="datetime"></span>
@@ -1693,7 +1707,23 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script> 
+
+ <script src="https://static.tumblr.com/uopakca/GVcnvdwbq/jquery.style-my-tooltips.js"></script>
+  
+ <script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:700,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+
 
 <!--
        NPF IMAGES READJUSTMENT | @glenthemes
