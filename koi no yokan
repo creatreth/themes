@@ -23,7 +23,6 @@
     shaky tooltips by sashatran on codepen
     typing dots animation by gaenglish on codepen
     
-    
 --->
 
 <!----- VARIABLES AND OPTIONS ----->
@@ -34,11 +33,14 @@
 <meta name="color:Text" content="#707070"/>
 <meta name="color:Link" content="#313131"/>
 <meta name="color:Text Over Accent" content="#ffffff"/>
-<meta name="color:Description Accent" content="#71d3d7"/>
+<meta name="color:Description Accent" content="#d1d1d1"/>
 <meta name="color:Accent" content="#c67644"/>
 <meta name="color:Accent 2" content="#767965"/>
 <meta name="color:Grey" content="#eeeeee"/>
 <meta name="color:Title" content="#313131"/>
+
+<meta name="if:Popup" content="1"/>
+<meta name="if:Show Tags on Index" content="1"/>
 
 <meta name="select:Post Width" content="400px" title="400px"/>
 <meta name="select:Post Width" content="500px" title="500px"/>
@@ -102,8 +104,7 @@ body {
     
 }
 
-::-webkit-
-bar {
+::-webkit-scrollbar {
   width: 0.5em;
 }
 ::-webkit-scrollbar-thumb {
@@ -860,6 +861,13 @@ a.likeb{
 
 .tags{
     margin-top:3px;
+    display:none;
+    {block:PermalinkPage}
+    display:block;
+    {block:PermalinkPage}
+    {block:ifShowTagsOnIndex}
+    display:block;
+    {block:ifShowTagsOnIndex}
 }
 .tags li{
     list-style-type:none;
@@ -1329,15 +1337,23 @@ ul.uperminfo, .uperminfo li{
 
 <div class="extrainfo">
     <ul class="bits">
-        <li><span>hi i'm <b>zsu</b> <i class="icon icon-heart"></i></span>
-        <li><span>i'm 24 and a leo</span>
-        <li><span>i post about <a href="/tagged/bts">#thing</a>, <a href="/tagged/bts">#thing</a>, and <a href="/tagged/bts">#thing</a></span></li>
-        <li><span>for all my other tags you can go <a href="">here</a>.</span></li>
-        <li><span>you can put whatever you want here, but max 9 lines pls :-)</span>
-        <li><span>you can also write a big long extended paragraph about something if you want. do daba dee daba boo de boo</span>
+    
+    <!---- 
+    
+    here you can put in extra stuff!
+    
+    max 9 lines 
+    
+    ---->
+    
+        <li><span>hi! this is a line of stuff</span>
+        <li><span>this is a second line</span>
     </ul>
 </div>
 
+
+
+{block:ifPopup}
 <div class="dots" id="anim">
 <a href="#" class="button">
 <span class="tooltip" data-tooltip="click me">
@@ -1349,19 +1365,8 @@ ul.uperminfo, .uperminfo li{
 </span>
 </a>
 </div>
+{block:ifPopup}
  
- 
- <!---
-        {block:ifHomeLink}<a href="/">{text:Home Link}</a>{/block:ifHomeLink}
-        {block:AskEnabled}{block:ifAskLink}<a href="/ask">{text:Ask Link}</a>{/block:ifAskLink}{/block:AskEnabled}
-        {block:ifArchiveLink}<a href="/archive">{text:Archive Link}</a>{/block:ifArchiveLink}
-
-        {block:ifLink1}<a href="{text:Link 1 URL}">{text:Link 1}</a>{/block:ifLink1}
-        {block:ifLink2}<a href="{text:Link 2 URL}">{text:Link 2}</a>{/block:ifLink2}
-        {block:ifLink3}<a href="{text:Link 3 URL}">{text:Link 3}</a>{/block:ifLink3}
-        {block:HasPages}{block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
-        
-        --->
 
 </aside>
 
