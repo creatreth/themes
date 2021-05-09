@@ -1539,7 +1539,7 @@ ul.uperminfo, .uperminfo li{
 {block:Answerer}
 <div class="ask-wrap">
     <img src="{AnswererPortraitURL-64}" class="askicon">
-    <div class="asking">{lang:Answered}:</div>
+    <div class="asking">{Answerer} answered:</div>
     <div class="question">{Answer}</div>
 </div>
 
@@ -1554,8 +1554,7 @@ ul.uperminfo, .uperminfo li{
 {block:RebloggedFrom}
     <div class="reblog-wrap">
 {block:Reblogs}
-<div class="date" style="margin-top:30px;margin-bottom:-20px;"><a href="{Permalink}">{ShortDayOfWeek} {DayOfMonth} at {12HourWithZero}:{Minutes} {AmPm}</a></div>
-        <li class="caption">
+        <li class="caption" style="margin-top:0px">
         <div class="ask-wrap">
     <img src="{PortraitURL-64}" class="askicon">
     <div class="asking reblog"><a href="{Permalink}">{Username}</a></div>
