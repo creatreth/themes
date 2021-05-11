@@ -1757,6 +1757,11 @@ attribute:"title"
     border-radius:0;
     margin-bottom:0px!important;
 }
+
+.npf_inst{
+    border-radius:10px!important;
+    overflow:hidden;
+}
 </style>
 
 <script>
