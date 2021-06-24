@@ -37,21 +37,25 @@
 
 <!----- VARIABLES AND OPTIONS ----->
 
-<meta name="image:Sidebar" content=""/>
+<meta name="image:Header" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Text" content="#707070"/>
+<meta name="image:Pop Out 1" content=""/>
+<meta name="image:Pop Out 2" content=""/>
+
+
+<meta name="color:Background" content="#0c0c0c"/>
+<meta name="color:Text" content="#f0f0f0"/>
 <meta name="color:Sidebar Text" content="#ffffff"/>
-<meta name="color:Link" content="#313131"/>
-<meta name="color:Link Hover" content="#313131"/>
-<meta name="color:Accent" content="#71d3d7"/>
-<meta name="color:Accent 2" content="#ffffff"/>
-<meta name="color:Text Over Accent" content="#000"/>
-<meta name="color:Pagination Text" content="#000000"/>
-<meta name="color:Borders" content="#dcdcdc"/>
-<meta name="color:Sidebar" content="#dcdcdc"/>
-<meta name="color:Pop Out Boxes" content="#dcdcdc"/>
-<meta name="color:Pop Out Box Text" content="#ffffff"/>
+<meta name="color:Link" content="#ededed"/>
+<meta name="color:Link Hover" content="#a2a5a8"/>
+<meta name="color:Accent" content="#313139"/>
+<meta name="color:Ask" content="#000000"/>
+<meta name="color:Text Over Accent" content="#ffffff"/>
+<meta name="color:Borders" content="#3c3c3c"/>
+<meta name="color:Sidebar" content="#000000"/>
+<meta name="color:Pop Out Boxes" content="#0c0c0c"/>
+<meta name="color:Pop Out Box Text" content="#e5e5e5"/>
+<meta name="color:Pop Out Box Link" content="#b6b6b6"/>
 
 <meta name="text:Post Width" content="500px"/>
 <meta name="text:Header Image Width" content="80px"/>
@@ -61,12 +65,12 @@
 <meta name="select:Header Image Shape" content="10px" title="Rounded Corners"/>
 <meta name="select:Header Image Shape" content="0px" title="Sharp Corners"/>
 
-<meta name="select:Pop Out Boxes Shape" content="10px" title="Rounded Corners"/>
-<meta name="select:Pop Out Boxes Shape" content="0px" title="Sharp Corners"/>
 
 <meta name="if:Stars" content="1"/>
 <meta name="if:Pop Out" content="1"/>
-<meta name="if:Black Controls" content="1"/>
+<meta name="if:Black Controls" content="0"/>
+<meta name="if:Updates" content="1"/>
+<meta name="if:Grey Icons" content="1"/>
 <meta name="text:Subtitle" content=""/>
 <meta name="text:Home Link" content="home"/>
 <meta name="text:Ask Link" content="ask"/>
@@ -305,7 +309,7 @@ em{
     z-index:99999;
     background:rgba({RGBcolor:accent}, 0.8);
     color:{color:text over accent};
-    padding:8px 10px;
+    padding:6px 10px;
     line-height:1.2;
     border-radius:15px;
 }
@@ -326,7 +330,7 @@ header .sm{
     overflow:hidden;
     object-fit:cover;
     margin-bottom:0.7em;
-    object-position:top;
+    object-position:middle;
     border-radius:{select:Header Image Shape};
 }
 
@@ -421,7 +425,7 @@ body.night #thing{
 }
 .descr, .t_links{
     color:{color:Pop Out Box text};
-    border-radius:{select:Pop Out Boxes Shape};
+    border-radius:10px;
     background:{color:Pop Out Boxes};
     padding:2em;
 }
@@ -434,7 +438,7 @@ body.night #thing{
 .sb{
     width:180px;
     height:100%;
-    border-radius:{select:Pop Out Boxes Shape};
+    border-radius:10px;
     border-top-left-radius:20px;
     object-fit:cover;
     bottom:0px;
@@ -443,9 +447,7 @@ body.night #thing{
 
 .descr{
     border-top-right-radius:20px;
-    {block:ifSidebarImage}
     margin-left:189px;
-    {block:ifSidebarImage}
 }
 
 .quo{
@@ -604,7 +606,17 @@ body.night .s_title{
     display:block;
     position:relative;
     padding-left:20px;
-    color:{color:pop out box text}!important;
+    color:{color:pop out box link}!important;
+}
+
+.descr a{
+    color:{color:pop out box link};
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+.descr a:hover{
+    color:{color:pop out box text};
 }
 
 .box span{
@@ -628,7 +640,12 @@ body.night .s_title{
 
 .box a:hover:before{
     transform: rotate(45deg);
-    color:{color:accent};
+    color:{color:pop out box text};
+    transition-duration:0.2s;
+}
+
+.box a:hover{
+    color:{color:pop out box text};
     transition-duration:0.2s;
 }
 
@@ -689,6 +706,9 @@ section{
     margin:0;
     padding:0;
     display:block;
+    {block:ifGreyIcons}
+    filter: grayscale(100%);
+    {/block:ifGreyIcons}
 }
 
 .actual-button{
@@ -710,6 +730,7 @@ section{
 .lr img{
     border:0;
     padding:0;
+    background:none;
     width:30px;
     margin-bottom:1.2em;
     height:30px;
@@ -733,6 +754,7 @@ section{
 
 .lr svg.feather{
     line-height:20px;
+    margin:0;
 }
 
 .lrb{
@@ -745,6 +767,10 @@ section{
 
 .text-caption img{
     margin:1px;
+}
+
+.text-caption a{
+    text-decoration:underline;
 }
 
 .text-caption figure:first-of-type{
@@ -767,7 +793,7 @@ ol.reblogs li:first-child .username, ol.reblogs li:first-child .user-icon{
     height: 1.6em;
     border:0.8em solid {color:background};
     z-index:10;
-    margin-top:-0.8em;
+    margin-top:-0em;
     margin-left:-5px!important;
     border-radius:50%;
 }
@@ -798,9 +824,14 @@ ol.reblogs li:first-child .username, ol.reblogs li:first-child .user-icon{
     display: inline-block;
     margin-left:10px;
     background:{color:background};
+    text-decoration:none!important;
     padding-left:1em;
     vertical-align: middle;
     font:bold 12pt Garamond, serif;
+}
+
+.text-caption .username a, .caption.top .username a{
+    text-decoration:none!important;
 }
 
 .username:after{
@@ -905,8 +936,8 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
 /*----- ANSWER -----*/
 
 .ask-wrap {
-    background:{color:accent};
-    color:{color:text over accent};
+    background:{color:ask};
+    color:{color:text};
     padding: 2em;
 }
 
@@ -1120,6 +1151,7 @@ ol.notes li.note img.avatar {
 
 .credit .up{
     width:auto;
+    line-height:10px;
 }
 
 .pag{
@@ -1250,11 +1282,11 @@ body.night .pag{
 }
 
 .soc a svg{
-    color:{color:Pop Out Box text};
+    color:{color:Pop Out Box link};
 }
 
 .soc a:hover svg{
-    color:{color:text over accent};
+    color:{color:Pop Out Box text};
 }
 
 .a{
@@ -1272,13 +1304,17 @@ body.night .pag{
 }
 .soc td{
     height:40px;
-    border:2.5px solid black;
+    border:2.5px solid {color:sidebar};
+    {block:ifStars}
+    border-color:black;
+    {/block:ifStars}
     overflow:hidden;
 }
 
 .soc td:first-child{
     border-bottom-left-radius:25px;
 }
+
 
 .soc img{
     height:40px;
@@ -1326,13 +1362,12 @@ body.night .pag{
 
 <div id="thing">
 <div class="thing_wrap">
-{block:ifSidebarImage}
-<img src="https://64.media.tumblr.com/1e14d25727d4a415b4b308b2825961a9/a5182f831382c34c-d1/s400x600/db86148f0ccc95f7ebc5ca32397fcf5aba7e35da.gif" class="sb">
-{/block:ifSidebarImage}
+<img src="{image:Pop Out 1}" class="sb">
 <div class="descr">
 <!------ POP OUT -- EDIT IT HERE!  ------->
 <em>[emphasis text]</em><br><br>
-here you can put more information. The sidebar image is 180px wide and will resize the height to fit the height of the description. The image is also set so that it doesn't stretch weirdly when the height changes. have as many or as few links below as you want. 
+here you can put more information. The sidebar image is 180px wide and will resize the height to fit the height of the description. The image is also set so that it doesn't stretch weirdly when the height changes. have as many or as few links below as you want.
+
 </div></div>
 
 <!--- extra links, delete if you don't want. i recommend no more than three boxes --->
@@ -1340,28 +1375,28 @@ here you can put more information. The sidebar image is 180px wide and will resi
 <div class="t_linkt"><em>navigate</em></div>
     <div class="box"><!-- title -->
         <a href="/tagged/mine">my stuff</a>
-        <a href="https://creatre.tumblr.com/tagged/creatreth">my codes</a>
-        <a href="https://ko-fi.com/taezs">ko-fi</a>
-        <a href="/tagged/edit">edits</a>
+        <a href="/tagged/mine">my gifs</a>
+        <a href="/tagged/mine">my edits</a>
         </div>
     <div class="box">
-        <a href="/tagged/bts">bts (all)</a>
-        <a href="/tagged/pjm">jimin</a>
-        <a href="/tagged/jjk">jungkook</a>
-        <a href="/tagged/myg">yoongi</a>
-        <a href="/tagged/kth">taehyung</a>
+        <a href="/tagged/">bts</a>
+        <a href="/tagged/">shinee</a>
+        <a href="/tagged/">txt</a>
+        <a href="/tagged/">itzy</a>
+        <a href="/tagged/">twice</a>
     </div>
     <div class="box">
-        <a href="/tagged/knj">namjoon</a>
-        <a href="/tagged/jhs">hobi</a>
-        <a href="/tagged/ksj">seokjin</a>
+        <a href="/tagged/">link</a>
+        <a href="/tagged/">link</a>
+        <a href="/tagged/">link</a>
     </div>
 </div>
+<!-- end links -->
 
 <table class="soc">
     <td class="a"><a href="/" title="my twitter"><i data-feather="twitter"></i></a></td>
-    <td class="a"><a href="/" title="my twitch"><i data-feather="twitch"></i></a></td>
-    <td class="full"><img src="https://64.media.tumblr.com/8f1035b19a4aea0988e47bd15b98e043/a5182f831382c34c-fb/s400x600/cdc922cd859a6bedf82636ca498661ebb80fae90.gif"></td>
+    <td class="a"><a href="/" title="my ko-fi"><i data-feather="coffee"></i></a></td>
+    <td class="full"><img src="{image:Pop Out 2}"></td>
 </table>
 
 
@@ -1424,7 +1459,7 @@ here you can put more information. The sidebar image is 180px wide and will resi
 <section class="cont">
 <header>
 
-<h1><img src="https://64.media.tumblr.com/2f746a9529b4d785008be92a40b16e15/8e666072e04a4351-24/s400x600/9c9f4b52191e7d614fa241b84b1cc2510787c2b3.png" class="sm">{title}</h1>
+<h1><img src="{image:Header}" class="sm">{title}</h1>
 <div class="hdesc">
 {description}</div>
 
@@ -1438,14 +1473,15 @@ here you can put more information. The sidebar image is 180px wide and will resi
 <div class="stick">
     <ol class="lr">
     {block:rebloggedfrom}
-    <img src="{ReblogRootPortraitURL-64}">
+    <a href="{ReblogRootURL}" title="posted by {ReblogRootName}">
+    <img src="{ReblogRootPortraitURL-64}"></a>
     {/block:rebloggedfrom}
     
     {block:NotReblog} 
     <img src="{PortraitURL-64}">
     {/block:NotReblog}
-            <a class="rb" href="{ReblogURL}" target="_blank"><i data-feather="repeat"></i></a>
-            <a class="likeb" href="#">{LikeButton}<span class="actual-button"><i data-feather="heart"></i></a>
+            <a class="rb" title="reblog this post" href="{ReblogURL}" target="_blank"><i data-feather="repeat"></i></a>
+            <a class="likeb" title="like this post" href="#">{LikeButton}<span class="actual-button"><i data-feather="heart"></i></a>
         </ol>
 </div>
 {block:indexpage}
@@ -1656,7 +1692,8 @@ here you can put more information. The sidebar image is 180px wide and will resi
 
 {block:Date}
 <div class="info">
-    {block:PinnedPostLabel}<a href="{Permalink}" class="pinned-post"><i data-feather="pin"></i>{PinnedPostLabel}</a>{/block:PinnedPostLabel}
+{block:PinnedPostLabel}<span style="margin-left:-10px; padding-right:10px"><i data-feather="map-pin"></i>{PinnedPostLabel}</span> {/block:PinnedPostLabel}
+        
     <a href="{Permalink}"><i data-feather="clock"></i><span class="time-ago">{TimeStamp}</span></a>
     <a href="{Permalink}"><i data-feather="bar-chart-2"></i><span class="notecount">{NoteCount}</span></a>
         
