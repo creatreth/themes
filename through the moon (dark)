@@ -271,6 +271,10 @@ pre {
     background:red;
 }
 
+.up span i.o{
+ background:orange;
+ }
+
 .control:hover .up{
     opacity:1;
     margin-top:-30px;
@@ -1346,6 +1350,13 @@ body.night .pag{
         <span><b>hiatus</b> due to work and school.</span>
         <span><b>this</b> is an updates tab</span>
         <span><b>put</b> whatever you like here</span>
+        
+         <!--- 
+        for a green dot, put in <i></i>
+        for a red dot: <i class="i"></i>
+        for an orange dot: <i class="o"></i>
+        ---->
+        
     </div>
 </div>
 {/block:ifUpdates}
