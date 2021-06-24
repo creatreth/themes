@@ -65,9 +65,6 @@
 <meta name="select:Header Image Shape" content="10px" title="Rounded Corners"/>
 <meta name="select:Header Image Shape" content="0px" title="Sharp Corners"/>
 
-<meta name="select:Pop Out Boxes Shape" content="10px" title="Rounded Corners"/>
-<meta name="select:Pop Out Boxes Shape" content="0px" title="Sharp Corners"/>
-
 <meta name="if:Stars" content="0"/>
 <meta name="if:Pop Out" content="1"/>
 <meta name="if:Black Controls" content="1"/>
