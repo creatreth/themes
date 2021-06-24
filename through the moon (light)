@@ -1307,6 +1307,9 @@ body.night .pag{
 .soc td{
     height:40px;
     border:2.5px solid {color:sidebar};
+    {block:ifStars}
+    border-color:black;
+    {/block:ifStars}
     overflow:hidden;
 }
 
