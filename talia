@@ -1,0 +1,1196 @@
+<!------ 
+
+talia - characters page by taezs
+
+credits:
+
+- flickity carousel: flickity.metafizzy.co
+- ionic icons: ionic.io/ionicons
+- day/night tutorial by @eggdesign
+- preview images from unsplash
+
+send questions to @taezsthemes
+
+note: i recommend having experience with coding to use this page as it's not very easy to customise.
+
+i do not recommend changing any colours, but leaving it white or black. to change the theme to default dark, ctrl+f to <body> and change it to <body class="night"> 
+
+for v2, go to "carousel carousel-main" and change it to "carousel carousel-main v2". hope that makes sense. for the other options shown in the v2 preview, read the instructions where it says CAROUSEL OPTIONS.
+
+:-)
+
+
+------>
+
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="{Favicon}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,500&family=Nunito:ital,wght@0,200;0,300;0,600;1,200;1,300;1,600&family=Viaoda+Libre&display=swap" rel="stylesheet"><link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_o5hd5vvqpoqiwwmi.css"><script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+<!--icon font-->
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_o5hd5vvqpoqiwwmi.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<!-- JavaScript -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('body').tooltip({track:true});    
+ 
+});
+</script>
+
+<!-- browser page title ---->
+<title>{title}: characters</title>
+
+<style>
+
+
+/*tooltip*/
+
+.ui-tooltip {  
+    position:Absolute;
+    z-index:9999;
+    padding-top:5px;
+}
+ 
+.ui-tooltip-content {
+    padding:4px 10px;
+    border-radius:10px;
+    transition:.5s;
+    font:italic 10pt 'Cormorant Garamond', serif;
+    border:1px solid rgba(238, 238, 238, 0.4);
+    background:rgba(255,255,255, 0.4);
+    backdrop-filter: blur(3px);
+}
+
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:999999999999;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+body {
+    font-family: 'Nunito', sans-serif;
+    color:#333;
+    font-size: 10pt;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    left:0;
+    top:0;
+    background-color:#fff;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+    letter-spacing:0.5px;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #222; 
+    transition: 0.3s ease-in-out;
+}
+
+.taezs, .daynight{
+    position:fixed;
+    bottom:18px;
+    right:20px;
+    width:200px;
+    height:20px;
+}
+
+.taezs a, .daynight span{
+    display:inline-block;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:50%;
+    right:20px;
+    position:fixed;
+    padding:8px 10px;
+    color:black;
+    bottom:13px;
+    cursor:pointer;
+    border:1px solid rgba(238, 238, 238, 0.4);
+    background:rgba(255,255,255, 0.4);
+    backdrop-filter: blur(3px);
+}
+
+.daynight, .daynight span{
+    top:10px;
+    left:20px;
+    right:auto;
+    bottom:auto;
+}
+
+.taezs a ion-icon, .daynight ion-icon{
+    margin-bottom:-2px;
+}
+
+.taezs a:before, .daynight span:before{
+    content:"'talia' page code by taezs";
+    position:fixed;
+    right:50px;
+    padding:5px 10px;
+    border-radius:10px;
+    opacity:0;
+    background:white;
+    bottom:-20px;
+    transition:.5s;
+    border:1px solid rgba(238, 238, 238, 0.4);
+    background:rgba(255,255,255, 0.4);
+    backdrop-filter: blur(3px);
+    white-space: nowrap;
+}
+
+.daynight span:before{
+    right:auto;
+    content:"toggle dark mode";
+    left:50px;
+    bottom:auto;
+    top:-20px;
+}
+
+.taezs a:hover:before, .daynight span:hover:before{
+    opacity:1;
+    bottom:0;
+    transition:.5s;
+}
+ .daynight span:hover:before{
+     bottom:auto;
+     top:3px;}
+
+::-webkit-scrollbar{
+    height:1px;
+    width:1px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background:#aaa;}
+
+::-webkit-scrollbar-track {background:transparent;}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {border:5px solid transparent;}
+
+/* container */
+main{
+    position:fixed;
+    left:15%;
+    height:80vh;
+    top:10vh;
+    width:900px;
+    left:calc(50% - 450px);
+}
+
+
+/* flickity carousel */
+
+* { box-sizing: border-box; }
+
+
+.carousel {
+    background:#fff;
+  margin-bottom: 40px;
+}
+
+.carousel-cell {
+  width: 100%;
+  height: 50vh;
+  margin-right: 10px;
+background-color: #fafafa;
+  border-radius: 20px;
+  overflow:hidden;
+}
+.carousel-nav{
+    background:none;
+    border-top:30px solid white;
+    
+}
+
+.carousel-nav .carousel-cell{
+    cursor:pointer;
+}
+
+/* no circle */
+.flickity-button {
+  background: transparent;
+}
+/* big previous & next buttons */
+.flickity-prev-next-button {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-nav .carousel-cell {
+  height: 60px;
+  width: 60px;
+  filter:grayscale(100%);
+}
+
+.carousel-cell img{
+    position:absolute;
+    top:0;
+    z-index:1;
+    height:100%;
+    width:60%;
+    border-radius:20px;
+    object-fit:cover;
+}
+
+.carousel-nav img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  filter:grayscale(0);
+}
+
+
+.info{
+    position:absolute;
+    right:0;
+    bottom:0;
+    border-top:1px solid rgba(238, 238, 238, 0.4);
+    border-left:1px solid rgba(238, 238, 238, 0.4);
+    padding:20px;
+    width:55%;
+    z-index:10;
+    border-top-left-radius:20px;
+    background:rgba(238, 238, 238, 0.4);
+    backdrop-filter: blur(3px);
+}
+
+.desc{
+    margin-top:20px;
+    line-height:1.5;
+    font-size:9pt;
+    padding:0 10px;
+    padding-bottom:20px;
+    max-height:100px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    text-align:justify;
+}
+
+h2:before{
+    content:'';
+    width:30px;
+    display:inline-block;
+    height:3px;
+    border-top:1px solid #333;
+    margin:0 10px 0 20px;
+}
+
+h1{
+    font:30pt/15px 'Cormorant Garamond', serif;
+    padding-bottom:10px;
+    margin-bottom:0;
+}
+
+h2{
+    text-transform:uppercase;
+    font-size:10px;
+    padding-top:5px;
+}
+
+.info h1{
+    margin:0;
+    margin-top:10px;
+}
+
+.things{
+    z-index:20;
+    line-height:2;
+}
+
+.things{
+    margin:-20px;
+    padding:15px 10px;
+    margin:0 -21px -21px -20px;
+    border-top:1px solid rgba(238, 238, 238, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+.things ion-icon {
+  display:inline-block;
+  margin-right:10px;
+  margin-left:20px;
+  margin-bottom:-2px;
+}
+
+.links{
+    top:-20px;
+    right:30px;
+    position:absolute;
+    text-align:right;
+}
+
+.links a{
+    margin-left:10px;
+    display:inline-block;
+    line-height:35px;
+    width:35px;
+    background:white;
+    color:black;
+    text-align:center;
+    border-radius:50%;
+}
+
+.links a:hover{
+    background:#eee;
+}
+
+.links ion-icon{
+    margin-bottom:-2px;
+}
+
+.flickity-page-dots .dot {
+  height: 2px;
+  width: 40px;
+  background:#aaa;
+  margin: 0;
+  border-radius: 0;
+}
+
+.flickity-button {
+  background: transparent;
+}
+
+.pt h1{
+    display:inline-block;
+    margin-right:10px;
+    font-size:20pt;
+    font-style:italic;
+    line-height:8pt;
+}
+
+.pt ion-icon{
+    margin-bottom:-3px;
+    margin-right:10px;
+}
+
+.pt a{
+    display:inline-block;
+    margin:0 5px -5px 5px;
+}
+
+.pt span:last-of-type a:last-of-type ion-icon{
+    margin-right:0;
+}
+
+.pt{
+    position:relative;
+    margin-bottom:30px;
+    margin-top:10px;
+    width:100%;
+    justify-content:space-between;
+    align-items:flex-end;
+    display:flex;
+}
+
+main:before, main:after{
+    position:fixed;
+    content:'';
+    width:100%;
+    height:30px;
+    left:0;
+    top:0;
+    background:#eee;
+}
+
+main:after{
+    bottom:0;
+    top:auto;
+}
+.flickity-button {
+    background: rgba(155,155,155,.5);
+    transition:0.5s;
+}
+.flickity-button:hover {
+    background: rgba(255,255,255,.9);
+    transition:0.5s;
+}
+
+.v2 .carousel-cell{
+    width:30vw;
+  filter:grayscale(100%);
+}
+
+.v2 .carousel-cell.is-selected {
+  filter:grayscale(0);
+}
+
+
+.v2 .info{
+    width:100%;
+        margin-bottom:-100px;
+        transition:0.5s;
+}
+
+.v2 img{
+    width:100%;}
+    
+.v2 .desc{
+        height:0px;
+        transition:0.5s;
+        overflow:hidden;
+        max-height:40vh;
+        transition:0.5s;
+    }
+
+.v2 .info:hover{
+        margin-bottom:0;
+        transition:0.5s;
+    backdrop-filter: blur(8px);
+    }
+    
+    .v2 .info:hover .desc{
+        height:10vh;
+        overflow-y:scroll;
+        transition:0.5s;
+    }
+    
+
+/*--- MEDIA QUERIES ---*/
+
+@media only screen and (max-width: 1024px) {
+    main {
+        width:600px;
+        left:calc(50% - 300px);
+        
+    }
+}
+
+/*--- for mobile devices ---*/
+
+@media only screen and (max-width: 720px) {
+    .tmblr-iframe-compact .tmblr-iframe--unified-controls {display: none!important;}
+
+tumblr_controls, .tmblr-iframe{display:none!important;}
+
+    main{
+    width:80vw;
+    left:calc(50% - 40vw);
+    top:30px;
+    }
+    
+    .carousel-cell{
+        height:45vh;
+    }
+    
+    
+    .pt span:first-of-type{
+        display:none;
+    }
+    
+    .pt h1{
+    }
+    
+    .pt{
+        flex-direction:column-reverse;
+        margin-top:20px;
+    }
+    
+    .pt span{
+        display:block;
+        text-align:center;
+        float:none;
+        width:100%;
+    }
+    
+    .carousel img{
+        width:100%;
+    }
+    
+    .info{
+        transition:0.5s;
+        width:100%;
+        margin-bottom:-100px;
+    }
+    
+    .desc{
+        height:0px;
+        transition:0.5s;
+        overflow:hidden;
+        max-height:20vh;
+    }
+    
+    .info:hover{
+        margin-bottom:0;
+        transition:0.5s;
+    backdrop-filter: blur(8px);
+    }
+    
+    .info:hover .desc{
+        height:10vh;
+        overflow-y:scroll;
+        transition:0.5s;
+    }
+    
+    .info:hover .desc::-webkit-scrollbar-thumb {background:#fafafa;}
+    
+}
+
+/* COLOR VARIABLES */
+
+:root {
+  --grey: #fafafa;
+  --white: #ffffff;
+}
+
+
+/* END OF MEDIA QUERIES */
+
+ion-icon {
+  pointer-events: none;
+}
+
+/* NIGHT MODE */
+
+body.night a, body.night b, body.night i { color:white!important; }
+
+
+body.night, body.night .carousel, body.night .links a{
+    background:#1f1f1f;
+    color:white!important;
+}
+
+body.night a{
+    color:white!important;
+}
+
+body.night a:hover{
+    color:#aaa!important;
+}
+body.night .carousel{
+    border-color:#1f1f1f;
+}
+
+body.night .carousel-cell{
+    background:#333;
+}
+
+body.night .info, body.night .taezs a, body.night .daynight span, body.night .taezs a:before, body.night .daynight span:before, body.night .ui-tooltip-content {
+    background:rgba(51, 51, 51, 0.4)!important;
+    color:white!important;
+    border-color:rgba(102, 102, 102, 0.8);
+}
+
+body.night .things{
+    border-color:rgba(102, 102, 102, 0.8);
+}
+
+body.night h2:before{
+    border-color:#eee;
+}
+
+body.night main:before, body.night main:after{
+    background:#333;
+}
+
+body.night .iframe-controls--desktop {
+    filter:invert(0%);
+    -webkit-filter:invert(0%); }
+
+
+</style>
+</head>
+
+<!-- change this to <body class="night"> for default dark mode -->
+<body>
+
+<!----- 
+
+
+HOW TO USE THIS PAGE 
+
+Please don't attempt to use this page if you've never touched this type of code - it can be quite confusing and annoying to customize.
+
+
+The two carousels - the main one and the bottom, navigation one - need to be done separately so you need to be careful when adding/removing characters so that there are the same number of characters in both rows, and that they match up. 
+
+---->
+
+<main>
+
+<div class="pt">
+
+
+<span><a href="/"><ion-icon name="chevron-back-outline"></ion-icon> return to blog</a></span>
+
+
+<span>
+    <h1>original characters</h1>
+ </span>   
+
+<!-- add/remove links as you wish - go to ionic.io/ionicons to see other icons, click on it, and copy the "web component code" that pops up at the bottom -->
+
+<span>
+    <a href="/" title="home"><ion-icon name="home-outline"></ion-icon></a>
+    <a href="/ask" title="message"><ion-icon name="chatbubble-outline"></ion-icon></a>
+    <a href="/" title="profile"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="site map"><ion-icon name="map-outline"></ion-icon></a>
+</span>
+</div>
+
+<!---- start carousel ------>
+
+<!---- 
+
+CAROUSEL OPTIONS - for even more options go to https://flickity.metafizzy.co/options.html
+
+- If you want previous/next buttons, change "prevNextButtons":false to "prevNextButtons":true
+
+- if you want the autoplay to be quicker or slower, change the number. if you want autoplay to be removed, change the number to say false instead.
+
+
+--->
+
+<div class="carousel carousel-main v2" data-flickity='{ "prevNextButtons": true, "freeScroll": true, "wrapAround": true, "autoPlay": 4000 }'>
+
+<!-- end carousel wrap -->
+
+
+<!-- start muses/characters. i recommend keeping in the numbers. add in as many as you like. -->
+
+
+<!-- begin muse 1 -->
+  <div class="carousel-cell">
+  <div class="info">
+  
+  <!-- start links - you can add more, remove some, or remove this div entirely. -->
+        <div class="links">
+            <a href="/" title="browse tag">
+                <ion-icon name="bookmark-outline"></ion-icon>
+            </a>
+            <a href="/" title="about">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <a href="/" title="rp threads">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+            </a>
+</div>   
+<!-- end links -->
+
+<!-- name, title -->
+      <h1>Talia</h1>
+      <h2>etym. Hebrew: "Dew of Heaven"</h2>
+      
+<!-- character description. if too long it will become scrollable. -->
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.<br>
+   
+      </div>
+<!-- end description -->
+
+<!-- here you can add descriptors, i recommend only a few, especially if you plan on it being really mobile friendly -->
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>26
+        <ion-icon name="person-outline"></ion-icon>she/her<br>
+        <ion-icon name="briefcase-outline"></ion-icon>sculptor
+        <ion-icon name="heart-outline"></ion-icon>aidan
+        <ion-icon name="planet-outline"></ion-icon>gemini
+      </div>
+  </div>
+
+<!-- here is where you put your image. it can be the same as the one on the nav or different. it will automatically resize to fit the screen, so i recommend having it quite large. -->
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80">
+  </div>
+<!-- end muse 1 -->  
+
+
+
+<!---->
+
+
+
+<!-- begin muse 2 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>  
+      <h1>Aidan</h1>
+      <h2>etym. celtic: "Born of Fire"</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>24
+        <ion-icon name="person-outline"></ion-icon>he/they<br>
+        <ion-icon name="briefcase-outline"></ion-icon>barista
+        <ion-icon name="heart-outline"></ion-icon>talia
+        <ion-icon name="planet-outline"></ion-icon>virgo
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1622236297949-eb7f7aa3a3cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80">
+  </div>
+<!-- end muse 2 -->  
+
+<!-- begin muse 3 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Julien</h1>
+      <h2>etym. french: "child born of love"</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>28
+        <ion-icon name="person-outline"></ion-icon>he/him<br>
+        <ion-icon name="briefcase-outline"></ion-icon>assistant professor
+        <ion-icon name="heart-outline"></ion-icon>leo
+        <ion-icon name="planet-outline"></ion-icon>aquarius
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1559697242-07e90b48b9fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=800">
+  </div>
+<!-- end muse 3 -->  
+
+<!-- begin muse 4 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Morgen</h1>
+      <h2>etym. Old Welsh: "Sea Born"</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>22
+        <ion-icon name="person-outline"></ion-icon>she/they<br>
+        <ion-icon name="briefcase-outline"></ion-icon>student
+        <ion-icon name="planet-outline"></ion-icon>libra
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80">
+  </div>
+<!-- end muse 4 -->  
+
+<!-- begin muse 5 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>  
+      <h1>Daphne</h1>
+      <h2>etym. Greek: "laurel tree"</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>26
+        <ion-icon name="person-outline"></ion-icon>she/her<br>
+        <ion-icon name="briefcase-outline"></ion-icon>sculptor
+        <ion-icon name="planet-outline"></ion-icon>taurus
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1624984674735-7ecdbd7de244?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60">
+  </div>
+<!-- end muse 5 -->  
+
+<!-- begin muse 6 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>  
+      <h1>Leo</h1>
+      <h2>etym. Greek: "Lion"</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. Morbi malesuada rutrum urna, nec ultrices tortor porta sit amet. Sed at ultricies mi. Integer molestie nibh non nisl euismod, sed hendrerit augue imperdiet.
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>25
+        <ion-icon name="person-outline"></ion-icon>they/them<br>
+        <ion-icon name="briefcase-outline"></ion-icon>student
+        <ion-icon name="heart-outline"></ion-icon>julien
+        <ion-icon name="planet-outline"></ion-icon>gemini
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1607556114526-058f5efdf49e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80">
+  </div>
+<!-- end muse 6 --> 
+<!-- begin muse 7 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1504834636679-cd3acd047c06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
+  </div>
+<!-- end muse 7 -->  
+
+<!-- begin muse 8 -->
+   <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1514846326710-096e4a8035e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60">
+  </div>
+<!-- end muse 8 -->  
+
+<!-- begin muse 9 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1590926938512-c0d7e5c39abd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80">
+  </div>
+<!-- end muse 9 -->  
+
+<!-- begin muse 10 -->
+   <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1554513647-dfaf0ef7c168?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80">
+  </div>
+<!-- end muse 10 -->  
+
+<!-- begin muse 11 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80">
+  </div>
+<!-- end muse 11 -->  
+
+<!-- begin muse 12 -->
+   <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1512413316925-fd4b93f31521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80">
+  </div>
+<!-- end muse 12 --> 
+
+<!-- begin muse 13 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1615843653880-104c9a0a4d47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
+  </div>
+<!-- end muse 13 --> 
+
+<!-- begin muse 14 -->
+  <div class="carousel-cell">
+  <div class="info">
+<div class="links">
+    <a href="/" title="browse tag"><ion-icon name="bookmark-outline"></ion-icon></a>
+    <a href="/" title="about"><ion-icon name="person-outline"></ion-icon></a>
+    <a href="/" title="rp threads"><ion-icon name="chatbubbles-outline"></ion-icon></a>
+</div>   
+      <h1>Name</h1>
+      <h2>etymology/subtitle/rank etc.</h2>
+      
+      <div class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit suscipit massa nec hendrerit. <b>bold</b>, <i>italic</i>, <s>strike. </s>
+   
+      </div>
+      <div class="things">
+        <ion-icon name="leaf-outline"></ion-icon>xx
+        <ion-icon name="person-outline"></ion-icon>pronouns<br>
+        <ion-icon name="briefcase-outline"></ion-icon>occupation
+        <ion-icon name="heart-outline"></ion-icon>love interest
+        <ion-icon name="planet-outline"></ion-icon>sign
+      </div>
+  </div>
+      
+      <img src="https://images.unsplash.com/photo-1613053340702-e6df1fb10b34?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+  </div>
+<!-- end muse 14 --> 
+    
+
+</div>
+
+
+
+<!-- start navigation carousel -->
+<div class="carousel carousel-nav"
+  data-flickity='{ "prevNextButtons": false, "asNavFor": ".carousel-main", "contain": true, "pageDots": false }' >
+  
+  
+<!-- here you add your muses/characters. Again, i recommend keeping them numbered so it's easier to keep track. again, you can have as many or as few as you want, it's up to you. example images from unsplash. --->
+
+
+<!-- start muse -->
+<div class="carousel-cell" title="Talia">
+    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80">
+</div>
+<!-- end muse -->
+
+<!-- start muse 2 -->
+  <div class="carousel-cell" title="Aidan"><img src="https://images.unsplash.com/photo-1622236297949-eb7f7aa3a3cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"></div>
+<!-- end muse 2 -->
+
+<!-- start muse 3 -->
+  <div class="carousel-cell" title="Julien"><img src="https://images.unsplash.com/photo-1559697242-07e90b48b9fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=800" style="object-position:top;"></div>
+<!-- end muse 3 -->
+
+<!-- start muse 4 -->
+  <div class="carousel-cell" title="Morgen"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"></div>
+<!-- end muse 4 -->
+
+<!-- start muse 5 -->
+  <div class="carousel-cell" title="Daphne"><img src="https://images.unsplash.com/photo-1624984674735-7ecdbd7de244?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"></div>
+<!-- end muse 5 -->
+
+<!-- start muse 6 -->
+  <div class="carousel-cell" title="Leo"><img src="https://images.unsplash.com/photo-1607556114526-058f5efdf49e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"></div>
+<!-- end muse 6 -->
+
+<!-- start muse 7 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1504834636679-cd3acd047c06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60"></div>
+<!-- end muse 7 -->
+
+<!-- start muse 8 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1514846326710-096e4a8035e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60"></div>
+<!-- end muse 8 -->
+
+<!-- start muse 9 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1590926938512-c0d7e5c39abd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=666&q=80"></div>
+<!-- end muse 9 -->
+
+<!-- start muse 10 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1554513647-dfaf0ef7c168?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"></div>
+<!-- end muse 10 -->
+
+<!-- start muse 11 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"></div>
+<!-- end muse 11 -->
+
+<!-- start muse 12 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1512413316925-fd4b93f31521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"></div>
+<!-- end muse 12 -->
+
+<!-- start muse 13 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1615843653880-104c9a0a4d47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60"></div>
+<!-- end muse 13 -->
+
+<!-- start muse 14 -->
+  <div class="carousel-cell" title="Name"><img src="https://images.unsplash.com/photo-1613053340702-e6df1fb10b34?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"></div>
+<!-- end muse 14 -->
+
+</div>
+
+
+<!---- end carousel ------>
+
+</main>
+
+
+ <div class="daynight"><span><ion-icon name="moon-outline"></ion-icon></span></div>
+
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><ion-icon name="star-outline"></ion-icon></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $('.daynight').click(function(){
+         $('body').toggleClass('night');
+      });
+   });
+</script>
+</body>
+</html>
