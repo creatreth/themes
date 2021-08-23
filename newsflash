@@ -88,7 +88,7 @@
 <!-- JavaScript -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
-<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="https://unpkg.com/phosphor-icons"></script>
 
 <!--
@@ -105,7 +105,6 @@
 </style>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
 
 <script>
@@ -1895,6 +1894,8 @@ Add as many as you want.
     
 </div>
 {/block:date}
+
+
 {block:Text}
 {block:Title}<h1 class="post-title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
 {block:NotReblog}
@@ -1905,8 +1906,10 @@ Add as many as you want.
 {block:RebloggedFrom}
     {block:Reblogs}
         <li class="caption text-caption">
+        <div class="source-head">
             <img src="{PortraitURL-64}" class="user-icon tumblr_avatar">
-            <div class="username tumblr_blog {block:IsDeactivated}deactive{/block:IsDeactivated}"><a href="{Permalink}">{Username}</a></div>
+            <div class="username tumblr_blog {block:IsDeactivated}deactive{/block:IsDeactivated}"><a href="{Permalink}">{Username}</a></div></div>
+    
             {Body}
         </li>
     {/block:Reblogs}
