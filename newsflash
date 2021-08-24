@@ -648,7 +648,7 @@ p.npf_chat, p.npf_chat b {font-family: inherit;}
     vertical-align:middle;
 }
 .info.top a:hover i, .perm .info a:hover i{
-    color:#b0c7c4;
+    color:{color:accent 1};
 }
 
 .lrb{
@@ -1898,7 +1898,9 @@ Add as many as you want.
     <a href="{ReblogParentURL}" title="Reblogged from {reblogparentname}"><i class="ph-path"></i>via</a>
     <a href="{ReblogRootURL}" title="Originally from {reblogrootname}"><i class="ph-note-pencil"></i>orig.</a>
     {/block:RebloggedFrom}
-    
+     {block:notreblog}
+    <a href="/"><i class="ph-lightbulb-filament"></i>original post</a>
+    {/block:notreblog}
 </div>
 {/block:date}
 
