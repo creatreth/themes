@@ -1899,7 +1899,7 @@ Add as many as you want.
     <a href="{ReblogRootURL}" title="Originally from {reblogrootname}"><i class="ph-note-pencil"></i>orig.</a>
     {/block:RebloggedFrom}
      {block:notreblog}
-    <a href="/"><i class="ph-lightbulb-filament"></i>original post</a>
+    <a href="{Permalink}"><i class="ph-lightbulb-filament"></i>original post</a>
     {/block:notreblog}
 </div>
 {/block:date}
