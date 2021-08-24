@@ -401,6 +401,13 @@ img {
     margin-bottom:20px!important;
 }
 
+p + .npf_inst {
+    margin-top:20px!important;
+}
+
+.text-caption .npf_inst:only-child {margin-bottom:-20px!important}
+
+\
 /*----- PHOTOSET -----*/
 
 .post-content div.npf_row, .post div.npf_row, body div.npf_row {
