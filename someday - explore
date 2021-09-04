@@ -612,6 +612,31 @@ hr {
     margin-top:-2px;
 }
 
+/* ask/faq section */
+
+.questions{
+    padding:0 30px;
+    border-bottom:1px solid var(--borders);
+    padding-bottom:20px;
+    margin-bottom:10px;
+}
+
+.questions a{
+    display:inline;
+    padding:0;
+    margin:0;
+    text-decoration:underline;
+}
+
+.questions a:hover{
+    background:none;
+}
+
+.askbox{
+    padding:20px 30px;
+}
+
+
 /* blogroll section */
 
 .blogroll li{
@@ -816,7 +841,7 @@ body.night .daynight i:before{
 <!-- start section -->
 <span><i class="ph-map-pin-fill"></i> quick access</span>
     <a href="/"><i class="ph-house-line-fill"></i> index</a>
-    <a href="/ask"><i class="ph-paper-plane-tilt-fill"></i> message</a>
+    <div class="tablinks" onclick="openCity(event, 'ask')"><i class="ph-paper-plane-tilt-fill"></i>message</div>
     <a href="/archive"><i class="ph-clock-fill"></i> archive</a>
     
 <!-- add a couple of extra links if you want, with a section header -->
@@ -869,6 +894,20 @@ body.night .daynight i:before{
     --->
 
 <div class="tab two">
+
+<!-- ask tab -->
+    <div id="ask" class="tabcontent ask">
+
+<span><i class="ph-circle-wavy-warning-fill"></i> faq</span>
+<div class="questions">
+    <b>question?</b> answer<br>
+ </div>
+<span><i class="ph-circle-wavy-question-fill"></i> ask a question</span>
+<div class="askbox">
+<iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/{Name}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
+</div>
+
+</div>
 
 
 <!-- 02 navigation box begin -->
