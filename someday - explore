@@ -725,7 +725,7 @@ body.night .nav a:hover{color:#000!important;}
 
 body.night .window{background:#000}
 
-body.night .window, body.night article, body.night .secondbar, body.night .secondbar div, body.night .name:after, body.night .search:before, body.night .tablinks:after, body.night .search:before, body.night .one, body.night .two, body.night .tablinks.active, body.night .tablinks:hover, body.night .info, body.night .tags, body.night .ask-wrap, body.night h1.post-title, body.night .notes, body.night ol.notes li.post_attribution:after, body.night .caption, body.night .bottombar, body.night .intro, body.night .npf-link-block a, body.night .top {border-color:#3a3a3a;} 
+body.night .window, body.night .questions, body.night article, body.night .secondbar, body.night .secondbar div, body.night .name:after, body.night .search:before, body.night .tablinks:after, body.night .search:before, body.night .one, body.night .two, body.night .tablinks.active, body.night .tablinks:hover, body.night .info, body.night .tags, body.night .ask-wrap, body.night h1.post-title, body.night .notes, body.night ol.notes li.post_attribution:after, body.night .caption, body.night .bottombar, body.night .intro, body.night .npf-link-block a, body.night .top {border-color:#3a3a3a;} 
 
 body.night section, body.night .ask-wrap, body.night .tags, body.night .info a:hover{background:#111;}
 
