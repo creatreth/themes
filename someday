@@ -283,7 +283,7 @@ body.night .daynight a:before{
 }
 
 ::-webkit-scrollbar-thumb {
-    background:var(--accent1);
+    background:var(--accent2);
     border-radius:5px;
 }
 
@@ -304,14 +304,14 @@ body.night .daynight a:before{
     box-shadow:2px 2px 10px rgba(0,0,0,0.2);
 }
 
-.desc, .image{
+.desc, .imagebox{
     left:calc(50% + 300px);
     top:calc(50% + 50px);
     width:300px;
     height:auto;
 }
 
-.image{
+.imagebox{
     left:calc(50% + 500px);
     top:calc(50% - 110px);
 }
@@ -496,14 +496,10 @@ li.complete:before{
 .search input{
     background:none;
     outline:none;
-    color:{color:text};
+    color:var(--accent2);
     font:inherit;
     letter-spacing:0.5px;
     border:0px solid transparent;
-}
-
-.search input::der{
-    color:{color:text};
 }
 
 .search form{
@@ -623,7 +619,7 @@ body.night .img{
     
 }
 
-.image .img{
+.imagebox .img{
     margin:0;
     height:400px;
     width:100%;
@@ -1355,7 +1351,7 @@ ol.notes li a{
     top:calc(50vh - 280px);
 }
 
-.image{
+.imagebox{
     top:calc(50vh - 150px);
     z-index:1000;
     left:calc(50vw - 610px);
@@ -1386,7 +1382,7 @@ ol.notes li a{
     .desc, .updates{
         left:100px;
     }
-    .image{
+    .imagebox{
         margin-top:-50px;
         left:calc(50vw + 330px);
     }
@@ -1396,11 +1392,11 @@ ol.notes li a{
         left:calc(30vw - 50px);
     }
     
-    .image{
+    .imagebox{
         margin-left:-50px;
     }
 
-    .desc, .image{
+    .desc, .imagebox{
     left:100px;
     margin-top:-50px;
     }
@@ -1463,7 +1459,7 @@ body.night .nav a:hover{color:#000!important;}
 
 body.night .window{background:#000}
 
-body.night .window, body.night article, body.night .secondbar, body.night .secondbar div, body.night .name:after, body.night .search:before, body.night .tablinks:after, body.night .search:before, body.night .one, body.night .two, body.night .tablinks.active, body.night .tablinks:hover, body.night .info, body.night .tags, body.night .ask-wrap, body.night h1.post-title, body.night .notes, body.night ol.notes li.post_attribution:after, body.night .caption, body.night .bottombar, body.night .intro, body.night .npf-link-block a, body.night .top {border-color:#3a3a3a;} 
+body.night .window, body.night .p_answer .caption, body.night article, body.night .secondbar, body.night .secondbar div, body.night .name:after, body.night .search:before, body.night .tablinks:after, body.night .search:before, body.night .one, body.night .two, body.night .tablinks.active, body.night .tablinks:hover, body.night .info, body.night .tags, body.night .ask-wrap, body.night h1.post-title, body.night .notes, body.night ol.notes li.post_attribution:after, body.night .caption, body.night .bottombar, body.night .intro, body.night .npf-link-block a, body.night .top {border-color:#3a3a3a;} 
 
 body.night section, body.night .ask-wrap, body.night .tags, body.night .info a:hover{background:#111;}
 
@@ -1503,7 +1499,7 @@ body.night .daynight i:before{
 
 {block:ifSidebarImageBox}
 <!-- sidebar image -->
-<div class="window image">
+<div class="window imagebox">
 <div class="top">
     <i class="ph ph-image-square"></i>{text:Image Name}.img
     <span>
