@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--- 
+
+    someday - explore page: theme by @taezs
+    
+    creds:
+    - day/night mode by @eggdesign
+    - phosphoricons - change icons by going to https://phosphoricons.com/ and finding the class name of the one you want.
+    
+    ko-fi? @taezs
+    questions? taezsthemes.tumblr.com/faq
+    hotel? trivago
+
+--->
+
+<title>{Title} {block:TagPage}/ #{Tag}{/block:TagPage}{block:PostSummary}: {PostSummary}{/block:PostSummary}</title>
+ 
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,500&family=Cairo:ital,wght@0,200;0,300;0,600;1,200;1,300;1,600&family=Vbiaoda+Libre&display=swap" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="https://unpkg.com/phosphor-icons"></script>
+
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('body').tooltip({track:true});    
+});
+</script>
+
+
+<style>
+
+:root {
+    --black: #222;
+    --white: #fff;
+    --accent1:#82d1d1;
+    --accent2:#6472f3;
+    --accent3:#a612c9;
+    --borders:#ddd;
+    --grey:#eee;
+}
+
+/* CHANGE IMAGES HERE !!!!!!!!!!!!!!!! default images from unsplash. remove the blend modes/change it to normal if you want */
+
+.img{background-blend-mode: screen;}
+
+body.night .img{background-blend-mode:multiply;}
+
+.image .img{background-image:url(https://64.media.tumblr.com/5af4e35d803a6509f09731dc08bf859f/b260c1867291358a-72/s2048x3072/1bc86415049642e4fe8eadfc026b7503c8a60982.jpg), linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 50%, var(--accent3) 100%);}
+
+.nav .img{background-image:url(https://images.unsplash.com/photo-1586423669195-d9df98e5a20e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=696&q=800), linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 50%, var(--accent3) 100%);}
+
+/*tooltip*/
+
+.ui-tooltip {  
+    position:Absolute;
+    z-index:9999;
+    padding-top:5px;
+}
+ 
+.ui-tooltip-content {
+    padding:4px 10px;
+    transition:0s!important;
+    font:italic 10pt 'Cairo', sans-serif;
+    background:white;
+    border:1px solid #ddd;
+    box-shadow:2px 2px 10px rgba(0,0,0,0.2);
+}
+
+
+.iframe-controls--desktop {
+    position:fixed;
+    top:0px;
+    right:0px;
+    filter:invert(100%);
+    -webkit-filter:invert(100%); 
+    z-index:999999999999;
+    -webkit-transform:scale(0.6,0.6);
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin:100% 0%;
+    -ms-transform:scale(0.6,0.6);
+    transform:scale(0.6,0.6);
+    transform-origin:100% 0%;
+}
+ 
+ 
+body {
+    font-family: 'Cairo', sans-serif;
+    color:#333;
+    font-size: 11pt;
+    font-weight:400;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    left:0;
+    top:0;
+    letter-spacing:0.5px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    background-color: #f6f6f6;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+    letter-spacing:0.5px;
+}
+
+.taezs, .daynight{
+    position:fixed;
+    bottom:18px;
+    right:20px;
+    width:200px;
+    z-index:4000;
+    height:20px;
+}
+
+.daynight{
+    right:auto;
+    left:18px;
+}
+
+.taezs a, .daynight a{
+    display:inline-block;
+    border-radius:50%;
+    right:20px;
+    position:fixed;
+    padding:8px 10px;
+    color:black;
+    bottom:13px;
+    cursor:pointer;
+}
+
+.daynight a{
+    right:auto;
+    left:20px;
+}
+
+.taezs a i, .daynight a i{
+    margin-bottom:-2px;
+    vertical-align:middle;
+}
+
+.taezs a:before, .daynight a:before{
+    content:"code by taezs";
+    position:fixed;
+    right:40px;
+    padding:5px 20px;
+    opacity:0;
+    width:auto!important;
+    bottom:-20px;
+    transition:.5s;
+    white-space: nowrap;
+}
+
+.daynight a:before{
+    right:auto;
+    content:'turn the lights off';
+    left:40px;
+    width:auto!important;
+}
+
+body.night .daynight a:before{
+    content:'turn the lights on';
+}
+
+.taezs a:hover:before, .daynight a:hover:before{
+    opacity:1;
+    bottom:13px;
+    transition:.5s;
+}
+
+::-webkit-scrollbar{
+    height:6px;
+    width:6px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {
+    background:var(--accent2);
+    border-radius:5px;
+}
+
+::-webkit-scrollbar-track {background:transparent;}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {border:5px solid transparent;}
+
+/* container */
+.window{
+    width:1000px;
+    margin:auto;
+    background:var(--white);
+    position:fixed;
+    height:80vh;
+    top:10vh;
+    border:1px solid var(--borders);
+    box-shadow:2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.desc, .image{
+    left:calc(50% + 300px);
+    top:calc(50% + 50px);
+    width:300px;
+    height:auto;
+}
+
+.nav{
+    z-index:10;
+}
+
+.chrome{
+    height:90vh;
+    top:5vh;
+}
+
+.updates{
+    width:300px;
+    height:auto;
+}
+
+.inner{
+    padding:1em;
+    font-size:12pt;
+}
+
+.inner li{
+    list-style:none;
+    padding-left:40px;
+}
+
+.inner li:before{
+    content: "\f857";
+    font-family: 'phosphor';
+    color:var(--grey);
+    position:absolute;
+    margin-left:-30px;
+    margin-top:8px;
+}
+
+.desc_links{
+    padding:10px 20px;
+    border-top:1px solid var(--borders);
+}
+
+.desc_links a{
+    margin-right:10px;
+}
+
+li.complete:before{
+  content: "\f851";
+    
+}
+
+.top{
+    background:var(--grey);
+    padding:5px 10px;
+    cursor:move;
+    border-bottom:1px solid var(--borders);
+}
+
+.top span:not(.nom){
+    float:right;
+}
+
+.top span:not(.nom) i{
+    margin-left:15px;
+}
+
+.top .ph-plus{
+    margin-right:15px;
+    margin-left:0;
+}
+
+.ph{
+    margin-right:10px;
+    vertical-align:middle;
+    margin-top:-3px;
+}
+
+.secondbar{
+    width:100%;
+    padding: 10px;
+    height:50px;
+    border-bottom:1px solid var(--borders);
+}
+
+.secondbar div{
+    border:1px solid var(--borders);
+    display:inline-block;
+    height:30px;
+    padding:0 10px;
+}
+
+.search{
+    float:right;
+    width:200px;
+    height:30px;
+    position:relative;
+}
+
+.controls{
+    height:30px;
+    float:left;
+    width:160px;
+    border-color:transparent!important;
+}
+
+.controls i{
+    text-align:center;
+    padding:7px;
+    border-radius:50%;
+    color:#eee;
+}
+
+.controls a i{
+    color:#aaa;
+}
+
+.controls a:hover i{
+    color:black;
+    background:var(--grey);
+}
+
+.search i{
+    margin-right:10px;
+}
+.secondbar i{
+    font-size:90%;
+    vertical-align:middle;
+    margin-top:-3px;
+}
+
+.name{
+    width:calc(100% - 210px);
+    position:relative;
+    white-space: nowrap;
+    padding-right:40px!important;
+    overflow: hidden;
+    margin-bottom:-8px;
+    text-overflow: ellipsis;
+}
+
+.name i{
+    margin-top:-1px;
+}
+
+.name:after, .search:before, .tablinks:after{
+    position:absolute;
+    right:0;
+    top:0;
+    height:15px;
+    padding:7px ;
+    border-left:1px solid var(--borders);
+    content:"\f045";
+    font-family: 'phosphor';
+}
+
+.web{
+    width:calc(100% - 180px);
+    margin-left:-20px;
+}
+
+.web.name i{
+    margin-right:5px;
+}
+
+.web:after{
+    content: "\fa5d";
+}
+
+.webimg{
+    float:right;
+    width:17px;
+    margin:5px;
+    margin-top:6px;
+    height:17px;
+    border-radius:50%;
+}
+
+.search:before{
+    left:0;
+    right:auto;
+    border-left:none;
+    border-right:1px solid var(--borders);
+    content: "\f20a";
+}
+
+.search input{
+    background:none;
+    font:inherit;
+    outline:none;
+    color:var(--accent2);
+    letter-spacing:0.5px;
+    border:0px solid transparent;
+}
+
+.search input::focus{
+    color:var(--black);
+}
+
+.search form{
+    float:left;
+    vertical-align:middle;
+    outline:none;
+    margin-top:-1px;
+    margin-left:25px;
+    border:0px solid transparent;
+}
+
+.intro{
+    padding:15px 20px;
+    text-align:justify;
+    margin-top:20px;
+    border-top:1px solid var(--borders);
+}
+
+.tabs{
+    display:flex;
+    height:calc(100% - 125px);
+    align-items: stretch;
+}
+
+.tab{
+    padding-bottom:20px;
+    overflow:auto;
+}
+
+
+.tab a, .tab span, .tab .tablinks{
+    display:block;
+    padding:2px 10px;
+}
+
+.tab a{
+    padding-left:20px;
+}
+
+.tab a:hover{
+    background-color: var(--grey);
+    color:black;
+    font-weight:600;
+}
+
+.tab a:hover i{
+    color:var(--black)!important;
+}
+
+.tab a i, .tab span i, .tablinks i, .inner i{
+    vertical-align:middle;
+    margin-top:-2px;
+    margin-right:10px;
+    color:#ccc!important;
+}
+
+.tab span{
+    padding-top:5px;
+    font-weight:600;
+}
+
+.tab span i{
+    margin-right:5px;
+}
+
+.active i, .ph-lock-fill, .tab span i , .tablinks:active i, .stick a:hover i, .web:after, .likeb .liked + .actual-button, .info a:hover i, .alert i, li.complete:before, .tags a:hover, .desc a:hover, .caption a:hover, .username, .notes a:hover, .updates a:hover, .ask-wrap a:hover {
+    background-size: 100%;
+    background:var(--accent1);
+background: -webkit-linear-gradient(-45deg, var(--accent1) 0%, var(--accent2) 50%, var(--accent3) 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.tablinks.active i:before{
+    content:"\f8f6"!important;
+}
+
+.one{
+    width:200px;
+    flex:none;
+    border-right:1px solid var(--borders);
+}
+
+.three{
+    text-align:center;
+    overflow:hidden;
+    font-weight:600;
+    font-size:9pt;
+    flex:none;
+    width:209px;
+    line-height:1.2;
+    padding:40px;
+}
+
+.img{
+    width:calc(100%);
+    height:200px;
+    margin-bottom:40px;
+    position:relative;
+    background-size:cover;
+    background-position:center center;
+}
+
+.image .img{
+    margin:0;
+    height:400px;
+    width:100%;
+}
+
+.two{
+    flex-grow:1;
+    border-right:1px solid var(--borders);
+}
+
+* {box-sizing: border-box}
+
+.tablinks {
+  display: block;
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+  border: none;
+  letter-spacing:0.5px;
+  padding-left:20px!important;
+  outline: none;
+  text-align: left;
+  font-family:inherit;
+  cursor: pointer;
+  position:relative;
+  transition: 0s;
+}
+
+.tablinks:after{
+    border:none;
+    margin-top:2px;
+    content: "\f0c4";
+    color:inherit;
+}
+
+.tablinks:hover {
+  background-color: var(--grey);
+  color:black;
+  font-weight:600;
+}
+
+.tablinks:hover:after, .tablinks:hover i{
+    color: var(--black)!important;
+}
+
+.tablinks.active {
+  background-color: var(--grey);
+  color:black;
+  font-weight:600;
+}
+
+.tabcontent {
+  float:left;
+  width:100%;
+  display:none;
+  height:300px;
+}
+
+#tab1{
+    display:block;
+}
+
+.bottombar{
+    width:100%;
+    padding:5px 10px;
+    line-height:25px;
+    border-top:1px solid var(--borders);
+}
+
+.bottombar a{
+    font-weight:600;
+    display:inline-block;
+    padding:0 10px;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    box-shadow: none;
+}
+
+.mobnav{
+    text-align:center;
+    display:none;
+    margin:20px;
+    margin-top:0;
+}
+
+.draginfo{
+    opacity:0.6;
+}
+
+.draginfo i{
+    vertical-align:middle;
+    margin-right:10px;
+    margin-top:-2px;
+}
+
+/* blogroll section */
+
+.blogroll li{
+    list-style-type:none;
+    display:block;
+    height:30px;
+    margin:2px;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    line-height:29px;
+}
+
+.blogroll img{
+    height:20px;
+    margin:5px;
+    margin-right:15px;
+    float:left;
+}
+
+/* window positions - full screen */
+
+.desc{z-index:1000;}
+
+.desc{
+    top:calc(50vh + 160px);
+    left:calc(50vw - 570px);
+}
+
+.nav{
+    left:calc(50vw - 400px);
+}
+
+.image{
+    top:calc(50vh - 150px);
+    left:calc(50vw - 620px);
+    margin-top:-50px;
+}
+
+
+.updates{
+    left:calc(50vw - 560px);
+    top:calc(50% - 350px);
+    z-index:-10;
+}
+
+
+/*--- MEDIA QUERIES ---*/
+
+
+@media only screen and (max-width: 1200px) {
+    .nav{
+        width:80vw;
+        left:10vw;
+    }
+    .three{
+        display:none;
+    }
+
+}
+
+
+/*--- for mobile devices ---*/
+
+@media only screen and (max-width: 800px) {
+    body{overflow-x:hidden;}
+    .updates, .desc, .image{display:none;}
+}
+
+/* NIGHT MODE */
+
+body.night{
+    background:var(--black);
+    color:var(--white)!important;
+}
+
+body.night .caption span, body.night .search input, body.night .search input::focus{
+    color:var(--white)!important;
+}
+
+body.night a{color:#eee;}
+body.night a:hover {color:#fff;}
+
+body.night .nav a{color:#eee;}
+body.night .nav a:hover{color:#000!important;}
+
+body.night .window{background:#000}
+
+body.night .window, body.night article, body.night .secondbar, body.night .secondbar div, body.night .name:after, body.night .search:before, body.night .tablinks:after, body.night .search:before, body.night .one, body.night .two, body.night .tablinks.active, body.night .tablinks:hover, body.night .info, body.night .tags, body.night .ask-wrap, body.night h1.post-title, body.night .notes, body.night ol.notes li.post_attribution:after, body.night .caption, body.night .bottombar, body.night .intro, body.night .npf-link-block a, body.night .top {border-color:#3a3a3a;} 
+
+body.night section, body.night .ask-wrap, body.night .tags, body.night .info a:hover{background:#111;}
+
+body.night .top, body.night .alert{background:#3a3a3a;}
+
+body.night article, body.night .actual-question{background:#000;}
+
+body.night .tab a:hover, body.night .tab a:hover i, body.night .tablinks:hover,  body.night .tablinks:hover i, body.night .active, body.night .tablinks:hover:after{
+    background-color: #111;
+    color:white!important;
+    font-weight:600;
+}
+
+body.night .npf-link-block a:hover{
+    background-size: 100%;
+    background: var(--black);}
+
+body.night .ui-tooltip-content {border:1px solid #333;background:#000;}
+
+body.night .iframe-controls--desktop {filter:invert(0%);-webkit-filter:invert(0%);}
+
+a.pinned-post, a.pinned-post i {font-weight: bold; color: #3cb065!important;}
+
+body.night .daynight i:before{
+    content: "\f2fe";
+}
+
+</style>
+</head>
+
+<!-- change this to just <body> if you want light mode default -->
+<body class="night">
+
+
+<main>
+
+<!-- sidebar image -->
+<div class="window image">
+<div class="top">
+    <i class="ph ph-image-square"></i>image.img
+    <span>
+        <i class="ph-dots-three-outline"></i>
+        <i class="ph-trash"></i>
+    </span>
+</div>
+<div class="img"></div>
+</div>
+
+<!-- description -->
+<div class="window desc">
+<div class="top">
+    <i class="ph ph-user-circle"></i>about.txt
+<span><i class="ph-minus"></i><i class="ph-square"></i><i class="ph-x"></i>  </span>
+</div>
+
+<div class="inner">
+{block:Description}{Description}{/block:Description}
+</div>
+</div>
+
+
+
+
+
+
+<!---------------------------- STUFF TO EDIT ------------------------------>
+
+
+
+<!-- updates box - delete  screen if you don't want it -->
+<div class="window updates">
+<div class="top"><i class="ph-plus"></i>updates<span><i class="ph-dots-three-outline"></i><i class="ph-trash"></i></span></div>
+
+<!-- updates box content -->
+<div class="inner">
+
+<!-- make each new dot with <li>, and </li> at the end if it's being a bit iffy. once the task is completed, change the li to li class="complete". -->
+
+    
+    <li class="complete">buy bread</li>
+    <li>eat bread</li>
+    
+    
+<!-- to make a little break put in <hr>, to put a line break put in <br> -->    
+    <hr/>
+<b><i class="ph-television-fill"></i> watching:</b> shows<br>
+<b><i class="ph-book-fill"></i> reading:</b> books
+
+
+</div></div>
+
+
+<div class="window nav">
+<!-- title, controls -->
+<div class="top"><i class="ph ph-folder-notch-open"></i>site navigation<span><i class="ph-minus"></i><i class="ph-square"></i><i class="ph-x"></i></span></div>
+
+
+<!-- second header -->
+<div class="secondbar">
+    <div class="name">{name} <i class="ph-caret-right"></i> explore</div>
+  
+<!-- search bar -->    
+<div class="search"><form action="/search" method="get"><input type="text" name="q" value="{SearchQuery}" placeholder="search blog ..."/></form></div>
+</div>
+
+
+<!-- nav content -->
+<div class="tabs">
+
+<!-- nav pane -->
+<div class="tab one">
+
+<!-- start section -->
+<span><i class="ph-map-pin-fill"></i> quick access</span>
+    <a href="/"><i class="ph-house-line-fill"></i> index</a>
+    <a href="/ask"><i class="ph-paper-plane-tilt-fill"></i> message</a>
+    <a href="/archive"><i class="ph-clock-fill"></i> archive</a>
+    
+<!-- add a couple of extra links if you want, with a section header -->
+<span><i class="ph-folders-fill"></i> sites</span>
+    <a href="/tagged/"><i class="ph-link"></i> extra link</a>
+    <a href="/tagged/"><i class="ph-link"></i> extra link</a>
+    <a href="/tagged/"><i class="ph-link"></i> extra link</a>
+    
+<!-- start list 
+
+<!-- start section -->
+<span><i class="ph-folders-fill"></i> explore</span>
+    
+<!-- 02 navigation tab link 1 -->    
+<div class="tablinks active" onclick="openCity(event, 'tab1')"><i class="ph-folder-fill"></i>links</div>
+
+<!-- 03 navigation tab link 2 --> 
+<div class="tablinks" onclick="openCity(event, 'tab2')"><i class="ph-folder-fill"></i>more links</div>
+
+<!-- 01 about me tab link -->
+<div class="tablinks" onclick="openCity(event, 'tab3')"><i class="ph-folder-fill"></i>about me</div>
+
+<!-- 03 navigation tab link 2 --> 
+<div class="tablinks" onclick="openCity(event, 'tab4')"><i class="ph-folder-fill"></i>following</div>
+
+<!-- add more tabs if you want by copying and pasting this last div ^^, just make sure you change 'tab4' to 'tab5' etc, and change the div id later on from id="tab4" to id="tab5" ---->
+
+
+<!-- add a couple of extra links if you want -->
+    <a href="/tagged/"><i class="ph-link"></i> extra link</a>
+    <a href="/tagged/"><i class="ph-link"></i> extra link</a>
+    <a href="/tagged/"><i class="ph-link"></i> extra link</a>
+
+</div>
+<!-- end nav pane -->   
+
+
+<!-- inner folders --->
+
+
+    <!--
+   
+    how to change the icons!
+    
+    go to https://phosphoricons.com/
+    
+    you can either use "regular" or "fill" (top left corner)
+    find an icon you like, click on it, and scroll to the bottom of the box that pops up, where it says HTML/CSS. copy the class name and replace it like in the examples below.
+    
+    --->
+
+<div class="tab two">
+
+
+<!-- 02 navigation box begin -->
+<div id="tab1" class="tabcontent">
+<span><i class="ph-download-fill"></i> downloads</span>
+  <a href="/"><i class="ph-download-fill"></i>all downloads</a>
+  <a href="/"><i class="ph-apple-logo-fill"></i>mac downloads</a>
+  <a href="/"><i class="ph-windows-logo-fill"></i>windows downloads</a>
+  <a href="/"><i class="ph-link"></i>tag name</a>
+
+<span><i class="ph-circles-three-fill"></i> other</span>
+  <a href="/"><i class="ph-squares-four-fill"></i>color palettes</a>
+  <a href="/tagged/fonts"><i class="ph-text-aa-fill"></i>fonts</a>
+  <a href="/tagged/gradients"><i class="ph-link"></i>gradients</a>
+  <a href="/tagged/icons"><i class="ph-user-circle-fill"></i>icons</a>
+  <a href="/"><i class="ph-link"></i>tag name</a>
+
+<span><i class="ph-info-fill"></i> tutorials by tag</span>
+  <a href="/"><i class="ph-image-fill"></i>photo tutorials</a>
+  <a href="/"><i class="ph-text-aa-fill"></i>typography tutorials</a>
+  <a href="/"><i class="ph-code"></i>tumblr/css/html tutorials</a>
+  <a href="/"><i class="ph-monitor-play-fill"></i>gif tutorials</a>
+  <a href="/"><i class="ph-link"></i>tag name</a>
+  
+</div>
+<!-- 02 navigation box end -->
+
+<!-- 03 navigation box begin -->
+<div id="tab2" class="tabcontent">
+<span><i class="ph-info-fill"></i> section subtitle</span>
+  <a href="/"><i class="ph-link"></i>tag name</a>
+  <a href="/"><i class="ph-link"></i>tag name</a>
+  <a href="/"><i class="ph-link"></i>tag name</a>
+  <a href="/"><i class="ph-link"></i>tag name</a>
+</div>
+<!-- 03 navigation box end --> 
+
+<!-- about me box. delete if you don't want. -->
+<div id="tab3" class="tabcontent about">
+<span><i class="ph-info-fill"></i>about me</span>
+<!-- descriptors -->
+  <a><i class="ph-user-circle"></i>name</a>
+  <a><i class="ph-moon-stars"></i>sign</a>
+  <a><i class="ph-thumbs-up"></i>likes</a>
+  <a><i class="ph-thumbs-down"></i>dislikes</a>
+  
+<div class="intro">
+<!-- text -->
+    Here is where you can chat about how great you are.
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    
+</div>
+</div>
+<!-- end about me tab -->
+
+
+<!-- new tab - blogroll - delete if you don't want -->
+<div id="tab4" class="tabcontent blogroll">
+
+<span><i class="ph-user-circle-plus-fill"></i> section name</span>
+    <a href="/"><i class="ph-link"></i>tag name</a>
+    <a href="/"><i class="ph-link"></i>tag name</a>
+    <a href="/"><i class="ph-link"></i>tag name</a>
+    <a href="/"><i class="ph-link"></i>tag name</a>
+
+<span><i class="ph-user-circle-plus-fill"></i> people i follow</span>
+{block:Following}
+{block:Followed}
+<a href="{FollowedURL}">
+<li>
+    <img src="{FollowedPortraitURL-128}"/>
+    <b>{FollowedName}</b>_{FollowedTitle}
+</li>
+</a>
+{/block:Followed}
+{/block:Following}
+
+
+</div>
+<!-- new tab - blogroll - delete if you don't want -->
+
+
+</div>
+
+<!-- tab three -->
+<div class="tab three">
+
+<!-- image in the navigation window - won't show up if you don't have one uploaded -->
+<div class="img"></div>
+<!-- navigation window subtitle -->
+here you can write something about your navigation system.<br><br> you can add as many extra sections and links as you want, or remove the extras.
+</div>
+
+
+
+
+</div>
+
+<div class="bottombar"><div class="draginfo"><i class="ph-warning-circle"></i> click and drag top bar to move windows around</div></div>
+
+</div>
+<!-- end nav window -->
+
+
+</main>
+
+
+
+ <div class="daynight"><a><i class="ph-moon"></i></a></div>
+
+
+<!------ LEAVE CREDIT IN TACT ------------>
+<div class="taezs"><a href="https://taezs.tumblr.com"><i class="ph-anchor-fill"></i></a></div>
+<!------ LEAVE CREDIT IN TACT ------------>
+
+
+<script>
+    $(document).ready(function(){
+      $('.daynight').click(function(){
+         $('body').toggleClass('night');
+      });
+   });
+   
+   function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<script>
+$( ".window" ).draggable({ handle: ".top" });
+$('.window').on('mousedown', function(event) { 
+    $('.window').css('z-index','1');
+    $( this ).css('z-index','1000');
+});
+</script>
+
+</body>
+</html>
